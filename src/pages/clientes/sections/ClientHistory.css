@@ -1,0 +1,104 @@
+
+
+
+
+/* ===========================
+   ClientHistory.css
+   Prefijo chist- para evitar choques con otros CSS
+   =========================== */
+
+.chist-error {
+  background: #fcebeb;
+  color: #791f1f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.chist-empty {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1.5px dashed #e0ddd4;
+  border-radius: 18px;
+  background: #fbfaf7;
+}
+
+.chist-empty-icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.chist-empty h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1a1a18;
+}
+
+.chist-empty p {
+  font-size: 13.5px;
+  color: #888780;
+}
+
+/* --- MODAL --- */
+.chist-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.chist-modal {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.chist-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid #e0ddd4;
+}
+
+.chist-modal-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a18;
+}
+
+.chist-modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #888780;
+}
+
+.chist-modal-close:hover {
+  color: #791f1f;
+}
+
+.chist-modal-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: #1a1a18;
+}
+
+.chist-modal-body strong {
+  color: #5f5e5a;
+  font-weight: 600;
+}

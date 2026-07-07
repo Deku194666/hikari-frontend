@@ -1,0 +1,907 @@
+/* Huron.css - Hikari - AISLADO */
+
+.hur-page {
+  min-height: 100vh;
+  background: #F6F4F0;
+}
+
+/* ===== HERO ===== */
+.hur-hero {
+  background: linear-gradient(135deg, #D9D2C4 0%, #6B5B4A 100%);
+  padding: 130px 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.hur-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hur-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2E251C;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-size: 1.1em;
+  margin-left: 6rem;
+  margin-top: -2rem;
+}
+
+.hur-h1 {
+  font-size: 2.5em;
+  color: white;
+  margin: 0 0 16px;
+  font-weight: 800;
+  margin-left: 6rem;
+}
+
+.hur-p {
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  margin-left: 6rem;
+}
+
+.hur-hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-left: 6rem;
+}
+
+.hur-stat {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.hur-stat strong {
+  display: block;
+  font-size: 1.5em;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.hur-stat span {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hur-hero-image {
+  flex: 0 50px 700px;
+  text-align: center;
+  transform: translateX(-50px);
+  margin-bottom: 2rem !important;
+  animation: serviciosSlideInRight 0.8s ease;
+}
+
+/* ===== CARRUSEL HERO (manual, sin autoplay) — clases únicas de Hurón ===== */
+.hur-hero-carousel {
+  position: relative;
+  width: 35rem;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  display: inline-block;
+  border: 3px solid white;
+}
+
+.hur-hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hur-hero-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2E251C;
+  font-size: 1.6em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+  line-height: 1;
+}
+
+.hur-hero-carousel-btn:hover {
+  background: #6B5B4A;
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.hur-hero-carousel-prev {
+  left: 14px;
+}
+
+.hur-hero-carousel-next {
+  right: 14px;
+}
+
+.hur-hero-carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.hur-hero-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.hur-hero-carousel-dot.active {
+  background: #6B5B4A;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* ===== SECCIÓN PRECIO EVALUACIÓN ===== */
+.hur-precio-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 30px 10px;
+}
+
+.hur-precio-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(107, 91, 74, 0.15);
+}
+
+.hur-precio-badge {
+  display: inline-block;
+  background: #EFEBE3;
+  color: #6B5B4A;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 14px;
+}
+
+.hur-precio-h2 {
+  font-size: 1.6em;
+  color: #2E251C;
+  margin: 0 0 12px;
+}
+
+.hur-precio-texto {
+  color: #6E6153;
+  font-size: 1.1em;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.5;
+}
+
+.hur-precio-comparacion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hur-precio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: #F6F4F0;
+  border: 2px solid #D9D2C4;
+}
+
+.hur-precio-item.hur-precio-destacado {
+  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  border-color: transparent;
+}
+
+.hur-precio-label {
+  font-weight: 600;
+  color: #2E251C;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.hur-precio-destacado .hur-precio-label {
+  color: white;
+}
+
+.hur-precio-valor {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #6B5B4A;
+}
+
+.hur-precio-valor-normal {
+  color: #6E6153;
+}
+
+.hur-precio-destacado .hur-precio-valor {
+  color: white;
+}
+
+.hur-precio-nota {
+  color: #6E6153;
+  font-size: 1em;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== SECCIÓN INFO / CARACTERÍSTICAS ===== */
+.hur-info-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px 20px;
+  text-align: center;
+}
+
+.hur-info-h2 {
+  font-size: 2em;
+  color: #2E251C;
+  margin: 0 0 12px;
+}
+
+.hur-info-p {
+  color: #6E6153;
+  font-size: 1.3em;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hur-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.hur-feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 4px 16px rgba(107, 91, 74, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.hur-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(107, 91, 74, 0.2);
+  border-top-color: #6B5B4A;
+}
+
+.hur-feature-icono {
+  font-size: 3em;
+  display: block;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.hur-feature-titulo {
+  margin: 0 0 8px;
+  color: #2E251C;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.hur-feature-texto {
+  margin: 0;
+  color: #6E6153;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ===== SECCIÓN DATOS CURIOSOS ===== */
+.hur-curiosos-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 30px 50px;
+}
+
+.hur-curiosos-h2 {
+  font-size: 1.8em;
+  color: #2E251C;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.hur-curiosos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hur-curioso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: white;
+  border-left: 4px solid #6B5B4A;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 3px 12px rgba(107, 91, 74, 0.08);
+}
+
+.hur-curioso-icono {
+  font-size: 1.9em;
+  flex-shrink: 0;
+}
+
+.hur-curioso-texto {
+  margin: 0;
+  color: #2E251C;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* ===== CONTAINER ===== */
+.hur-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* ===== SIDEBAR ===== */
+.hur-sidebar {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 16px rgba(107, 91, 74, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 150px;
+}
+
+.hur-sidebar-h3 {
+  color: #2E251C;
+  margin: 0 0 20px;
+  font-size: 1.2em;
+}
+
+.hur-categorias-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hur-categoria-btn {
+  padding: 12px 16px;
+  border: 2px solid #D9D2C4;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2E251C;
+  font-size: 0.95em;
+}
+
+.hur-categoria-btn:hover {
+  border-color: #6B5B4A;
+  background: #EFEBE3;
+  transform: translateX(3px);
+}
+
+.hur-categoria-btn.hur-active {
+  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  color: white;
+  border-color: #6B5B4A;
+}
+
+.hur-count {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.85em;
+}
+
+.hur-categoria-btn.hur-active .hur-count {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== MAIN ===== */
+.hur-main {
+  min-height: 500px;
+}
+
+.hur-main-header {
+  margin-bottom: 24px;
+}
+
+.hur-main-h2 {
+  font-size: 1.8em;
+  color: #2E251C;
+  margin: 0 0 8px;
+}
+
+.hur-main-p {
+  color: #6E6153;
+  margin: 0;
+}
+
+/* ===== GRID PRODUCTOS ===== */
+.hur-productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.hur-producto-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(107, 91, 74, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid transparent;
+}
+
+.hur-producto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(107, 91, 74, 0.25);
+  border-left-color: #6B5B4A;
+}
+
+.hur-producto-imagen {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #F6F4F0 0%, #D9D2C4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hur-producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hur-emoji-imagen {
+  font-size: 5em;
+}
+
+.hur-producto-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.hur-producto-h3 {
+  margin: 0;
+  color: #2E251C;
+  font-size: 1.05em;
+}
+
+.hur-descripcion {
+  color: #6E6153;
+  font-size: 0.9em;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.hur-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  color: #2E251C;
+}
+
+.hur-stock {
+  color: #6E9C6B;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.hur-precios {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hur-precio-original {
+  text-decoration: line-through;
+  color: #6E6153;
+  font-size: 0.9em;
+}
+
+.hur-precio {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #6B5B4A;
+}
+
+.hur-btn-agregar {
+  padding: 12px;
+  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.hur-btn-agregar:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(107, 91, 74, 0.5);
+}
+
+.hur-btn-agregar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== CARRITO ===== */
+.hur-cart-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  color: white;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(107, 91, 74, 0.5);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.hur-cart-toggle:hover {
+  transform: scale(1.1);
+}
+
+.hur-cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: hur-slideInRight 0.3s ease;
+}
+
+@keyframes hur-slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.hur-cart-header {
+  padding: 25px;
+  border-bottom: 2px solid #D9D2C4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hur-cart-h3 {
+  margin: 0;
+  color: #2E251C;
+}
+
+.hur-close-cart {
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #6E6153;
+  padding: 5px 10px;
+}
+
+.hur-cart-items {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.hur-cart-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #D9D2C4;
+}
+
+.hur-item-imagen {
+  width: 60px;
+  height: 60px;
+  background: #F6F4F0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hur-item-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hur-item-imagen span {
+  font-size: 2em;
+}
+
+.hur-item-info {
+  flex-grow: 1;
+}
+
+.hur-item-nombre {
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.hur-item-precio {
+  color: #6B5B4A;
+  font-weight: 700;
+  margin: 0 0 8px;
+  font-size: 0.9em;
+}
+
+.hur-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hur-item-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #D9D2C4;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #2E251C;
+}
+
+.hur-item-controls button:hover {
+  background: #6B5B4A;
+  color: white;
+  border-color: #6B5B4A;
+}
+
+.hur-btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  align-self: flex-start;
+}
+
+.hur-cart-footer {
+  padding: 20px 25px;
+  border-top: 2px solid #D9D2C4;
+}
+
+.hur-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.hur-cart-total span {
+  font-weight: 700;
+  color: #6B5B4A;
+  font-size: 1.2em;
+}
+
+.hur-btn-checkout {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hur-btn-checkout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(107, 91, 74, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hur-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hur-sidebar {
+    position: relative;
+    top: auto;
+  }
+
+  .hur-categorias-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+   .hur-h1 {
+    font-size: 2.1em;
+  }
+
+  .hur-hero-carousel {
+    width: 100%;
+    max-width: 420px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hur-hero {
+    flex-direction: column;
+    padding: 120px 20px 40px;
+    text-align: center;
+  }
+
+  .hur-h1 {
+    font-size: 1.8em;
+    margin-left: 0;
+  }
+
+  .hur-p {
+    margin-left: 0;
+  }
+
+  .hur-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hur-hero-carousel {
+    width: 100%;
+    height: 260px;
+    margin-left: 3rem
+    ;
+  }
+
+
+  .hur-badge {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .hur-hero-stats {
+    margin-left: 0;
+  }
+
+  .hur-hero-image {
+    margin-bottom: -26rem !important;
+  }
+
+  .hur-info-section,
+  .hur-precio-section,
+  .hur-curiosos-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hur-productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .hur-cart-panel {
+    width: 100%;
+  }
+  /* ===== CELULARES (480px y menos) ===== */
+@media (max-width: 480px) {
+  .hur-hero {
+    padding: 100px 16px 30px;
+  }
+
+  .hur-h1 {
+    font-size: 1.5em;
+  }
+
+  .hur-p {
+    font-size: 1.15rem;
+  }
+
+  .hur-badge {
+    font-size: 0.95em;
+  }
+
+  .hur-hero-stats {
+    gap: 14px;
+  }
+
+  .hur-hero-carousel {
+    height: 220px;
+  }
+
+  .hur-precio-card {
+    padding: 24px 20px;
+  }
+
+  .hur-precio-comparacion {
+    gap: 10px;
+  }
+
+  .hur-precio-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .hur-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hur-productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hur-producto-imagen {
+    height: 170px;
+  }
+}
+}

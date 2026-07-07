@@ -1,0 +1,305 @@
+
+
+
+
+/* ===========================
+   ClientSchedule.css
+   Agendar Cita — Cliente
+   =========================== */
+
+.csch-section {
+  --csch-accent: #534ab7;
+  --csch-accent-dark: #3c3489;
+  --csch-accent-bg: #eeedfe;
+  --csch-border: #e0ddd4;
+  --csch-border-soft: #f1efe8;
+  --csch-text: #1a1a18;
+  --csch-text-muted: #5f5e5a;
+  --csch-text-faint: #888780;
+  --csch-taken-bg: #fcebeb;
+  --csch-taken-text: #791f1f;
+}
+
+.csch-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* --- CALENDARIO --- */
+.csch-calendar-card {
+  background: #ffffff;
+  border: 1px solid var(--csch-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.csch-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.csch-calendar-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--csch-text);
+}
+
+.csch-cal-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--csch-border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--csch-text-muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.csch-cal-nav:hover {
+  background: var(--csch-accent-bg);
+  color: var(--csch-accent-dark);
+}
+
+.csch-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.csch-calendar-weekdays span {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--csch-text-faint);
+  padding: 6px 0;
+}
+
+.csch-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.csch-cal-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--csch-text);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.csch-cal-empty {
+  cursor: default;
+}
+
+.csch-cal-cell:not(.csch-cal-empty):not(.past):hover {
+  background: var(--csch-border-soft);
+}
+
+.csch-cal-cell.today {
+  font-weight: 700;
+  color: var(--csch-accent);
+}
+
+.csch-cal-cell.selected {
+  background: var(--csch-accent);
+  color: #ffffff;
+}
+
+.csch-cal-cell.past {
+  color: var(--csch-text-faint);
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.csch-cal-day-number {
+  position: relative;
+  z-index: 1;
+}
+
+.csch-cal-dot {
+  position: absolute;
+  bottom: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--csch-accent);
+}
+
+.csch-cal-cell.selected .csch-cal-dot {
+  background: #ffffff;
+}
+
+.csch-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.csch-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--csch-text-faint);
+}
+
+.csch-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.csch-legend-dot.selected {
+  background: var(--csch-accent);
+}
+
+.csch-legend-dot.busy {
+  background: var(--csch-accent);
+  opacity: 0.5;
+}
+
+/* --- FORMULARIO --- */
+.csch-form-card {
+  background: #ffffff;
+  border: 1px solid var(--csch-border);
+  border-radius: 16px;
+  padding: 1.6rem;
+}
+
+.csch-form-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--csch-text);
+  text-transform: capitalize;
+}
+
+.csch-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.csch-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.csch-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--csch-text-muted);
+}
+
+.csch-field select,
+.csch-field textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--csch-border);
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  color: var(--csch-text);
+  background: #ffffff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.csch-field select:focus,
+.csch-field textarea:focus {
+  border-color: var(--csch-accent);
+  box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
+}
+
+.csch-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.csch-hint {
+  font-size: 13px;
+  color: var(--csch-text-faint);
+  font-style: italic;
+}
+
+.csch-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.csch-slot {
+  padding: 10px 6px;
+  border-radius: 10px;
+  border: 1px solid var(--csch-border);
+  background: #ffffff;
+  color: var(--csch-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.csch-slot:hover:not(.taken) {
+  border-color: var(--csch-accent);
+  background: var(--csch-accent-bg);
+}
+
+.csch-slot.chosen {
+  background: var(--csch-accent);
+  border-color: var(--csch-accent);
+  color: #ffffff;
+}
+
+.csch-slot.taken {
+  background: var(--csch-taken-bg);
+  color: var(--csch-taken-text);
+  border-color: var(--csch-taken-bg);
+  text-decoration: line-through;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.csch-submit-btn {
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  background: var(--csch-accent);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.csch-submit-btn:hover:not(:disabled) {
+  background: var(--csch-accent-dark);
+}
+
+.csch-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+  .csch-layout {
+    grid-template-columns: 1fr;
+  }
+  .csch-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

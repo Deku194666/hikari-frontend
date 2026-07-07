@@ -1,0 +1,509 @@
+/* Reptiles.css - Hikari - Página informativa (AISLADO) */
+
+.rep-page {
+  min-height: 100vh;
+  background: #F5FBF8;
+}
+
+/* ===== HERO ===== */
+.rep-hero {
+  background: linear-gradient(135deg, #D4E8DD 0%, #2D8659 100%);
+  padding: 130px 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.rep-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.rep-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1A3A2A;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  margin-top: -11rem;
+}
+
+.rep-h1 {
+  font-size: 2.5em;
+  color: white;
+  margin: 0 0 16px;
+  font-weight: 800;
+  margin-left: 3rem;
+}
+
+.rep-p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  margin-left: 3rem;
+}
+
+.rep-hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-left: 3rem;
+}
+
+.rep-stat {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.rep-stat strong {
+  display: block;
+  font-size: 1.5em;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.rep-stat span {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rep-hero-image {
+  flex: 0 50px 700px;
+  text-align: center;
+  transform: translateX(-50px);
+  margin-bottom: 2rem !important;
+  animation: serviciosSlideInRight 0.8s ease;
+}
+
+/* ===== CARRUSEL HERO (manual, sin autoplay) — clases únicas de Reptiles ===== */
+.rep-hero-carousel {
+  position: relative;
+  max-width: 100%;
+  width: 480px;
+  height: 400px;
+  margin-top: -1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  display: inline-block;
+  border: 3px solid white;
+}
+
+.rep-hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rep-hero-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1A3A2A;
+  font-size: 1.6em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+  line-height: 1;
+}
+
+.rep-hero-carousel-btn:hover {
+  background: #2D8659;
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.rep-hero-carousel-prev {
+  left: 14px;
+}
+
+.rep-hero-carousel-next {
+  right: 14px;
+}
+
+.rep-hero-carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.rep-hero-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.rep-hero-carousel-dot.active {
+  background: #2D8659;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* ===== SECCIÓN INFO / CARACTERÍSTICAS ===== */
+.rep-info-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px 20px;
+  text-align: center;
+}
+
+.rep-info-h2 {
+  font-size: 2em;
+  color: #1A3A2A;
+  margin: 0 0 12px;
+}
+
+.rep-info-p {
+  color: #5A7A6F;
+  font-size: 1.3em;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.rep-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.rep-feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 4px 16px rgba(45, 134, 89, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.rep-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(45, 134, 89, 0.18);
+  border-top-color: #2D8659;
+}
+
+.rep-feature-icono {
+  font-size: 3.3em;
+  display: block;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.rep-feature-titulo {
+  margin: 0 0 8px;
+  color: #1A3A2A;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.rep-feature-texto {
+  margin: 0;
+  color: #5A7A6F;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ===== SECCIÓN PRECIO EVALUACIÓN ===== */
+.rep-precio-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 30px 10px;
+}
+
+.rep-precio-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(45, 134, 89, 0.1);
+}
+
+.rep-precio-badge {
+  display: inline-block;
+  background: #FFF4E6;
+  color: #F08030;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 14px;
+}
+
+.rep-precio-h2 {
+  font-size: 1.6em;
+  color: #1A3A2A;
+  margin: 0 0 12px;
+}
+
+.rep-precio-texto {
+  color: #5A7A6F;
+  font-size: 1.1em;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.5;
+}
+
+.rep-precio-comparacion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rep-precio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: #F5FBF8;
+  border: 2px solid #D4E8DD;
+}
+
+.rep-precio-item.rep-precio-destacado {
+  background: linear-gradient(135deg, #F08030 0%, #FF9D47 100%);
+  border-color: transparent;
+}
+
+.rep-precio-label {
+  font-weight: 600;
+  color: #1A3A2A;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.rep-precio-destacado .rep-precio-label {
+  color: white;
+}
+
+.rep-precio-valor {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #2D8659;
+}
+
+.rep-precio-valor-normal {
+  color: #5A7A6F;
+}
+
+.rep-precio-destacado .rep-precio-valor {
+  color: white;
+}
+
+.rep-precio-nota {
+  color: #5A7A6F;
+  font-size: 1em;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== SECCIÓN DATOS CURIOSOS ===== */
+.rep-curiosos-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 30px 50px;
+}
+
+.rep-curiosos-h2 {
+  font-size: 1.8em;
+  color: #1A3A2A;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.rep-curiosos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rep-curioso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: white;
+  border-left: 4px solid #F08030;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 3px 12px rgba(45, 134, 89, 0.06);
+}
+
+.rep-curioso-icono {
+  font-size: 1.9em;
+  flex-shrink: 0;
+}
+
+.rep-curioso-texto {
+  margin: 0;
+  color: #2C4A3C;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* ===== SECCIÓN TIPOS (Tortugas / Iguanas) ===== */
+.rep-tipos-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px 80px;
+  text-align: center;
+}
+
+.rep-tipos-h2 {
+  font-size: 2em;
+  color: #1A3A2A;
+  margin: 0 0 12px;
+}
+
+.rep-tipos-p {
+  color: #5A7A6F;
+  font-size: 1.3em;
+  margin: 0 auto 40px;
+}
+
+.rep-tipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.rep-tipo-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(45, 134, 89, 0.1);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.rep-tipo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(240, 128, 48, 0.25);
+}
+
+.rep-tipo-imagen {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F5FBF8 0%, #D4E8DD 100%);
+}
+
+.rep-tipo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.rep-tipo-card:hover .rep-tipo-imagen img {
+  transform: scale(1.08);
+}
+
+.rep-tipo-info {
+  padding: 24px;
+}
+
+.rep-tipo-h3 {
+  margin: 0 0 10px;
+  color: #1A3A2A;
+  font-size: 1.4em;
+}
+
+.rep-tipo-texto {
+  margin: 0 0 18px;
+  color: #5A7A6F;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+
+.rep-tipo-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #F08030 0%, #FF9D47 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.92em;
+  transition: all 0.3s ease;
+}
+
+.rep-tipo-card:hover .rep-tipo-btn {
+  box-shadow: 0 4px 14px rgba(240, 128, 48, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .rep-hero {
+    flex-direction: column;
+    padding: 120px 20px 40px;
+    text-align: center;
+  }
+
+  .rep-h1 {
+    font-size: 1.8em;
+    margin-left: 0;
+  }
+
+  .rep-p {
+    margin-left: 0;
+  }
+
+  .rep-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .rep-hero-carousel {
+    width: 100%;
+    height: 260px;
+    margin-top: 0;
+  }
+
+  .rep-info-section,
+  .rep-tipos-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .rep-tipos-grid {
+    grid-template-columns: 1fr;
+  }
+}

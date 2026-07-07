@@ -1,0 +1,457 @@
+
+
+
+/* ===========================
+   ClientShop.css
+   Prefijo cshop- para evitar choques con otros CSS
+   =========================== */
+
+.cshop-error {
+  background: #fcebeb;
+  color: #791f1f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.cshop-topbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cshop-search {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e0ddd4;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.cshop-search:focus {
+  border-color: #534ab7;
+  box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
+}
+
+.cshop-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cshop-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #e0ddd4;
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5f5e5a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cshop-cat-btn:hover {
+  border-color: #534ab7;
+  color: #534ab7;
+}
+
+.cshop-cat-btn.active {
+  background: #534ab7;
+  border-color: #534ab7;
+  color: white;
+}
+
+.cshop-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.cshop-sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: sticky;
+  top: 20px;
+}
+
+.cshop-sidebar h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.cshop-species-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f5e5a;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cshop-species-btn:hover {
+  background: #eeedfe;
+}
+
+.cshop-species-btn.active {
+  background: #eeedfe;
+  color: #3c3489;
+  font-weight: 700;
+}
+
+.cshop-main {
+  min-width: 0;
+}
+
+.cshop-empty {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.cshop-empty-icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.cshop-empty h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cshop-empty p {
+  font-size: 13.5px;
+  color: #888780;
+}
+
+/* --- GRID DE PRODUCTOS --- */
+.cshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.cshop-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cshop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.cshop-card.out-of-stock {
+  opacity: 0.7;
+}
+
+.cshop-card-image {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg, #eeedfe, #f5f4f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cshop-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cshop-card-placeholder {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.cshop-out-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 24, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.cshop-card-body {
+  padding: 14px 16px 16px;
+}
+
+.cshop-card-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a18;
+  margin-bottom: 8px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+}
+
+.cshop-card-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.cshop-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: #eeedfe;
+  color: #3c3489;
+}
+
+.cshop-tag-species {
+  background: #f1efe8;
+  color: #5f5e5a;
+}
+
+.cshop-stock {
+  font-size: 12px;
+  color: #3b6d11;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.cshop-price {
+  font-size: 17px;
+  font-weight: 800;
+  color: #534ab7;
+  margin-bottom: 10px;
+}
+
+.cshop-add-btn {
+  width: 100%;
+  padding: 9px;
+  background: #534ab7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cshop-add-btn:hover:not(:disabled) {
+  background: #3c3489;
+}
+
+.cshop-add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- CARRITO --- */
+.cshop-cart-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #534ab7;
+  color: white;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(83, 74, 183, 0.4);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.cshop-cart-toggle:hover {
+  transform: scale(1.08);
+}
+
+.cshop-cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 90vw;
+  height: 100vh;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.cshop-cart-header {
+  padding: 20px;
+  border-bottom: 1px solid #e0ddd4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cshop-cart-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cshop-close-cart {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #888780;
+}
+
+.cshop-cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.cshop-cart-empty {
+  text-align: center;
+  color: #888780;
+  font-size: 13px;
+  padding: 2rem 0;
+}
+
+.cshop-cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1efe8;
+}
+
+.cshop-cart-item-name {
+  font-weight: 600;
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+.cshop-cart-item-price {
+  color: #534ab7;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.cshop-cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cshop-cart-controls button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e0ddd4;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cshop-cart-controls button:hover {
+  background: #534ab7;
+  color: white;
+  border-color: #534ab7;
+}
+
+.cshop-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-start;
+}
+
+.cshop-cart-footer {
+  padding: 18px 20px;
+  border-top: 1px solid #e0ddd4;
+}
+
+.cshop-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.cshop-cart-total span {
+  font-weight: 800;
+  color: #534ab7;
+}
+
+.cshop-checkout-btn {
+  width: 100%;
+  padding: 13px;
+  background: #534ab7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cshop-checkout-btn:hover:not(:disabled) {
+  background: #3c3489;
+}
+
+.cshop-checkout-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+  .cshop-layout {
+    grid-template-columns: 1fr;
+  }
+  .cshop-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cshop-cart-panel {
+    width: 100%;
+  }
+}

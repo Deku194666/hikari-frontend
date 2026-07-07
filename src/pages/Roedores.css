@@ -1,0 +1,510 @@
+/* Roedores.css - Hikari - Página informativa (AISLADO) */
+
+.roe-page {
+  min-height: 100vh;
+  background: #FBF6F0;
+}
+
+/* ===== HERO ===== */
+.roe-hero {
+  background: linear-gradient(135deg, #E8D5C4 0%, #A9714F 100%);
+  padding: 130px 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.roe-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.roe-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3A2A1F;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-size: 1.1em;
+  margin-left: 5rem;
+}
+
+.roe-h1 {
+  font-size: 2.5em;
+  color: white;
+  margin: 0 0 16px;
+  font-weight: 800;
+  margin-left: 5rem;
+}
+
+.roe-p {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  margin-left: 5rem;
+  width: 40rem;
+}
+
+.roe-hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-left: 5rem;
+}
+
+.roe-stat {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.roe-stat strong {
+  display: block;
+  font-size: 1.5em;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.roe-stat span {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.roe-hero-image {
+  flex: 0 50px 700px;
+  text-align: center;
+  transform: translateX(-50px);
+  margin-bottom: 2rem !important;
+  animation: homeSlideInRight 0.8s ease;
+}
+
+/* ===== CARRUSEL HERO (manual, sin autoplay) — clases únicas de Roedores ===== */
+.roe-hero-carousel {
+  position: relative;
+  max-width: 80%;
+  width: 480px;
+  height: 400px;
+  margin-left: 5rem;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  display: inline-block;
+  border: 3px solid white;
+}
+
+.roe-hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.roe-hero-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3A2A1F;
+  font-size: 1.6em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+  line-height: 1;
+}
+
+.roe-hero-carousel-btn:hover {
+  background: #A9714F;
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.roe-hero-carousel-prev {
+  left: 14px;
+}
+
+.roe-hero-carousel-next {
+  right: 14px;
+}
+
+.roe-hero-carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.roe-hero-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.roe-hero-carousel-dot.active {
+  background: #A9714F;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* ===== SECCIÓN PRECIO EVALUACIÓN ===== */
+.roe-precio-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 30px 10px;
+}
+
+.roe-precio-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(169, 113, 79, 0.15);
+}
+
+.roe-precio-badge {
+  display: inline-block;
+  background: #F3E3D3;
+  color: #A9714F;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 14px;
+}
+
+.roe-precio-h2 {
+  font-size: 1.6em;
+  color: #3A2A1F;
+  margin: 0 0 12px;
+}
+
+.roe-precio-texto {
+  color: #7A6A5E;
+  font-size: 1.1em;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.5;
+}
+
+.roe-precio-comparacion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.roe-precio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: #FBF6F0;
+  border: 2px solid #E8D5C4;
+}
+
+.roe-precio-item.roe-precio-destacado {
+  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
+  border-color: transparent;
+}
+
+.roe-precio-label {
+  font-weight: 600;
+  color: #3A2A1F;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.roe-precio-destacado .roe-precio-label {
+  color: white;
+}
+
+.roe-precio-valor {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #A9714F;
+}
+
+.roe-precio-valor-normal {
+  color: #7A6A5E;
+}
+
+.roe-precio-destacado .roe-precio-valor {
+  color: white;
+}
+
+.roe-precio-nota {
+  color: #7A6A5E;
+  font-size: 0.85em;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== SECCIÓN INFO / CARACTERÍSTICAS ===== */
+.roe-info-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px 20px;
+  text-align: center;
+}
+
+.roe-info-h2 {
+  font-size: 2em;
+  color: #3A2A1F;
+  margin: 0 0 12px;
+}
+
+.roe-info-p {
+  color: #7A6A5E;
+  font-size: 1.4em;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.roe-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.roe-feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 4px 16px rgba(169, 113, 79, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.roe-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(169, 113, 79, 0.2);
+  border-top-color: #A9714F;
+}
+
+.roe-feature-icono {
+  font-size: 3.3em;
+  display: block;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.roe-feature-titulo {
+  margin: 0 0 8px;
+  color: #3A2A1F;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.roe-feature-texto {
+  margin: 0;
+  color: #7A6A5E;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ===== SECCIÓN DATOS CURIOSOS ===== */
+.roe-curiosos-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 30px 50px;
+}
+
+.roe-curiosos-h2 {
+  font-size: 1.8em;
+  color: #3A2A1F;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.roe-curiosos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1.2rem;
+}
+
+.roe-curioso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: white;
+  border-left: 4px solid #A9714F;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 3px 12px rgba(169, 113, 79, 0.08);
+}
+
+.roe-curioso-icono {
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+.roe-curioso-texto {
+  margin: 0;
+  color: #3A2A1F;
+  font-size: 0.98em;
+  line-height: 1.5;
+}
+
+/* ===== SECCIÓN TIPOS (Cuy / Furón / Erizo) ===== */
+.roe-tipos-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px 80px;
+  text-align: center;
+}
+
+.roe-tipos-h2 {
+  font-size: 2em;
+  color: #3A2A1F;
+  margin: 0 0 12px;
+}
+
+.roe-tipos-p {
+  color: #7A6A5E;
+  font-size: 1.3em;
+  margin: 0 auto 40px;
+}
+
+.roe-tipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.roe-tipo-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(169, 113, 79, 0.12);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.roe-tipo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(169, 113, 79, 0.3);
+}
+
+.roe-tipo-imagen {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FBF6F0 0%, #E8D5C4 100%);
+}
+
+.roe-tipo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.roe-tipo-card:hover .roe-tipo-imagen img {
+  transform: scale(1.08);
+}
+
+.roe-tipo-info {
+  padding: 22px;
+}
+
+.roe-tipo-h3 {
+  margin: 0 0 10px;
+  color: #3A2A1F;
+  font-size: 1.3em;
+}
+
+.roe-tipo-texto {
+  margin: 0 0 18px;
+  color: #7A6A5E;
+  font-size: 0.93em;
+  line-height: 1.55;
+}
+
+.roe-tipo-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.roe-tipo-card:hover .roe-tipo-btn {
+  box-shadow: 0 4px 14px rgba(169, 113, 79, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .roe-hero {
+    flex-direction: column;
+    padding: 120px 20px 40px;
+    text-align: center;
+  }
+
+  .roe-h1 {
+    font-size: 1.8em;
+    margin-left: 0;
+  }
+
+  .roe-p {
+    margin-left: 0;
+  }
+
+  .roe-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .roe-hero-carousel {
+    width: 100%;
+    height: 260px;
+    margin-left: 0;
+  }
+
+  .roe-info-section,
+  .roe-precio-section,
+  .roe-curiosos-section,
+  .roe-tipos-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .roe-tipos-grid {
+    grid-template-columns: 1fr;
+  }
+}

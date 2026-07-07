@@ -1,0 +1,707 @@
+/* AtenciónDomicilio.css - Hikari - Paleta Tienda Unificada (SCOPED a .dom-page) */
+
+:root {
+  --pine: #1f4b43;
+  --pine-dark: #15332d;
+  --pine-light: #e6efec;
+  --coral: #ff6b4a;
+  --coral-dark: #e2573a;
+  --paper: #fbf7f0;
+  --sand: #e8dcc8;
+  --ink: #2d2a26;
+  --ink-soft: #5c574f;
+  --line: rgba(45, 42, 38, 0.12);
+  --shadow: 0 10px 26px -14px rgba(31, 75, 67, 0.35);
+  --shadow-lg: 0 26px 50px -20px rgba(31, 75, 67, 0.4);
+}
+
+.dom-page {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.dom-page h1,
+.dom-page h2,
+.dom-page h3,
+.dom-page h4 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--pine-dark);
+}
+
+/* ===== HERO ===== */
+.dom-page .dom-hero {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  padding: 80px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  color: var(--ink);
+}
+
+.dom-page .dom-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.dom-page .dom-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--coral-dark);
+  margin-bottom: 16px;
+  background: none;
+  margin-left: 3rem;
+}
+
+.dom-page .dom-h1 {
+  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+  margin-bottom: 20px;
+  line-height: 1.08;
+  font-weight: 600;
+  margin-left: 3rem;
+}
+
+.dom-page .dom-p {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  margin-bottom: 30px;
+  line-height: 1.7;
+  opacity: 1;
+  margin-left: 3rem;
+}
+
+.dom-page .dom-hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+}
+
+.dom-page .dom-btn-primary {
+  padding: 14px 28px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-btn-primary:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+.dom-page .dom-btn-secondary {
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--pine-dark);
+  border: 1.5px solid var(--pine-dark);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-btn-secondary:hover {
+  background: var(--pine-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.dom-page .dom-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dom-page .dom-hero-emoji {
+  font-size: 150px;
+  animation: domFloat 3s ease-in-out infinite;
+}
+
+.dom-page .dom-hero-img-full {
+  width: 100%;
+  max-width: 480px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid white;
+  filter: none;
+  margin-top: 3rem;
+}
+
+@keyframes domFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ===== CONTAINER ===== */
+.dom-page .dom-container-small {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ===== DESCRIPTION ===== */
+.dom-page .dom-description {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.dom-page .dom-section-h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.dom-page .dom-description-text {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dom-page .dom-description-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.dom-page .dom-desc-card {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-desc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--coral);
+}
+
+.dom-page .dom-desc-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.dom-page .dom-desc-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.dom-page .dom-desc-card p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* ===== BENEFITS ===== */
+.dom-page .dom-benefits {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.dom-page .dom-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.dom-page .dom-benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid var(--coral);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-benefit-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dom-page .dom-benefit-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.dom-page .dom-benefit-card h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.dom-page .dom-benefit-card p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== PROCESS ===== */
+.dom-page .dom-process {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.dom-page .dom-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.dom-page .dom-process-item {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.dom-page .dom-process-number {
+  width: 46px;
+  height: 46px;
+  background: var(--pine);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 auto 15px;
+}
+
+.dom-page .dom-process-content h3 {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.dom-page .dom-process-content p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ===== VETS ===== */
+.dom-page .dom-vets {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.dom-page .dom-vets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.dom-page .dom-vet-card {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-vet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dom-page .dom-vet-avatar {
+  font-size: 3.5rem;
+  margin-bottom: 14px;
+}
+
+.dom-page .dom-vet-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.dom-page .dom-vet-specialty {
+  color: var(--coral-dark);
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.92rem;
+}
+
+.dom-page .dom-vet-exp {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+/* ===== PRICES ===== */
+.dom-page .dom-prices {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.dom-page .dom-prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.dom-page .dom-price-card {
+  background: var(--paper);
+  padding: 36px 30px;
+  border-radius: 16px;
+  border-top: 4px solid var(--pine);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-price-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dom-page .dom-price-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.dom-page .dom-price-amount {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--pine-dark);
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+.dom-page .dom-price-time {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.dom-page .dom-price-services {
+  list-style: none;
+  padding: 20px 0;
+  margin: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.dom-page .dom-price-services li {
+  color: var(--ink-soft);
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.dom-page .dom-price-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+}
+
+.dom-page .dom-price-btn:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== FAQ ===== */
+.dom-page .dom-faq {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.dom-page .dom-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dom-page .dom-faq-item {
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.dom-page .dom-faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: white;
+  border: none;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  color: var(--ink);
+}
+
+.dom-page .dom-faq-question:hover {
+  background: var(--paper);
+}
+
+.dom-page .dom-faq-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--coral-dark);
+}
+
+.dom-page .dom-faq-answer {
+  padding: 18px 20px;
+  background: white;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== TESTIMONIOS ===== */
+.dom-page .dom-testimonios {
+  padding: 80px 6vw;
+  background: var(--sand);
+}
+
+.dom-page .dom-testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.dom-page .dom-testimonio-card {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border-left: 3px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-testimonio-card:hover {
+  border-left-color: var(--coral);
+  box-shadow: var(--shadow-lg);
+}
+
+.dom-page .dom-testimonio-header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.dom-page .dom-testimonio-avatar {
+  font-size: 2.2rem;
+}
+
+.dom-page .dom-testimonio-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dom-page .dom-testimonio-pet {
+  margin: 0;
+  color: var(--pine);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.dom-page .dom-testimonio-text {
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.7;
+  margin: 14px 0;
+  font-size: 0.95rem;
+}
+
+.dom-page .dom-testimonio-stars {
+  font-size: 1.1rem;
+  color: var(--coral-dark);
+}
+
+/* ===== FORMULARIO ===== */
+.dom-page .dom-contact {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.dom-page .dom-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.dom-page .dom-form-group {
+  margin-bottom: 20px;
+}
+
+.dom-page .dom-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.dom-page .dom-form-group input,
+.dom-page .dom-form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.dom-page .dom-form-group input:focus,
+.dom-page .dom-form-group textarea:focus {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px rgba(31, 75, 67, 0.1);
+}
+
+.dom-page .dom-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dom-page .dom-btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.dom-page .dom-btn-submit:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== CTA FINAL ===== */
+.dom-page .dom-cta-final {
+  padding: 80px 6vw;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--sand) 100%);
+  text-align: center;
+  color: var(--ink);
+}
+
+.dom-page .dom-cta-final h2 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.dom-page .dom-cta-final p {
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.dom-page .dom-btn-large {
+  padding: 16px 40px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dom-page .dom-btn-large:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dom-page .dom-hero {
+    flex-direction: column;
+    padding: 50px 5vw;
+    text-align: center;
+  }
+
+  .dom-page .dom-h1 {
+    font-size: 2rem;
+  }
+
+  .dom-page .dom-hero-emoji {
+    font-size: 80px;
+  }
+
+  .dom-page .dom-hero-cta {
+    justify-content: center;
+  }
+
+  .dom-page .dom-hero-img-full {
+    height: 280px;
+  }
+
+  .dom-page .dom-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dom-page .dom-section-h2 {
+    font-size: 1.7rem;
+  }
+
+  .dom-page .dom-description,
+  .dom-page .dom-benefits,
+  .dom-page .dom-process,
+  .dom-page .dom-vets,
+  .dom-page .dom-prices,
+  .dom-page .dom-faq,
+  .dom-page .dom-testimonios,
+  .dom-page .dom-contact,
+  .dom-page .dom-cta-final {
+    padding: 50px 5vw;
+  }
+}

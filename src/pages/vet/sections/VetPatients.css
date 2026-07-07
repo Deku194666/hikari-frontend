@@ -1,0 +1,363 @@
+
+
+
+/* ===========================
+   VetPatients.css
+   =========================== */
+
+.vp-section {
+  --vp-accent: #534ab7;
+  --vp-accent-dark: #3c3489;
+  --vp-accent-bg: #eeedfe;
+  --vp-border: #e0ddd4;
+  --vp-border-soft: #f1efe8;
+  --vp-text: #1a1a18;
+  --vp-text-muted: #5f5e5a;
+  --vp-text-faint: #888780;
+  --vp-new: #0c447c;
+  --vp-new-bg: #e6f1fb;
+  --vp-pending: #633806;
+  --vp-pending-bg: #faeeda;
+  --vp-attended: #27500a;
+  --vp-attended-bg: #eaf3de;
+}
+
+.vp-error {
+  background: #fcebeb;
+  color: #791f1f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+/* --- RESUMEN --- */
+.vp-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 1.75rem;
+}
+
+.vp-summary-card {
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vp-summary-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.vp-summary-label {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.vp-summary-total { background: var(--vp-accent-bg); color: var(--vp-accent-dark); }
+.vp-summary-new { background: var(--vp-new-bg); color: var(--vp-new); }
+.vp-summary-pending { background: var(--vp-pending-bg); color: var(--vp-pending); }
+.vp-summary-attended { background: var(--vp-attended-bg); color: var(--vp-attended); }
+
+/* --- TABS --- */
+.vp-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--vp-border);
+}
+
+.vp-tab {
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vp-text-faint);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.vp-tab:hover { color: var(--vp-text); }
+
+.vp-tab.active {
+  color: var(--vp-accent);
+  border-bottom-color: var(--vp-accent);
+}
+
+/* --- TABLA --- */
+.vp-table-wrap {
+  background: #ffffff;
+  border: 1px solid var(--vp-border);
+  border-radius: 16px;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.patients-table th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--vp-text-faint);
+  font-weight: 600;
+  border-bottom: 1px solid var(--vp-border);
+}
+
+.patients-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--vp-border-soft);
+  color: var(--vp-text-muted);
+}
+
+.patient-row:hover td { background: var(--vp-border-soft); }
+
+.patient-name {
+  font-weight: 700;
+  color: var(--vp-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vp-new-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  background: var(--vp-new-bg);
+  color: var(--vp-new);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.status-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  display: inline-block;
+}
+
+.vp-status-pending { background: var(--vp-pending-bg); color: var(--vp-pending); }
+.vp-status-attended { background: var(--vp-attended-bg); color: var(--vp-attended); }
+.vp-status-none { background: var(--vp-border-soft); color: var(--vp-text-faint); }
+
+.vp-empty-row {
+  text-align: center;
+  padding: 2rem;
+  color: var(--vp-text-faint);
+}
+
+/* --- CALENDARIO --- */
+.vp-calendar-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.vp-calendar-card {
+  background: #ffffff;
+  border: 1px solid var(--vp-border);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.vp-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.vp-calendar-header h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.vp-cal-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--vp-border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--vp-text-muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.vp-cal-nav:hover { background: var(--vp-accent-bg); color: var(--vp-accent-dark); }
+
+.vp-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.vp-calendar-weekdays span {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-text-faint);
+  padding: 6px 0;
+}
+
+.vp-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.vp-cal-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--vp-text);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.vp-cal-empty { cursor: default; }
+
+.vp-cal-cell:not(.vp-cal-empty):hover {
+  background: var(--vp-border-soft);
+}
+
+.vp-cal-cell.today {
+  font-weight: 700;
+  color: var(--vp-accent);
+}
+
+.vp-cal-cell.selected {
+  background: var(--vp-accent);
+  color: #ffffff;
+}
+
+.vp-cal-cell.selected .vp-cal-dot { background: #ffffff; }
+
+.vp-cal-dot-wrap {
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.vp-cal-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--vp-accent);
+}
+
+.vp-cal-count {
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* --- PANEL DEL DÍA --- */
+.vp-day-panel {
+  background: #ffffff;
+  border: 1px solid var(--vp-border);
+  border-radius: 18px;
+  padding: 1.4rem;
+  min-height: 200px;
+}
+
+.vp-day-panel h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.vp-day-empty {
+  font-size: 13px;
+  color: var(--vp-text-faint);
+}
+
+.vp-day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vp-apt-item {
+  border: 1px solid var(--vp-border);
+  border-left: 3px solid var(--vp-accent);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.vp-apt-pendiente { border-left-color: #e0a53c; }
+.vp-apt-atendida { border-left-color: #3b9e6f; }
+.vp-apt-cancelada { border-left-color: #c94f4f; }
+
+.vp-apt-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-accent);
+  margin-bottom: 4px;
+}
+
+.vp-apt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.vp-apt-info strong { font-size: 14px; color: var(--vp-text); }
+.vp-apt-info span { font-size: 12.5px; color: var(--vp-text-muted); }
+.vp-apt-reason { font-style: italic; color: var(--vp-text-faint) !important; }
+
+.vp-apt-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vp-attend-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-attended);
+  background: var(--vp-attended-bg);
+  color: var(--vp-attended);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vp-attend-btn:hover { background: #dcecc8; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .vp-summary { grid-template-columns: 1fr 1fr; }
+  .vp-calendar-layout { grid-template-columns: 1fr; }
+}

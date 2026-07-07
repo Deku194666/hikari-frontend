@@ -1,0 +1,367 @@
+/* Navbar.css - Barra superior con buscador */
+
+:root {
+  --primary: #00a66f;
+  --primary-dark: #007a52;
+  --secondary: #ff6b9d;
+  --bg-light: #ffffff;
+  --border-light: #e9ecef;
+  --text-dark: #2c3e50;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-bottom: 2px solid var(--primary);
+  padding: 15px 0;
+  box-shadow: 0 2px 12px rgba(0, 166, 111, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  height: 2.8rem; /* Solo aplica en desktop, en 1 sola fila */
+}
+
+/* ===== LOGO ===== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3em;
+  min-width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.logo-img {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: contain;
+}
+
+.logo-icon {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.7rem;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-logo:active {
+  transform: scale(0.98);
+}
+
+/* ===== BUSCADOR ===== */
+
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  color: var(--text-dark);
+  min-width: 0; /* evita overflow en flex containers */
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 166, 111, 0.1);
+  background: white;
+}
+
+.search-input:hover {
+  border-color: var(--primary-dark);
+}
+
+.search-btn {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 166, 111, 0.3);
+}
+
+.search-btn:active {
+  transform: scale(0.98);
+}
+
+.search-no-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background: white;
+  color: #dc3545;
+  font-size: 0.8em;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  z-index: 100;
+  max-width: 100%;
+}
+
+/* ===== AUTH BUTTONS ===== */
+
+.nav-auth {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: fit-content;
+}
+
+.nav-link {
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.login-link {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  background: transparent;
+}
+
+.login-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  border: none;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 166, 111, 0.3);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+/* ===== TABLETS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .navbar-container {
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .search-bar {
+    max-width: 320px;
+  }
+
+  .logo-img {
+    width: 55px !important;
+    height: 55px !important;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
+@media (max-width: 768px) {
+  .navbar-container {
+    height: auto; /* 👈 clave: saca el corte que tapaba el contenido al envolver */
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  .navbar-logo {
+    order: 1;
+    font-size: 1.1em;
+  }
+
+  .logo-img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .nav-auth {
+    order: 2;
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+
+  .search-bar {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .search-input {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .search-btn {
+    padding: 10px 14px;
+  }
+}
+
+/* ===== CELULARES MEDIANOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px 0;
+  }
+
+  .navbar-container {
+    gap: 8px;
+    padding: 4px 6px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    width: 60px !important; /* 👈 más grande que antes */
+    height: 60px !important;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .nav-auth {
+    order: 2;
+    gap: 5px;
+    flex-shrink: 1;
+  }
+
+  .nav-link {
+    padding: 6px 8px; /* 👈 más chico para que quepa junto al logo */
+    font-size: 1em;
+    white-space: nowrap;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .search-input {
+    padding: 9px 10px;
+    font-size: 0.85em;
+  }
+
+  .search-input::placeholder {
+    font-size: 0.85em;
+  }
+
+  .search-btn {
+    padding: 9px 12px;
+    font-size: 1em;
+  }
+
+  .search-no-results {
+    font-size: 0.72em;
+    padding: 6px 10px;
+  }
+}
+
+/* ===== CELULARES CHICOS (380px y menos) — cubre Moto G24 Power y similares ===== */
+@media (max-width: 380px) {
+  .navbar-container {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .logo-img {
+    width: 42px !important; /* 👈 más grande que antes, pero un poco menor que el breakpoint de arriba */
+    height: 42px !important;
+  }
+
+  .nav-link {
+    padding: 5px 7px;
+    font-size: 0.62em;
+  }
+
+  .search-input {
+    padding: 8px 9px;
+    font-size: 0.8em;
+  }
+
+  .search-input::placeholder {
+    font-size: 0.75em;
+  }
+
+  .search-btn {
+    padding: 8px 10px;
+  }
+  
+
+    .search-bar {
+    display: none;
+  }
+
+}

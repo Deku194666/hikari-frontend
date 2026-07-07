@@ -1,0 +1,97 @@
+
+
+
+/* Legal.css - Hikari - Términos y Privacidad (AISLADO) */
+
+.legal-page {
+  min-height: 100vh;
+  background: #F9FAFB;
+}
+
+/* ===== HERO ===== */
+.legal-hero {
+  background: linear-gradient(135deg, #E8F0ED 0%, #A8D8D8 100%);
+  padding: 130px 50px 60px;
+  text-align: center;
+}
+
+.legal-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.85);
+  color: #2C3E50;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-size: 0.9em;
+}
+
+.legal-h1 {
+  font-size: 2.4em;
+  color: #2C3E50;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.legal-p {
+  color: #4A5A63;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+/* ===== CONTENIDO ===== */
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 30px 80px;
+}
+
+.legal-block {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.legal-block h2 {
+  font-size: 1.25em;
+  color: #2C3E50;
+  margin: 0 0 12px;
+}
+
+.legal-block p {
+  color: #5A6670;
+  font-size: 0.98em;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.legal-block a {
+  color: #4BA3B8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.legal-block a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 120px 20px 40px;
+  }
+
+  .legal-h1 {
+    font-size: 1.8em;
+  }
+
+  .legal-container {
+    padding: 40px 20px 60px;
+  }
+
+  .legal-block {
+    padding: 22px 20px;
+  }
+}

@@ -1,0 +1,134 @@
+/* ===========================
+   VetOverview.css
+   Prefijo voc- para evitar choques con otros CSS
+   =========================== */
+
+.voc-error {
+  background: #fcebeb;
+  color: #791f1f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.voc-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.voc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 100%;
+}
+
+.voc-col-title {
+  font-size: 0.82em;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 2px;
+}
+
+/* --- CARD BASE (tipo "overview-card") --- */
+.voc-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #00a66f;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.voc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.voc-card h3 {
+  font-size: 0.82em;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.voc-big-number {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #00a66f;
+  margin: 6px 0;
+}
+
+.voc-desc {
+  color: #888;
+  font-size: 0.82em;
+}
+
+/* --- CARD ESTILO "stat-card" (icono + valor a la izquierda) --- */
+.voc-card-accent-blue,
+.voc-card-accent-green,
+.voc-card-accent-orange,
+.voc-card-accent-purple {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border-top: none;
+  border-left: 4px solid;
+}
+
+.voc-card-accent-blue { border-left-color: #17a2b8; }
+.voc-card-accent-green { border-left-color: #28a745; }
+.voc-card-accent-orange { border-left-color: #ffa500; }
+.voc-card-accent-purple { border-left-color: #ff6b9d; }
+
+.voc-card-icon {
+  font-size: 1.9em;
+  flex-shrink: 0;
+}
+
+.voc-card-body h3 {
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.voc-card-value {
+  font-size: 1.6em;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* ===========================
+   FIX: texto con degradado rompe emojis
+   Sobrescribe cualquier .section-title h2 con
+   background-clip:text que se cuele desde otro CSS
+   =========================== */
+.overview-section.section-content .section-title h2 {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: #007a52 !important;
+}
+
+@media (max-width: 700px) {
+  .voc-wrapper {
+    flex-direction: column;
+  }
+  .voc-col {
+    min-width: 100%;
+  }
+}

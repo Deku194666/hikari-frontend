@@ -1,0 +1,694 @@
+/* SeguimientoMédico.css - Hikari - Paleta Tienda Unificada (SCOPED a .seg-page) */
+
+:root {
+  --pine: #1f4b43;
+  --pine-dark: #15332d;
+  --pine-light: #e6efec;
+  --coral: #ff6b4a;
+  --coral-dark: #e2573a;
+  --paper: #fbf7f0;
+  --sand: #e8dcc8;
+  --ink: #2d2a26;
+  --ink-soft: #5c574f;
+  --line: rgba(45, 42, 38, 0.12);
+  --shadow: 0 10px 26px -14px rgba(31, 75, 67, 0.35);
+  --shadow-lg: 0 26px 50px -20px rgba(31, 75, 67, 0.4);
+}
+
+.seg-page {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.seg-page h1,
+.seg-page h2,
+.seg-page h3,
+.seg-page h4 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--pine-dark);
+}
+
+/* ===== HERO ===== */
+.seg-page .seg-hero {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  padding: 80px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  color: var(--ink);
+}
+
+.seg-page .seg-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.seg-page .seg-badge {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--coral-dark);
+  margin-bottom: 16px;
+  background: none;
+  margin-left: 3rem;
+}
+
+.seg-page .seg-h1 {
+  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+  margin: 0 0 20px;
+  line-height: 1.08;
+  font-weight: 600;
+  margin-left: 3rem;
+}
+
+.seg-page .seg-p {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  margin-bottom: 30px;
+  line-height: 1.7;
+  opacity: 1;
+  margin-left: 3rem;
+}
+
+.seg-page .seg-hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+}
+
+.seg-page .seg-btn-primary {
+  padding: 14px 28px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-btn-primary:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+.seg-page .seg-btn-secondary {
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--pine-dark);
+  border: 1.5px solid var(--pine-dark);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-btn-secondary:hover {
+  background: var(--pine-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.seg-page .seg-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.seg-page .seg-hero-emoji {
+  font-size: 150px;
+  animation: segFloat 3s ease-in-out infinite;
+}
+
+.seg-page .seg-hero-img-full {
+  width: 110%;
+  max-width: 480px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid white;
+  filter: none;
+  margin-top: 3rem;
+}
+
+@keyframes segFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ===== CONTAINER ===== */
+.seg-page .seg-container-small {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ===== DESCRIPTION ===== */
+.seg-page .seg-description {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.seg-page .seg-section-h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.seg-page .seg-description-text {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seg-page .seg-description-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.seg-page .seg-desc-card {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-desc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--coral);
+}
+
+.seg-page .seg-desc-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.seg-page .seg-desc-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.seg-page .seg-desc-card p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+/* ===== BENEFITS ===== */
+.seg-page .seg-benefits {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.seg-page .seg-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.seg-page .seg-benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid var(--coral);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-benefit-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seg-page .seg-benefit-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.seg-page .seg-benefit-card h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.seg-page .seg-benefit-card p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== SERVICES / PLANES ===== */
+.seg-page .seg-services {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.seg-page .seg-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.seg-page .seg-service-card {
+  background: var(--paper);
+  padding: 36px 28px;
+  border-radius: 16px;
+  border-top: 4px solid var(--pine);
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.seg-page .seg-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seg-page .seg-service-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.seg-page .seg-service-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.seg-page .seg-service-price {
+  font-family: "Fraunces", serif;
+  color: var(--pine-dark);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 12px 0 20px;
+}
+
+.seg-page .seg-service-btn {
+  padding: 12px 24px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-service-btn:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== COORDINACIÓN ===== */
+.seg-page .seg-coordination {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.seg-page .seg-coordination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.seg-page .seg-coord-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-coord-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seg-page .seg-coord-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.seg-page .seg-coord-card h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.seg-page .seg-coord-card p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== PROCESS ===== */
+.seg-page .seg-process {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.seg-page .seg-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.seg-page .seg-process-item {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.seg-page .seg-process-number {
+  width: 46px;
+  height: 46px;
+  background: var(--pine);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 auto 15px;
+}
+
+.seg-page .seg-process-content h3 {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.seg-page .seg-process-content p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ===== FAQ ===== */
+.seg-page .seg-faq {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.seg-page .seg-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seg-page .seg-faq-item {
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.seg-page .seg-faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: white;
+  border: none;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  color: var(--ink);
+}
+
+.seg-page .seg-faq-question:hover {
+  background: var(--paper);
+}
+
+.seg-page .seg-faq-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--coral-dark);
+}
+
+.seg-page .seg-faq-answer {
+  padding: 18px 20px;
+  background: white;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== TESTIMONIOS ===== */
+.seg-page .seg-testimonios {
+  padding: 80px 6vw;
+  background: var(--sand);
+}
+
+.seg-page .seg-testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.seg-page .seg-testimonio-card {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border-left: 3px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-testimonio-card:hover {
+  border-left-color: var(--coral);
+  box-shadow: var(--shadow-lg);
+}
+
+.seg-page .seg-testimonio-header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.seg-page .seg-testimonio-avatar {
+  font-size: 2.2rem;
+}
+
+.seg-page .seg-testimonio-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.seg-page .seg-testimonio-pet {
+  margin: 0;
+  color: var(--pine);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.seg-page .seg-testimonio-text {
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.7;
+  margin: 14px 0;
+  font-size: 0.95rem;
+}
+
+.seg-page .seg-testimonio-stars {
+  font-size: 1.1rem;
+  color: var(--coral-dark);
+}
+
+/* ===== FORMULARIO ===== */
+.seg-page .seg-contact {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.seg-page .seg-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.seg-page .seg-form-group {
+  margin-bottom: 20px;
+}
+
+.seg-page .seg-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.seg-page .seg-form-group input,
+.seg-page .seg-form-group textarea,
+.seg-page .seg-form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.seg-page .seg-form-group input:focus,
+.seg-page .seg-form-group textarea:focus,
+.seg-page .seg-form-group select:focus {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px rgba(31, 75, 67, 0.1);
+}
+
+.seg-page .seg-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.seg-page .seg-btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.seg-page .seg-btn-submit:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== CTA FINAL ===== */
+.seg-page .seg-cta-final {
+  padding: 80px 6vw;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--sand) 100%);
+  text-align: center;
+  color: var(--ink);
+}
+
+.seg-page .seg-cta-final h2 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.seg-page .seg-cta-final p {
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.seg-page .seg-btn-large {
+  padding: 16px 40px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seg-page .seg-btn-large:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .seg-page .seg-hero {
+    flex-direction: column;
+    padding: 50px 5vw;
+    text-align: center;
+  }
+
+  .seg-page .seg-h1 {
+    font-size: 2rem;
+  }
+
+  .seg-page .seg-hero-emoji {
+    font-size: 80px;
+  }
+
+  .seg-page .seg-hero-cta {
+    justify-content: center;
+  }
+
+  .seg-page .seg-hero-img-full {
+    height: 280px;
+  }
+
+  .seg-page .seg-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .seg-page .seg-section-h2 {
+    font-size: 1.7rem;
+  }
+
+  .seg-page .seg-description,
+  .seg-page .seg-benefits,
+  .seg-page .seg-services,
+  .seg-page .seg-coordination,
+  .seg-page .seg-process,
+  .seg-page .seg-faq,
+  .seg-page .seg-testimonios,
+  .seg-page .seg-contact,
+  .seg-page .seg-cta-final {
+    padding: 50px 5vw;
+  }
+}

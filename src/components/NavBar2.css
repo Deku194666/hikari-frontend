@@ -1,0 +1,351 @@
+/* NavBar2.css - Barra de navegación secundaria */
+
+:root {
+  --primary: #00a66f;
+  --primary-dark: #007a52;
+  --secondary: #ff6b9d;
+  --bg-light: #f8f9fa;
+  --border-light: #e9ecef;
+  --text-dark: #2c3e50;
+}
+
+.navbar2 {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+  border-bottom: 2px solid var(--primary);
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 166, 111, 0.08);
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 98;
+
+}
+
+.navbar2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10 10px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 8px;  
+  margin-bottom: 0.1rem; 
+}
+
+.navbar2-logo {
+  border-right: 2px solid var(--border-light);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+  margin-left: 8rem;
+  margin-top: 2.7rem;
+  order: 999;         /* ← AL FINAL */
+}
+
+/* ===== ITEM DE NAVBAR2 ===== */
+
+.navbar2-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+    margin-bottom: 3rem;
+
+  
+}
+
+/* ===== LINK DIRECTO ===== */
+
+.navbar2-link {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+ }
+
+.navbar2-link:hover {
+  background: rgba(0, 166, 111, 0.1);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.navbar2-link:active {
+  transform: translateY(0);
+}
+
+/* ===== DROPDOWN WRAPPER ===== */
+
+.dropdown-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== BOTÓN DROPDOWN ===== */
+
+.dropdown-button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.dropdown-button:hover {
+  background: rgba(0, 166, 111, 0.1);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.dropdown-button:active {
+  transform: translateY(0);
+}
+
+.dropdown-arrow {
+  font-size: 0.7em;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown-wrapper:hover .dropdown-arrow {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* ===== DROPDOWN MENU ===== */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  padding: 8px 0;
+  margin-top: 0;
+  animation: slideDown 0.3s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== DROPDOWN ITEMS ===== */
+
+.dropdown-item {
+  display: block;
+  padding: 12px 18px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 166, 111, 0.08);
+  color: var(--primary);
+  border-left-color: var(--primary);
+  padding-left: 22px;
+}
+
+.dropdown-item:active {
+  background: rgba(0, 166, 111, 0.15);
+}
+
+
+/* ===== SUBMENÚ ANIDADO (flyout) ===== */
+
+.dropdown-item-wrapper {
+  position: relative;
+}
+
+.dropdown-item-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.submenu-arrow {
+  font-size: 0.7em;
+  margin-left: 8px;
+}
+
+.dropdown-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+  z-index: 1001;
+}
+
+.dropdown-subitem {
+  display: block;
+  padding: 12px 18px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-subitem:hover {
+  background: rgba(0, 166, 111, 0.08);
+  color: var(--primary);
+  border-left-color: var(--primary);
+  padding-left: 22px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+/* ===== TABLET (768px y menos, aún con espacio para todo) ===== */
+@media (max-width: 768px) {
+  .navbar2-container {
+    gap: 15px;
+    padding: 0 10px;
+    height: 50px;
+  }
+
+  .navbar2-link,
+  .dropdown-button {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+
+  .dropdown-menu {
+    min-width: 160px;
+    padding: 6px 0;
+  }
+
+  .dropdown-item {
+    padding: 10px 14px;
+    font-size: 0.9em;
+  }
+
+  .dropdown-item:hover {
+    padding-left: 18px;
+  }
+}
+
+/* ===== CELULARES (600px y menos): scroll horizontal ===== */
+@media (max-width: 600px) {
+  .navbar2 {
+    top: 80px;
+  }
+
+  .navbar2-container {
+    gap: 6px;
+    height: 48px;
+    padding: 0 10px;
+
+    /* 👇 activa el scroll horizontal */
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    /* oculta la barra de scroll fea, pero sigue funcionando el gesto */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+  }
+
+  .navbar2-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Android */
+  }
+
+  /* 👇 sobrescribe los valores raros que descuadraban todo en celular */
+  .navbar2-logo {
+    display: none;
+  }
+
+  .logo-icon {
+    font-size: 1.3em;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  .navbar2-item {
+    margin-bottom: 0;
+    flex-shrink: 0; /* cada item mantiene su ancho, no se aplasta */
+    white-space: nowrap;
+  }
+
+  .navbar2-link,
+  .dropdown-button {
+    font-size: 0.82em;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  .dropdown-arrow {
+  font-size: 0.65em;
+}
+
+  
+
+  .dropdown-menu {
+    position: fixed;
+    top: 108px;
+    left: auto; /* 👈 antes era "10px" */
+    right: 10px; /* 👈 antes era "auto" */
+    width: 220px;
+    max-width: 75vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 200;
+  }
+
+  .dropdown-submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid var(--border-light);
+    border-radius: 0;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
+
+  .dropdown-item {
+    padding: 9px 12px;
+    font-size: 0.85em;
+    white-space: normal;
+  }
+}
