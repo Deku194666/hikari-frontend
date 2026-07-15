@@ -1,0 +1,350 @@
+
+
+
+/* ===========================
+   VetPatientRecord.css
+   =========================== */
+
+.vpr-page {
+  --vpr-accent: #534ab7;
+  --vpr-accent-dark: #3c3489;
+  --vpr-accent-bg: #eeedfe;
+  --vpr-border: #e0ddd4;
+  --vpr-border-soft: #f1efe8;
+  --vpr-text: #1a1a18;
+  --vpr-text-muted: #5f5e5a;
+  --vpr-text-faint: #888780;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.vpr-back-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vpr-text-muted);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.vpr-back-link:hover { color: var(--vpr-accent); }
+
+.vpr-error {
+  background: #fcebeb;
+  color: #791f1f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+/* --- HEADER --- */
+.vpr-header {
+  margin-bottom: 1.75rem;
+}
+
+.vpr-header h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--vpr-text);
+  margin-bottom: 4px;
+}
+
+.vpr-owner {
+  font-size: 14px;
+  color: var(--vpr-text-muted);
+}
+
+/* --- CARD GENÉRICA --- */
+.vpr-card {
+  background: #ffffff;
+  border: 1px solid var(--vpr-border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.vpr-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.vpr-card-header h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vpr-text);
+}
+
+.vpr-edit-btn {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--vpr-accent);
+  background: var(--vpr-accent-bg);
+  color: var(--vpr-accent-dark);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vpr-edit-btn:hover { background: var(--vpr-accent); color: #fff; }
+
+/* --- DATOS DEL PACIENTE (lectura) --- */
+.vpr-pet-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.vpr-pet-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vpr-pet-grid span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--vpr-text-faint);
+  font-weight: 600;
+}
+
+.vpr-pet-grid strong {
+  font-size: 14.5px;
+  color: var(--vpr-text);
+}
+
+/* --- FORMULARIOS --- */
+.vpr-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 1rem;
+}
+
+.vpr-pet-form label,
+.vpr-form-grid label,
+.vpr-field-full {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--vpr-text-muted);
+  margin-bottom: 1rem;
+}
+
+.vpr-field-full { width: 100%; }
+
+.vpr-pet-form input,
+.vpr-form-grid input,
+.vpr-form-grid select,
+.vpr-field-full input,
+.vpr-field-full textarea,
+.vpr-field-full select {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--vpr-text);
+  border: 1px solid var(--vpr-border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+  resize: vertical;
+}
+
+.vpr-pet-form input:focus,
+.vpr-form-grid input:focus,
+.vpr-form-grid select:focus,
+.vpr-field-full input:focus,
+.vpr-field-full textarea:focus,
+.vpr-field-full select:focus {
+  border-color: var(--vpr-accent);
+}
+
+.vpr-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.vpr-cancel-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9px;
+  border: 1px solid var(--vpr-border);
+  background: transparent;
+  color: var(--vpr-text-muted);
+  cursor: pointer;
+}
+
+.vpr-cancel-btn:hover { background: var(--vpr-border-soft); }
+
+.vpr-save-btn {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 9px;
+  border: none;
+  background: var(--vpr-accent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vpr-save-btn:hover { background: var(--vpr-accent-dark); }
+.vpr-save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* --- SECCIONES DENTRO DEL FORM DE CONSULTA --- */
+.vpr-record-form h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--vpr-text);
+  margin-bottom: 1.25rem;
+}
+
+.vpr-section {
+  border-top: 1px solid var(--vpr-border-soft);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.vpr-section h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--vpr-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+
+/* --- HISTORIAL --- */
+.vpr-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.vpr-history-header h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--vpr-text);
+}
+
+.vpr-new-btn {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--vpr-accent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vpr-new-btn:hover { background: var(--vpr-accent-dark); }
+
+.vpr-empty {
+  font-size: 13.5px;
+  color: var(--vpr-text-faint);
+  background: #ffffff;
+  border: 1px dashed var(--vpr-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* --- TARJETAS DE CONSULTA --- */
+.vpr-record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vpr-record-card {
+  background: #ffffff;
+  border: 1px solid var(--vpr-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.vpr-record-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+}
+
+.vpr-record-summary:hover { background: var(--vpr-border-soft); }
+
+.vpr-record-summary strong {
+  font-size: 14.5px;
+  color: var(--vpr-text);
+  display: block;
+}
+
+.vpr-record-vet {
+  font-size: 12px;
+  color: var(--vpr-text-faint);
+}
+
+.vpr-expand-icon {
+  font-size: 11px;
+  color: var(--vpr-text-faint);
+}
+
+.vpr-record-detail {
+  padding: 0 1.3rem 1.3rem;
+  border-top: 1px solid var(--vpr-border-soft);
+}
+
+.vpr-detail-row {
+  padding-top: 0.9rem;
+}
+
+.vpr-detail-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--vpr-text-faint);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vpr-detail-value {
+  font-size: 13.5px;
+  color: var(--vpr-text);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.vpr-record-detail .vpr-edit-btn {
+  margin-top: 1rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 720px) {
+  .vpr-pet-grid { grid-template-columns: 1fr 1fr; }
+  .vpr-form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .vpr-pet-grid { grid-template-columns: 1fr; }
+  .vpr-history-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

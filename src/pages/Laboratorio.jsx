@@ -4,6 +4,7 @@
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./Laboratorio.css";
+import { Link } from "react-router-dom";
 
 function Laboratorio() {
   const [formData, setFormData] = useState({
@@ -86,8 +87,8 @@ function Laboratorio() {
             Análisis precisos con equipos de última tecnología. Detecta problemas de salud a tiempo y asegura el bienestar de tu mascota.
           </p>
           <div className="lab-hero-cta">
-            <button className="lab-btn-primary">Solicitar Examen</button>
-            <button className="lab-btn-secondary">📞 Consultar</button>
+            <Link to="/login" className="lab-btn-primary">Solicitar Examen</Link>
+             <button className="lab-btn-secondary">📞 Consultar</button>
           </div>
         </div>
         <div className="lab-hero-image">

@@ -1,7 +1,5 @@
 
 
-
-
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./EvaluaciónGeneral.css";
@@ -86,8 +84,7 @@ function EvaluaciónGeneral() {
             Revisión completa del estado de salud de tu mascota. Detección temprana de problemas y recomendaciones personalizadas para su bienestar.
           </p>
           <div className="eval-hero-cta">
-            <button className="eval-btn-primary">Agendar Evaluación</button>
-            <button className="eval-btn-secondary">📞 Consultar</button>
+            
           </div>
         </div>
         

@@ -1,13 +1,25 @@
 /* Cuy.css - Hikari - AISLADO */
 
 .cuy-page {
+  --cuy-page-bg: #F9FAFB;
+  --cuy-soft: #FBF6F0;
+  --cuy-text-dark: #3A2A1F;
+  --cuy-text-gray: #7A6A5E;
+  --cuy-border: #E8D5C4;
+  --cuy-accent: #A9714F;
+  --cuy-accent-light: #C68F63;
+  --cuy-badge-bg: #F3E3D3;
+  --cuy-mint: #D4E8DD;
+
   min-height: 100vh;
-  background: #FBF6F0;
+  background: var(--cuy-page-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .cuy-hero {
-  background: linear-gradient(135deg, #E8D5C4 0%, #A9714F 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,7 +36,7 @@
 .cuy-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -36,7 +48,7 @@
 
 .cuy-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--cuy-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 5rem;
@@ -44,7 +56,7 @@
 
 .cuy-p {
   font-size: 1.5em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--cuy-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
@@ -59,7 +71,7 @@
 }
 
 .cuy-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -70,13 +82,13 @@
 .cuy-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--cuy-text-dark);
   margin-bottom: 4px;
 }
 
 .cuy-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--cuy-text-gray);
 }
 
 .cuy-hero-image {
@@ -119,7 +131,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -132,7 +144,7 @@
 }
 
 .cuy-hero-carousel-btn:hover {
-  background: #A9714F;
+  background: var(--cuy-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
@@ -167,7 +179,7 @@
 }
 
 .cuy-hero-carousel-dot.active {
-  background: #A9714F;
+  background: white;
   width: 24px;
   border-radius: 5px;
 }
@@ -189,8 +201,8 @@
 
 .cuy-precio-badge {
   display: inline-block;
-  background: #F3E3D3;
-  color: #A9714F;
+  background: var(--cuy-badge-bg);
+  color: var(--cuy-accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -200,12 +212,12 @@
 
 .cuy-precio-h2 {
   font-size: 1.6em;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   margin: 0 0 12px;
 }
 
 .cuy-precio-texto {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 1.1em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -225,18 +237,18 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #FBF6F0;
-  border: 2px solid #E8D5C4;
+  background: var(--cuy-soft);
+  border: 2px solid var(--cuy-border);
 }
 
 .cuy-precio-item.cuy-precio-destacado {
-  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
+  background: linear-gradient(135deg, var(--cuy-accent) 0%, var(--cuy-accent-light) 100%);
   border-color: transparent;
 }
 
 .cuy-precio-label {
   font-weight: 600;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 0.95em;
   text-align: left;
 }
@@ -248,11 +260,11 @@
 .cuy-precio-valor {
   font-size: 1.3em;
   font-weight: 800;
-  color: #A9714F;
+  color: var(--cuy-accent);
 }
 
 .cuy-precio-valor-normal {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
 }
 
 .cuy-precio-destacado .cuy-precio-valor {
@@ -260,7 +272,7 @@
 }
 
 .cuy-precio-nota {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 0.85em;
   margin: 0;
   font-style: italic;
@@ -276,12 +288,12 @@
 
 .cuy-info-h2 {
   font-size: 2em;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   margin: 0 0 12px;
 }
 
 .cuy-info-p {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -306,7 +318,7 @@
 .cuy-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(169, 113, 79, 0.2);
-  border-top-color: #A9714F;
+  border-top-color: var(--cuy-accent);
 }
 
 .cuy-feature-icono {
@@ -318,14 +330,14 @@
 
 .cuy-feature-titulo {
   margin: 0 0 8px;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 1.4em;
   text-align: center;
 }
 
 .cuy-feature-texto {
   margin: 0;
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -333,14 +345,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .cuy-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--cuy-badge-bg);
 }
 
 .cuy-curiosos-h2 {
   font-size: 1.8em;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -356,10 +369,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #A9714F;
+  border-left: 4px solid var(--cuy-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(169, 113, 79, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .cuy-curioso-icono {
@@ -369,7 +384,7 @@
 
 .cuy-curioso-texto {
   margin: 0;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -396,7 +411,7 @@
 }
 
 .cuy-sidebar-h3 {
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -409,7 +424,7 @@
 
 .cuy-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #E8D5C4;
+  border: 2px solid var(--cuy-mint);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -418,20 +433,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 0.95em;
 }
 
 .cuy-categoria-btn:hover {
-  border-color: #A9714F;
-  background: #F3E3D3;
+  border-color: var(--cuy-accent);
+  background: white;
   transform: translateX(3px);
 }
 
 .cuy-categoria-btn.cuy-active {
-  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
-  color: white;
-  border-color: #A9714F;
+  background: var(--cuy-mint);
+  color: var(--cuy-text-dark);
+  border-color: var(--cuy-mint);
 }
 
 .cuy-count {
@@ -442,7 +457,7 @@
 }
 
 .cuy-categoria-btn.cuy-active .cuy-count {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== MAIN ===== */
@@ -456,12 +471,12 @@
 
 .cuy-main-h2 {
   font-size: 1.8em;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   margin: 0 0 8px;
 }
 
 .cuy-main-p {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   margin: 0;
 }
 
@@ -486,7 +501,7 @@
 .cuy-producto-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(169, 113, 79, 0.25);
-  border-left-color: #A9714F;
+  border-left-color: var(--cuy-accent);
 }
 
 .cuy-producto-imagen {
@@ -519,12 +534,12 @@
 
 .cuy-producto-h3 {
   margin: 0;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
   font-size: 1.05em;
 }
 
 .cuy-descripcion {
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -535,7 +550,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
 }
 
 .cuy-stock {
@@ -552,20 +567,20 @@
 
 .cuy-precio-original {
   text-decoration: line-through;
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   font-size: 0.9em;
 }
 
 .cuy-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #A9714F;
+  color: var(--cuy-text-dark);
 }
 
 .cuy-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
-  color: white;
+  background: var(--cuy-mint);
+  color: var(--cuy-text-dark);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -588,12 +603,12 @@
 /* ===== CARRITO ===== */
 .cuy-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
+  background: linear-gradient(135deg, var(--cuy-accent) 0%, var(--cuy-accent-light) 100%);
   color: white;
   border: none;
   font-size: 1.2em;
@@ -630,7 +645,7 @@
 
 .cuy-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #E8D5C4;
+  border-bottom: 2px solid var(--cuy-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -638,7 +653,7 @@
 
 .cuy-cart-h3 {
   margin: 0;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
 }
 
 .cuy-close-cart {
@@ -646,7 +661,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #7A6A5E;
+  color: var(--cuy-text-gray);
   padding: 5px 10px;
 }
 
@@ -660,13 +675,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #E8D5C4;
+  border-bottom: 1px solid var(--cuy-border);
 }
 
 .cuy-item-imagen {
   width: 60px;
   height: 60px;
-  background: #FBF6F0;
+  background: var(--cuy-soft);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -696,7 +711,7 @@
 }
 
 .cuy-item-precio {
-  color: #A9714F;
+  color: var(--cuy-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -712,17 +727,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #E8D5C4;
+  border: 1px solid var(--cuy-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #3A2A1F;
+  color: var(--cuy-text-dark);
 }
 
 .cuy-item-controls button:hover {
-  background: #A9714F;
+  background: var(--cuy-accent);
   color: white;
-  border-color: #A9714F;
+  border-color: var(--cuy-accent);
 }
 
 .cuy-btn-eliminar {
@@ -735,7 +750,7 @@
 
 .cuy-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #E8D5C4;
+  border-top: 2px solid var(--cuy-border);
 }
 
 .cuy-cart-total {
@@ -748,14 +763,14 @@
 
 .cuy-cart-total span {
   font-weight: 700;
-  color: #A9714F;
+  color: var(--cuy-accent);
   font-size: 1.2em;
 }
 
 .cuy-btn-checkout {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #A9714F 0%, #C68F63 100%);
+  background: linear-gradient(135deg, var(--cuy-accent) 0%, var(--cuy-accent-light) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -840,5 +855,121 @@
 
   .cuy-cart-panel {
     width: 100%;
+  }
+
+  .cuy-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
+@media (max-width: 480px) {
+  .cuy-hero {
+    padding: 100px 16px 30px;
+  }
+
+  .cuy-h1 {
+    font-size: 1.5em;
+  }
+
+  .cuy-p {
+    font-size: 1.1rem;
+  }
+
+  .cuy-badge {
+    font-size: 0.95em;
+  }
+
+  .cuy-hero-stats {
+    gap: 14px;
+  }
+
+  .cuy-hero-carousel {
+    height: 220px;
+  }
+
+  .cuy-precio-card {
+    padding: 24px 20px;
+  }
+
+  .cuy-precio-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .cuy-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cuy-productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cuy-producto-imagen {
+    height: 170px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .cuy-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .cuy-badge {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .cuy-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .cuy-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .cuy-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .cuy-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .cuy-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .cuy-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cuy-curiosos-section,
+  .cuy-precio-section,
+  .cuy-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

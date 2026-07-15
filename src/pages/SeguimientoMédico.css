@@ -94,6 +94,7 @@
   font-size: 0.92rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .seg-page .seg-btn-primary:hover {
@@ -649,6 +650,65 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .seg-page .seg-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .seg-page .seg-badge,
+  .seg-page .seg-h1,
+  .seg-page .seg-p,
+  .seg-page .seg-hero-cta {
+    margin-left: 0;
+  }
+
+  .seg-badge { 
+    margin-left: 0;
+    margin-top: 2rem;
+
+  }
+
+  .seg-page .seg-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .seg-page .seg-p {
+    font-size: 1.15rem;
+  }
+
+  .seg-page .seg-hero-img-full {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin-top: 1.5rem;
+  }
+
+  .seg-page .seg-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .seg-page .seg-description-text {
+    font-size: 1.1rem;
+  }
+
+  .seg-page .seg-description-grid,
+  .seg-page .seg-benefits-grid,
+  .seg-page .seg-services-grid,
+  .seg-page .seg-coordination-grid,
+  .seg-page .seg-process-timeline,
+  .seg-page .seg-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seg-page .seg-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .seg-page .seg-hero {
     flex-direction: column;
@@ -669,6 +729,7 @@
   }
 
   .seg-page .seg-hero-img-full {
+    width: 100%;
     height: 280px;
   }
 
@@ -690,5 +751,114 @@
   .seg-page .seg-contact,
   .seg-page .seg-cta-final {
     padding: 50px 5vw;
+  }
+
+  .seg-page .seg-description-grid,
+  .seg-page .seg-benefits-grid,
+  .seg-page .seg-services-grid,
+  .seg-page .seg-coordination-grid,
+  .seg-page .seg-process-timeline,
+  .seg-page .seg-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .seg-page .seg-hero {
+    padding: 40px 4vw;
+  }
+
+  .seg-page .seg-badge {
+    font-size: 0.82rem;
+    margin-top: 3rem;
+  }
+
+  .seg-page .seg-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .seg-page .seg-p {
+    font-size: 1rem;
+  }
+
+  .seg-page .seg-hero-emoji {
+    font-size: 60px;
+  }
+
+  .seg-page .seg-hero-img-full {
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .seg-page .seg-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .seg-page .seg-btn-primary,
+  .seg-page .seg-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .seg-page .seg-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .seg-page .seg-description-text {
+    font-size: 1rem;
+  }
+
+  .seg-page .seg-desc-card,
+  .seg-page .seg-benefit-card,
+  .seg-page .seg-service-card,
+  .seg-page .seg-coord-card,
+  .seg-page .seg-process-item,
+  .seg-page .seg-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .seg-page .seg-service-price {
+    font-size: 1.2rem;
+  }
+
+  .seg-page .seg-form {
+    padding: 24px 18px;
+  }
+
+  .seg-page .seg-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .seg-page .seg-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .seg-page .seg-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .seg-page .seg-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .seg-page .seg-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .seg-page .seg-hero-img-full {
+    height: 300px;
   }
 }

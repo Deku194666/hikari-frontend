@@ -86,8 +86,7 @@ function CuidadoPreventivo() {
             Prevención integral de enfermedades. Desparasitación, control de pulgas, asesoramiento nutricional y consejos de bienestar para una mascota saludable.
           </p>
           <div className="prev-hero-cta">
-            <button className="prev-btn-primary">Iniciar Prevención</button>
-            <button className="prev-btn-secondary">📞 Consultar</button>
+    
           </div>
         </div>
       

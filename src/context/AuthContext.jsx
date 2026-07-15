@@ -1,15 +1,9 @@
-
-
-
 import { createContext, useState, useContext } from "react";
 
-// Crear el contexto
 const AuthContext = createContext();
 
-// Proveedor de contexto
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    // Obtener usuario del localStorage si existe
     const savedUser = localStorage.getItem("user");
     return savedUser ? JSON.parse(savedUser) : null;
   });
@@ -24,14 +18,21 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("user");
   };
 
+  const updateUser = (updatedFields) => {
+    setUser((prev) => {
+      const newUser = { ...prev, ...updatedFields };
+      localStorage.setItem("user", JSON.stringify(newUser));
+      return newUser;
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
-// Hook para usar el contexto
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {

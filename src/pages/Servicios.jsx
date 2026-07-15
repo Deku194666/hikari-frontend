@@ -28,6 +28,49 @@ function Servicios() {
     setHeroIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
   };
 
+  const gatitosImages = [
+  "/images/cliente-gato-1.jpg",
+  "/images/cliente-gato-2.jpg",
+  "/images/cliente-gato-3.jpg",
+  "/images/cliente-gato-4.jpg",
+  "/images/cliente-gato-5.jpg",
+  "/images/cliente-gato-6.jpg",
+];
+
+const [gatitosIndex, setGatitosIndex] = useState(0);
+
+const prevGatitosImage = () => {
+  setGatitosIndex((prev) => (prev === 0 ? gatitosImages.length - 1 : prev - 1));
+};
+
+const nextGatitosImage = () => {
+  setGatitosIndex((prev) => (prev === gatitosImages.length - 1 ? 0 : prev + 1));
+};
+
+
+const perritosImages = [
+  "/images/cliente-perro-1.jpg",
+  "/images/cliente-perro-2.jpg",
+  "/images/cliente-perro-3.jpg",
+  "/images/cliente-perro-4.jpg",
+  "/images/cliente-perro-5.jpg",
+  "/images/cliente-perro-6.jpg",
+  "/images/cliente-perro-7.jpg",
+  "/images/cliente-perro-8.jpg",
+  "/images/cliente-perro-9.jpg",
+  "/images/cliente-perro-10.jpg",
+];
+
+const [perritosIndex, setPerritosIndex] = useState(0);
+
+const prevPerritosImage = () => {
+  setPerritosIndex((prev) => (prev === 0 ? perritosImages.length - 1 : prev - 1));
+};
+
+const nextPerritosImage = () => {
+  setPerritosIndex((prev) => (prev === perritosImages.length - 1 ? 0 : prev + 1));
+};
+
   const services = [
     {
       id: 1,
@@ -113,7 +156,7 @@ function Servicios() {
     { step: 1, icon: "📞", title: "Contacto", description: "Llama o agenda tu cita en línea" },
     { step: 2, icon: "📅", title: "Agenda", description: "Elige fecha y hora que te convenga" },
     { step: 3, icon: "🚗", title: "Visitamos", description: "Vamos a tu hogar con equipamiento" },
-    { step: 4, icon: "✅", title: "Atención", description: "Evaluamos y diagnosticamos a tu mascota" },
+    { step: 4, icon: "✅", title: "Atención", description: "Evaluamos y damos tratamiento a tu mascota" },
     { step: 5, icon: "📊", title: "Resultados", description: "Entregamos reporte y recomendaciones" },
   ];
 
@@ -264,25 +307,79 @@ function Servicios() {
         </div>
       </section>
 
-      {/* ===== GALERÍA SERVICIOS ===== */}
-      <section className="gallery-section">
-        <div className="section-header">
-          <h2>📸 Nuestro Trabajo</h2>
-          <p>Galería de servicios realizados</p>
-        </div>
+     {/* ===== GALERÍA SERVICIOS ===== */}
+<section className="gallery-section">
+  <div className="section-header">
+    <h2>📸 Nuestro Trabajo</h2>
+    <p>Galería de servicios realizados</p>
+  </div>
 
-        <div className="gallery-grid">
-          
-          <div className="gallery-item">
-            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&h=300&fit=crop" alt="Exámenes" />
-            <p>Perrit@s</p>
-          </div>
-          <div className="gallery-item">
-            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=400&h=300&fit=crop" alt="Evaluación" />
-            <p>Gatit@s</p>
-          </div>
-        </div>
-      </section>
+  <div className="gallery-grid">
+
+    <div className="gallery-item gallery-carousel-wrap">
+  <img src={perritosImages[perritosIndex]} alt={`Perrit@s ${perritosIndex + 1}`} />
+  <p>Perrit@s</p>
+
+  <button
+    className="gallery-carousel-btn gallery-carousel-prev"
+    onClick={(e) => { e.stopPropagation(); prevPerritosImage(); }}
+    aria-label="Foto anterior"
+  >
+    ‹
+  </button>
+  <button
+    className="gallery-carousel-btn gallery-carousel-next"
+    onClick={(e) => { e.stopPropagation(); nextPerritosImage(); }}
+    aria-label="Foto siguiente"
+  >
+    ›
+  </button>
+
+  <div className="gallery-carousel-dots">
+    {perritosImages.map((_, idx) => (
+      <button
+        key={idx}
+        className={`gallery-carousel-dot ${idx === perritosIndex ? "active" : ""}`}
+        onClick={(e) => { e.stopPropagation(); setPerritosIndex(idx); }}
+        aria-label={`Ir a la foto ${idx + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
+    <div className="gallery-item gallery-carousel-wrap">
+      <img src={gatitosImages[gatitosIndex]} alt={`Gatit@s ${gatitosIndex + 1}`} />
+      <p>Gatit@s</p>
+
+      <button
+        className="gallery-carousel-btn gallery-carousel-prev"
+        onClick={(e) => { e.stopPropagation(); prevGatitosImage(); }}
+        aria-label="Foto anterior"
+      >
+        ‹
+      </button>
+      <button
+        className="gallery-carousel-btn gallery-carousel-next"
+        onClick={(e) => { e.stopPropagation(); nextGatitosImage(); }}
+        aria-label="Foto siguiente"
+      >
+        ›
+      </button>
+
+      <div className="gallery-carousel-dots">
+        {gatitosImages.map((_, idx) => (
+          <button
+            key={idx}
+            className={`gallery-carousel-dot ${idx === gatitosIndex ? "active" : ""}`}
+            onClick={(e) => { e.stopPropagation(); setGatitosIndex(idx); }}
+            aria-label={`Ir a la foto ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* ===== IMPORTANTES ===== */}
       <section className="important-section">

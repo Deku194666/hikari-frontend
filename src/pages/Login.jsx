@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 import NavBar2 from "../components/NavBar2";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 
 function Login() {
@@ -74,6 +75,7 @@ function Login() {
   return (
     <div className="login-container">
       <NavBar2 />
+      <WhatsAppButton />
       <div className="login-wrapper">
         
         {/* CARD PRINCIPAL */}

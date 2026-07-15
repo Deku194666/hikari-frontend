@@ -1,13 +1,23 @@
 /* Iguanas.css - Hikari - AISLADO */
 
 .igu-page {
+  --igu-bg: #F5FBF8;
+  --igu-text-dark: #1A3A2A;
+  --igu-text-gray: #5A7A6F;
+  --igu-border: #D4E8DD;
+  --igu-accent: #F08030;
+  --igu-accent-light: #FF9D47;
+  --igu-badge-bg: #FFF4E6;
+
   min-height: 100vh;
-  background: #F5FBF8;
+  background: var(--igu-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .igu-hero {
-  background: linear-gradient(135deg, #D4E8DD 0%, #2D8659 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,7 +34,7 @@
 .igu-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -36,7 +46,7 @@
 
 .igu-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--igu-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 3rem;
@@ -44,7 +54,7 @@
 
 .igu-p {
   font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--igu-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
@@ -58,7 +68,7 @@
 }
 
 .igu-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -69,13 +79,13 @@
 .igu-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--igu-text-dark);
   margin-bottom: 4px;
 }
 
 .igu-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--igu-text-gray);
 }
 
 .igu-hero-image {
@@ -118,7 +128,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -131,10 +141,12 @@
 }
 
 .igu-hero-carousel-btn:hover {
-  background: #F08030;
+  background: var(--igu-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
+
+
 
 .igu-hero-carousel-prev {
   left: 14px;
@@ -166,7 +178,7 @@
 }
 
 .igu-hero-carousel-dot.active {
-  background: #F08030;
+  background: var(--igu-accent);
   width: 24px;
   border-radius: 5px;
 }
@@ -188,8 +200,8 @@
 
 .igu-precio-badge {
   display: inline-block;
-  background: #FFF4E6;
-  color: #F08030;
+  background: var(--igu-badge-bg);
+  color: var(--igu-accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -199,12 +211,12 @@
 
 .igu-precio-h2 {
   font-size: 1.6em;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   margin: 0 0 12px;
 }
 
 .igu-precio-texto {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 1.2em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -224,18 +236,18 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #F5FBF8;
-  border: 2px solid #D4E8DD;
+  background: var(--igu-bg);
+  border: 2px solid var(--igu-border);
 }
 
 .igu-precio-item.igu-precio-destacado {
-  background: linear-gradient(135deg, #F08030 0%, #FF9D47 100%);
+  background: linear-gradient(135deg, var(--igu-accent) 0%, var(--igu-accent-light) 100%);
   border-color: transparent;
 }
 
 .igu-precio-label {
   font-weight: 600;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 1.1em;
   text-align: left;
 }
@@ -247,11 +259,11 @@
 .igu-precio-valor {
   font-size: 1.5em;
   font-weight: 800;
-  color: #F08030;
+  color: var(--igu-accent);
 }
 
 .igu-precio-valor-normal {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
 }
 
 .igu-precio-destacado .igu-precio-valor {
@@ -259,7 +271,7 @@
 }
 
 .igu-precio-nota {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 1em;
   margin: 0;
   font-style: italic;
@@ -275,12 +287,12 @@
 
 .igu-info-h2 {
   font-size: 2em;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   margin: 0 0 12px;
 }
 
 .igu-info-p {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -305,7 +317,7 @@
 .igu-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(240, 128, 48, 0.2);
-  border-top-color: #F08030;
+  border-top-color: var(--igu-accent);
 }
 
 .igu-feature-icono {
@@ -317,14 +329,14 @@
 
 .igu-feature-titulo {
   margin: 0 0 8px;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 1.4em;
   text-align: center;
 }
 
 .igu-feature-texto {
   margin: 0;
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -332,14 +344,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .igu-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--igu-badge-bg);
 }
 
 .igu-curiosos-h2 {
   font-size: 1.8em;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -355,10 +368,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #F08030;
+  border-left: 4px solid var(--igu-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(45, 134, 89, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .igu-curioso-icono {
@@ -368,7 +383,7 @@
 
 .igu-curioso-texto {
   margin: 0;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -395,7 +410,7 @@
 }
 
 .igu-sidebar-h3 {
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -408,7 +423,7 @@
 
 .igu-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #D4E8DD;
+  border: 2px solid var(--igu-border);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -417,20 +432,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 0.95em;
 }
 
 .igu-categoria-btn:hover {
-  border-color: #F08030;
-  background: #FFF4E6;
+  border-color: var(--igu-accent);
+  background: var(--igu-badge-bg);
   transform: translateX(3px);
 }
 
 .igu-categoria-btn.igu-active {
-  background: linear-gradient(135deg, #F08030 0%, #FF9D47 100%);
+  background: linear-gradient(135deg, var(--igu-accent) 0%, var(--igu-accent-light) 100%);
   color: white;
-  border-color: #F08030;
+  border-color: var(--igu-accent);
 }
 
 .igu-count {
@@ -455,12 +470,12 @@
 
 .igu-main-h2 {
   font-size: 1.8em;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   margin: 0 0 8px;
 }
 
 .igu-main-p {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   margin: 0;
 }
 
@@ -485,7 +500,7 @@
 .igu-producto-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(240, 128, 48, 0.25);
-  border-left-color: #F08030;
+  border-left-color: var(--igu-accent);
 }
 
 .igu-producto-imagen {
@@ -518,12 +533,12 @@
 
 .igu-producto-h3 {
   margin: 0;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
   font-size: 1.05em;
 }
 
 .igu-descripcion {
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -534,7 +549,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
 }
 
 .igu-stock {
@@ -551,19 +566,19 @@
 
 .igu-precio-original {
   text-decoration: line-through;
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   font-size: 0.9em;
 }
 
 .igu-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #F08030;
+  color: var(--igu-text-dark);
 }
 
 .igu-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #F08030 0%, #FF9D47 100%);
+  background: linear-gradient(135deg, var(--igu-accent) 0%, var(--igu-accent-light) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -587,8 +602,8 @@
 /* ===== CARRITO ===== */
 .igu-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -629,7 +644,7 @@
 
 .igu-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #D4E8DD;
+  border-bottom: 2px solid var(--igu-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -637,7 +652,7 @@
 
 .igu-cart-h3 {
   margin: 0;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
 }
 
 .igu-close-cart {
@@ -645,7 +660,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #5A7A6F;
+  color: var(--igu-text-gray);
   padding: 5px 10px;
 }
 
@@ -659,13 +674,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #D4E8DD;
+  border-bottom: 1px solid var(--igu-border);
 }
 
 .igu-item-imagen {
   width: 60px;
   height: 60px;
-  background: #F5FBF8;
+  background: var(--igu-bg);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -695,7 +710,7 @@
 }
 
 .igu-item-precio {
-  color: #F08030;
+  color: var(--igu-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -711,17 +726,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #D4E8DD;
+  border: 1px solid var(--igu-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #1A3A2A;
+  color: var(--igu-text-dark);
 }
 
 .igu-item-controls button:hover {
-  background: #F08030;
+  background: var(--igu-accent);
   color: white;
-  border-color: #F08030;
+  border-color: var(--igu-accent);
 }
 
 .igu-btn-eliminar {
@@ -734,7 +749,7 @@
 
 .igu-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #D4E8DD;
+  border-top: 2px solid var(--igu-border);
 }
 
 .igu-cart-total {
@@ -747,7 +762,7 @@
 
 .igu-cart-total span {
   font-weight: 700;
-  color: #F08030;
+  color: var(--igu-accent);
   font-size: 1.2em;
 }
 
@@ -852,7 +867,13 @@
     width: 100%;
   }
 
-  /* ===== CELULARES (480px y menos) ===== */
+  .igu-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
 @media (max-width: 480px) {
   .igu-hero {
     padding: 100px 16px 30px;
@@ -904,4 +925,65 @@
     height: 170px;
   }
 }
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .igu-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .igu-badge {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .igu-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .igu-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .igu-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .igu-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .igu-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .igu-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .igu-curiosos-section,
+  .igu-precio-section,
+  .igu-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

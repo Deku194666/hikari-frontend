@@ -16,8 +16,8 @@ function Huron() {
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
     "/images/imagen97.jpg",
-    "https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=600&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&h=500&fit=crop",
+    "/images/imagen197.webp",
+    "/images/imagen200.jpg",
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
@@ -89,7 +89,7 @@ function Huron() {
       categoria: "alimento",
       precio: 12900,
       precioOriginal: 17000,
-      imagen: "/images/imagen169.avif",
+      imagen: "/images/imagen169.jpg",
       descripcion: "Fórmula carnívora especial para hurones",
       stock: 30,
       rating: 4.9,
@@ -100,7 +100,7 @@ function Huron() {
       categoria: "alimento",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen170.jpg",
+      imagen: "/images/imagen170.webp",
       descripcion: "Premio natural sin cereales",
       stock: 35,
       rating: 4.8,
@@ -134,7 +134,7 @@ function Huron() {
       categoria: "jaulas",
       precio: 9900,
       precioOriginal: 13000,
-      imagen: "/images/imagen173.webp",
+      imagen: "/images/imagen173.jpg",
       descripcion: "Lugar favorito para dormir de los hurones",
       stock: 30,
       rating: 4.9,
@@ -157,7 +157,7 @@ function Huron() {
       categoria: "accesorios",
       precio: 10900,
       precioOriginal: 14000,
-      imagen: "/images/imagen175.jpg",
+      imagen: "/images/imagen175.png",
       descripcion: "Estimulación mental para su alta energía",
       stock: 26,
       rating: 4.8,
@@ -396,17 +396,6 @@ function Huron() {
         </div>
       </section>
 
-      <section className="hur-curiosos-section">
-        <h2 className="hur-curiosos-h2">¿Sabías que...?</h2>
-        <div className="hur-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="hur-curioso-item">
-              <span className="hur-curioso-icono">💡</span>
-              <p className="hur-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="hur-container">
         <aside className="hur-sidebar">
@@ -475,6 +464,18 @@ function Huron() {
           </div>
         </main>
       </div>
+
+            <section className="hur-curiosos-section">
+        <h2 className="hur-curiosos-h2">¿Sabías que...?</h2>
+        <div className="hur-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="hur-curioso-item">
+              <span className="hur-curioso-icono">💡</span>
+              <p className="hur-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {cart.length > 0 && (
         <button className="hur-cart-toggle" onClick={() => setShowCart(!showCart)}>

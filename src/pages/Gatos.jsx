@@ -504,18 +504,7 @@ function Gatos() {
         </div>
       </section>
 
-      {/* ===== DATOS CURIOSOS ===== */}
-      <section className="gat-curiosos-section">
-        <h2 className="gat-curiosos-h2">¿Sabías que...?</h2>
-        <div className="gat-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="gat-curioso-item">
-              <span className="gat-curioso-icono">💡</span>
-              <p className="gat-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       {/* ===== CONTENIDO ===== */}
       <div className="gatos-container" id="tienda-anchor" >
@@ -585,6 +574,20 @@ function Gatos() {
           </div>
         </main>
       </div>
+
+
+            {/* ===== DATOS CURIOSOS ===== */}
+      <section className="gat-curiosos-section">
+        <h2 className="gat-curiosos-h2">¿Sabías que...?</h2>
+        <div className="gat-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="gat-curioso-item">
+              <span className="gat-curioso-icono">💡</span>
+              <p className="gat-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* CARRITO */}
       {cart.length > 0 && (

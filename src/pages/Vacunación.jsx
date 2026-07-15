@@ -4,6 +4,7 @@
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./Vacunación.css";
+import { Link } from "react-router-dom";
 
 function Vacunación() {
   const [formData, setFormData] = useState({
@@ -85,8 +86,8 @@ function Vacunación() {
             Esquemas vacunales completos y actualizados para mantener protegida a tu mascota contra las principales enfermedades.
           </p>
           <div className="vac-hero-cta">
-            <button className="vac-btn-primary">Agendar Vacunación</button>
-            <button className="vac-btn-secondary">📞 Consultar</button>
+            <Link to="/login" className="vac-btn-primary"> 📱 Agendar Vacunación</Link>
+             <button className="vac-btn-secondary">📞 Consultar</button>
           </div>
         </div>
         <div className="vac-hero-image">

@@ -16,8 +16,8 @@ function Erizo() {
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
     "/images/imagen98.jpg",
-    "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=600&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1591872203534-8d5d3e9cff5f?w=600&h=500&fit=crop",
+    "/images/imagen201.webp",
+    "/images/imagen202.jpg",
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
@@ -89,7 +89,7 @@ function Erizo() {
       categoria: "alimento",
       precio: 10900,
       precioOriginal: 14000,
-      imagen: "/images/imagen189.jpg",
+      imagen: "/images/imagen176.jpg",
       descripcion: "Fórmula balanceada especial para erizos",
       stock: 30,
       rating: 4.9,
@@ -100,7 +100,7 @@ function Erizo() {
       categoria: "alimento",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen190.jpg",
+      imagen: "/images/imagen175.png",
       descripcion: "Proteína natural, snack favorito de los erizos",
       stock: 35,
       rating: 4.8,
@@ -112,7 +112,7 @@ function Erizo() {
       categoria: "alimento",
       precio: 6900,
       precioOriginal: 9000,
-      imagen: "/images/imagen191.jpg",
+      imagen: "/images/imagen86.jpg",
       descripcion: "Refuerzo nutricional para huesos sanos",
       stock: 40,
       rating: 4.8,
@@ -123,7 +123,7 @@ function Erizo() {
       categoria: "habitat",
       precio: 69900,
       precioOriginal: 90000,
-      imagen: "/images/imagen192.jpg",
+      imagen: "/images/imagen153.jpg",
       descripcion: "Espacio amplio con buena ventilación",
       stock: 8,
       rating: 4.9,
@@ -134,23 +134,12 @@ function Erizo() {
       categoria: "habitat",
       precio: 24900,
       precioOriginal: 32000,
-      imagen: "/images/imagen193.webp",
+      imagen: "/images/imagen178.jpg",
       descripcion: "Superficie sólida, segura para sus patas",
       stock: 18,
       rating: 4.9,
     },
-    {
-      id: 7,
-      nombre: "Manta Térmica Regulable",
-      categoria: "habitat",
-      precio: 19900,
-      precioOriginal: 26000,
-      imagen: "/images/imagen194.jpg",
-      descripcion: "Los erizos necesitan calor constante (24-27°C)",
-      stock: 15,
-      rating: 4.8,
-    },
-     
+  
     {
       id: 9,
       nombre: "Casa Refugio Oscura",
@@ -169,7 +158,7 @@ function Erizo() {
       categoria: "accesorios",
       precio: 7900,
       precioOriginal: 11000,
-      imagen: "/images/imagen198.jpg",
+      imagen: "/images/imagen180.jpg",
       descripcion: "Cerámica resistente a volcaduras",
       stock: 32,
       rating: 4.8,
@@ -181,7 +170,7 @@ function Erizo() {
       categoria: "cuidado",
       precio: 6900,
       precioOriginal: 9000,
-      imagen: "/images/imagen200.jpg",
+      imagen: "/images/imagen181.jpg",
       descripcion: "Ayuda a mantener la higiene sin lastimar",
       stock: 24,
       rating: 4.8,
@@ -192,23 +181,13 @@ function Erizo() {
       categoria: "cuidado",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen201.jpg",
+      imagen: "/images/imagen182.jpg",
       descripcion: "Corte seguro y sin estrés",
       stock: 20,
       rating: 4.9,
     },
      
-    {
-      id: 16,
-      nombre: "Termómetro Digital de Hábitat",
-      categoria: "cuidado",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen203.jpg",
-      descripcion: "Monitoreo constante de temperatura",
-      stock: 28,
-      rating: 4.9,
-    },
+   
      
     {
       id: 18,
@@ -216,7 +195,7 @@ function Erizo() {
       categoria: "higiene",
       precio: 10900,
       precioOriginal: 14000,
-      imagen: "/images/imagen205.jpg",
+      imagen: "/images/imagen203.jpg",
       descripcion: "Fácil de limpiar diariamente",
       stock: 20,
       rating: 4.8,
@@ -227,7 +206,7 @@ function Erizo() {
       categoria: "transportes",
       precio: 18900,
       precioOriginal: 24000,
-      imagen: "/images/imagen206.jpg",
+      imagen: "/images/imagen173.jpg",
       descripcion: "Seguro para viajes cortos",
       stock: 14,
       rating: 4.8,
@@ -397,17 +376,6 @@ function Erizo() {
         </div>
       </section>
 
-      <section className="eri-curiosos-section">
-        <h2 className="eri-curiosos-h2">¿Sabías que...?</h2>
-        <div className="eri-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="eri-curioso-item">
-              <span className="eri-curioso-icono">💡</span>
-              <p className="eri-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="eri-container">
         <aside className="eri-sidebar">
@@ -476,6 +444,18 @@ function Erizo() {
           </div>
         </main>
       </div>
+
+            <section className="eri-curiosos-section">
+        <h2 className="eri-curiosos-h2">¿Sabías que...?</h2>
+        <div className="eri-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="eri-curioso-item">
+              <span className="eri-curioso-icono">💡</span>
+              <p className="eri-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {cart.length > 0 && (
         <button className="eri-cart-toggle" onClick={() => setShowCart(!showCart)}>

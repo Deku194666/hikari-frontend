@@ -80,6 +80,16 @@ function VetAppointments() {
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   };
 
+  const isToday = (date) => {
+  const todayCheck = new Date();
+  return formatDate(date) === formatDate(todayCheck);
+};
+
+const currentTimeStr = () => {
+  const now = new Date();
+  return `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+};
+
   const handlePrevMonth = () => {
     setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1));
   };
@@ -348,6 +358,7 @@ function VetAppointments() {
                       <h3>{petIcon} {apt.pet?.name || "Mascota"}</h3>
                       <p className="service">{apt.reason}</p>
                       <p className="owner">👤 {apt.owner?.name || "—"}</p>
+                      <p className="vet-assigned">👨‍⚕️ Atiende: Dr(a). {apt.vet?.name || "Sin asignar"}</p>
                       <p className="phone">📱 {apt.owner?.phone || "—"}</p>
                       <p className="notes">📝 {apt.notes || "Sin notas"}</p>
                     </div>
@@ -415,6 +426,11 @@ function VetAppointments() {
               <div className="detail-group">
                 <label>Propietario</label>
                 <p>👤 {selectedAppointment.owner?.name}</p>
+              </div>
+
+              <div className="detail-group">
+                <label>Veterinario asignado</label>
+                <p>👨‍⚕️ Dr(a). {selectedAppointment.vet?.name || "Sin asignar"}</p>
               </div>
 
               <div className="detail-group">
@@ -597,15 +613,21 @@ function VetAppointments() {
               )}
 
               <div className="detail-group">
-                <label>⏰ Hora de la cita *</label>
-                <input
-                  type="time"
-                  name="time"
-                  value={newAppointment.time}
-                  onChange={handleNewAppointmentChange}
-                  className="modal-input"
-                />
-              </div>
+  <label>⏰ Hora de la cita *</label>
+  <input
+    type="time"
+    name="time"
+    value={newAppointment.time}
+    onChange={handleNewAppointmentChange}
+    className="modal-input"
+    min={isToday(selectedDate) ? currentTimeStr() : undefined}
+  />
+  {isToday(selectedDate) && (
+    <p className="csch-hint" style={{ marginTop: "4px" }}>
+      No puedes agendar una hora anterior a la actual para el día de hoy
+    </p>
+  )}
+</div>
 
               <div className="detail-group">
                 <label>💉 Tipo de servicio *</label>

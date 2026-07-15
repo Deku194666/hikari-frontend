@@ -4,6 +4,7 @@
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./AtenciónDomicilio.css";
+import { Link } from "react-router-dom";
 
 function AtenciónDomicilio() {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ function AtenciónDomicilio() {
 
   const vets = [
     { name: "Dra. Sofia Pirul", specialty: "Medicina General", exp: "12 años", img: "👩‍⚕️" },
-    { name: "Dr. Nils ....", specialty: "Cirugía", exp: "15 años", img: "👨‍⚕️" },
+    { name: "Dr. Nils Meyer Galindo", specialty: "Cirugía", exp: "15 años", img: "👨‍⚕️" },
   ];
 
   const prices = [
@@ -86,7 +87,7 @@ function AtenciónDomicilio() {
             Llevamos la mejor atención veterinaria directamente a tu hogar. Sin estrés, con comodidad y la máxima calidad profesional.
           </p>
           <div className="dom-hero-cta">
-            <button className="dom-btn-primary">Agendar Ahora</button>
+             <Link to="/login" className="dom-btn-primary">📱 Agendar Ahora</Link>
             <button className="dom-btn-secondary">Llamar: +56 9 8765 4321</button>
           </div>
         </div>
@@ -192,8 +193,7 @@ function AtenciónDomicilio() {
                     <li key={i}>✓ {service}</li>
                   ))}
                 </ul>
-                <button className="dom-price-btn">Seleccionar</button>
-              </div>
+               </div>
             ))}
           </div>
         </div>

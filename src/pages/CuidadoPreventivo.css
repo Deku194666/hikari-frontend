@@ -601,6 +601,63 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .prev-page .prev-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .prev-page .prev-badge,
+  .prev-page .prev-h1,
+  .prev-page .prev-p,
+  .prev-page .prev-hero-cta {
+    margin-left: 0;
+  }
+
+  .prev-badge{ 
+    margin-left: 0;
+    margin-top: 2rem;
+
+  }
+
+  .prev-page .prev-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .prev-page .prev-p {
+    font-size: 1.15rem;
+  }
+
+  .prev-page .prev-hero-img-full {
+    max-width: 380px;
+    height: 300px;
+    margin-top: 1.5rem;
+  }
+
+  .prev-page .prev-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .prev-page .prev-description-text {
+    font-size: 1.1rem;
+  }
+
+  .prev-page .prev-description-grid,
+  .prev-page .prev-benefits-grid,
+  .prev-page .prev-services-grid,
+  .prev-page .prev-process-timeline,
+  .prev-page .prev-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prev-page .prev-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .prev-page .prev-hero {
     flex-direction: column;
@@ -641,5 +698,117 @@
   .prev-page .prev-contact,
   .prev-page .prev-cta-final {
     padding: 50px 5vw;
+  }
+
+  .prev-page .prev-description-grid,
+  .prev-page .prev-benefits-grid,
+  .prev-page .prev-services-grid,
+  .prev-page .prev-process-timeline,
+  .prev-page .prev-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .prev-page .prev-service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .prev-page .prev-hero {
+    padding: 40px 4vw;
+  }
+
+  .prev-page .prev-badge {
+    font-size: 0.82rem;
+  }
+
+  .prev-page .prev-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .prev-page .prev-p {
+    font-size: 1rem;
+  }
+
+  .prev-page .prev-hero-emoji {
+    font-size: 60px;
+  }
+
+  .prev-page .prev-hero-img-full {
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .prev-page .prev-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .prev-page .prev-btn-primary,
+  .prev-page .prev-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .prev-page .prev-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .prev-page .prev-description-text {
+    font-size: 1rem;
+  }
+
+  .prev-page .prev-desc-card,
+  .prev-page .prev-benefit-card,
+  .prev-page .prev-service-card,
+  .prev-page .prev-process-item,
+  .prev-page .prev-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .prev-page .prev-service-price {
+    font-size: 1.05rem;
+  }
+
+  .prev-page .prev-form {
+    padding: 24px 18px;
+  }
+
+  .prev-page .prev-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .prev-page .prev-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .prev-page .prev-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .prev-page .prev-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .prev-page .prev-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .prev-page .prev-hero-img-full {
+    height: 300px;
   }
 }

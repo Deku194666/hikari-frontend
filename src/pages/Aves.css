@@ -1,13 +1,26 @@
 /* Aves.css - Hikari - AISLADO */
 
 .ave-page {
+  --ave-page-bg: #F9FAFB;
+  --ave-soft: #FFF9F0;
+  --ave-text-dark: #3E2723;
+  --ave-text-gray: #6D5D52;
+  --ave-border: #F0D9B8;
+  --ave-accent: #E8A70A;
+  --ave-accent-light: #FFD700;
+  --ave-accent-mid: #FFA500;
+  --ave-badge-bg: #FFF4E6;
+  --ave-mint: #D4E8DD;
+
   min-height: 100vh;
-  background: #FFF9F0;
+  background: var(--ave-page-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .ave-hero {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,7 +37,7 @@
 .ave-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #3E2723;
+  color: var(--ave-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -35,7 +48,7 @@
 
 .ave-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--ave-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 3rem;
@@ -44,7 +57,7 @@
 
 .ave-p {
   font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.98);
+  color: var(--ave-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.95;
@@ -58,7 +71,7 @@
 }
 
 .ave-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -69,13 +82,13 @@
 .ave-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--ave-text-dark);
   margin-bottom: 4px;
 }
 
 .ave-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ave-text-gray);
 }
 
 .ave-hero-image {
@@ -118,7 +131,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -131,7 +144,7 @@
 }
 
 .ave-hero-carousel-btn:hover {
-  background: #E8A70A;
+  background: var(--ave-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
@@ -166,7 +179,7 @@
 }
 
 .ave-hero-carousel-dot.active {
-  background: #E8A70A;
+  background: white;
   width: 24px;
   border-radius: 5px;
 }
@@ -188,8 +201,8 @@
 
 .ave-precio-badge {
   display: inline-block;
-  background: #FFF4E6;
-  color: #E8A70A;
+  background: var(--ave-badge-bg);
+  color: var(--ave-accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -199,12 +212,12 @@
 
 .ave-precio-h2 {
   font-size: 1.6em;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   margin: 0 0 12px;
 }
 
 .ave-precio-texto {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 1.1em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -224,18 +237,18 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #FFF9F0;
-  border: 2px solid #F0D9B8;
+  background: var(--ave-soft);
+  border: 2px solid var(--ave-border);
 }
 
 .ave-precio-item.ave-precio-destacado {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  background: linear-gradient(135deg, var(--ave-accent-light) 0%, var(--ave-accent-mid) 100%);
   border-color: transparent;
 }
 
 .ave-precio-label {
   font-weight: 600;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 1.1em;
   text-align: left;
 }
@@ -247,11 +260,11 @@
 .ave-precio-valor {
   font-size: 1.3em;
   font-weight: 800;
-  color: #E8A70A;
+  color: var(--ave-accent);
 }
 
 .ave-precio-valor-normal {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
 }
 
 .ave-precio-destacado .ave-precio-valor {
@@ -259,7 +272,7 @@
 }
 
 .ave-precio-nota {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 1em;
   margin: 0;
   font-style: italic;
@@ -275,12 +288,12 @@
 
 .ave-info-h2 {
   font-size: 2em;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   margin: 0 0 12px;
 }
 
 .ave-info-p {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -305,7 +318,7 @@
 .ave-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(255, 165, 0, 0.2);
-  border-top-color: #E8A70A;
+  border-top-color: var(--ave-accent);
 }
 
 .ave-feature-icono {
@@ -317,14 +330,14 @@
 
 .ave-feature-titulo {
   margin: 0 0 8px;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 1.4em;
   text-align: center;
 }
 
 .ave-feature-texto {
   margin: 0;
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -332,14 +345,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .ave-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--ave-badge-bg);
 }
 
 .ave-curiosos-h2 {
   font-size: 1.8em;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -355,10 +369,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #E8A70A;
+  border-left: 4px solid var(--ave-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(232, 167, 10, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .ave-curioso-icono {
@@ -368,7 +384,7 @@
 
 .ave-curioso-texto {
   margin: 0;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -395,7 +411,7 @@
 }
 
 .ave-sidebar-h3 {
-  color: #3E2723;
+  color: var(--ave-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -408,7 +424,7 @@
 
 .ave-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #F0D9B8;
+  border: 2px solid var(--ave-mint);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -417,20 +433,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 0.95em;
 }
 
 .ave-categoria-btn:hover {
-  border-color: #E8A70A;
-  background: #FFF4E6;
+  border-color: var(--ave-accent);
+  background: white;
   transform: translateX(3px);
 }
 
 .ave-categoria-btn.ave-active {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  color: white;
-  border-color: #E8A70A;
+  background: var(--ave-mint);
+  color: var(--ave-text-dark);
+  border-color: var(--ave-mint);
 }
 
 .ave-count {
@@ -441,7 +457,7 @@
 }
 
 .ave-categoria-btn.ave-active .ave-count {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== MAIN ===== */
@@ -455,12 +471,12 @@
 
 .ave-main-h2 {
   font-size: 1.8em;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   margin: 0 0 8px;
 }
 
 .ave-main-p {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   margin: 0;
 }
 
@@ -485,7 +501,7 @@
 .ave-producto-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(255, 165, 0, 0.25);
-  border-left-color: #E8A70A;
+  border-left-color: var(--ave-accent);
 }
 
 .ave-producto-imagen {
@@ -518,12 +534,12 @@
 
 .ave-producto-h3 {
   margin: 0;
-  color: #3E2723;
+  color: var(--ave-text-dark);
   font-size: 1.05em;
 }
 
 .ave-descripcion {
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -534,7 +550,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #3E2723;
+  color: var(--ave-text-dark);
 }
 
 .ave-stock {
@@ -551,20 +567,20 @@
 
 .ave-precio-original {
   text-decoration: line-through;
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   font-size: 0.9em;
 }
 
 .ave-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #E8A70A;
+  color: var(--ave-text-dark);
 }
 
 .ave-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  color: white;
+  background: var(--ave-mint);
+  color: var(--ave-text-dark);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -587,12 +603,12 @@
 /* ===== CARRITO ===== */
 .ave-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  background: linear-gradient(135deg, var(--ave-accent-light) 0%, var(--ave-accent-mid) 100%);
   color: white;
   border: none;
   font-size: 1.2em;
@@ -629,7 +645,7 @@
 
 .ave-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #F0D9B8;
+  border-bottom: 2px solid var(--ave-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -637,7 +653,7 @@
 
 .ave-cart-h3 {
   margin: 0;
-  color: #3E2723;
+  color: var(--ave-text-dark);
 }
 
 .ave-close-cart {
@@ -645,7 +661,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #6D5D52;
+  color: var(--ave-text-gray);
   padding: 5px 10px;
 }
 
@@ -659,13 +675,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #F0D9B8;
+  border-bottom: 1px solid var(--ave-border);
 }
 
 .ave-item-imagen {
   width: 60px;
   height: 60px;
-  background: #FFF9F0;
+  background: var(--ave-soft);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -695,7 +711,7 @@
 }
 
 .ave-item-precio {
-  color: #E8A70A;
+  color: var(--ave-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -711,17 +727,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #F0D9B8;
+  border: 1px solid var(--ave-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #3E2723;
+  color: var(--ave-text-dark);
 }
 
 .ave-item-controls button:hover {
-  background: #E8A70A;
+  background: var(--ave-accent);
   color: white;
-  border-color: #E8A70A;
+  border-color: var(--ave-accent);
 }
 
 .ave-btn-eliminar {
@@ -734,7 +750,7 @@
 
 .ave-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #F0D9B8;
+  border-top: 2px solid var(--ave-border);
 }
 
 .ave-cart-total {
@@ -747,14 +763,14 @@
 
 .ave-cart-total span {
   font-weight: 700;
-  color: #E8A70A;
+  color: var(--ave-accent);
   font-size: 1.2em;
 }
 
 .ave-btn-checkout {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  background: linear-gradient(135deg, var(--ave-accent-light) 0%, var(--ave-accent-mid) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -839,5 +855,120 @@
 
   .ave-cart-panel {
     width: 100%;
+  }
+
+  .ave-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
+@media (max-width: 480px) {
+  .ave-hero {
+    padding: 100px 16px 30px;
+  }
+
+  .ave-h1 {
+    font-size: 1.5em;
+  }
+
+  .ave-p {
+    font-size: 1.1rem;
+  }
+
+  .ave-badge {
+    font-size: 0.95em;
+  }
+
+  .ave-hero-stats {
+    gap: 14px;
+  }
+
+  .ave-hero-carousel {
+    height: 220px;
+  }
+
+  .ave-precio-card {
+    padding: 24px 20px;
+  }
+
+  .ave-precio-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .ave-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ave-productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ave-producto-imagen {
+    height: 170px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .ave-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .ave-badge {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .ave-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .ave-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .ave-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .ave-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .ave-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .ave-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .ave-curiosos-section,
+  .ave-precio-section,
+  .ave-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

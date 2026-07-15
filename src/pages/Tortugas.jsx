@@ -426,17 +426,6 @@ function Tortugas() {
         </div>
       </section>
 
-      <section className="tor-curiosos-section">
-        <h2 className="tor-curiosos-h2">¿Sabías que...?</h2>
-        <div className="tor-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="tor-curioso-item">
-              <span className="tor-curioso-icono">💡</span>
-              <p className="tor-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="tor-container">
         <aside className="tor-sidebar">
@@ -506,6 +495,20 @@ function Tortugas() {
         </main>
       </div>
 
+
+            <section className="tor-curiosos-section">
+        <h2 className="tor-curiosos-h2">¿Sabías que...?</h2>
+        <div className="tor-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="tor-curioso-item">
+              <span className="tor-curioso-icono">💡</span>
+              <p className="tor-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+     { /* CARRITO */}
       {cart.length > 0 && (
         <button className="tor-cart-toggle" onClick={() => setShowCart(!showCart)}>
           🛒 {totalItems}

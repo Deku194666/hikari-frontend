@@ -487,18 +487,7 @@ function Perros() {
         </div>
       </section>
 
-      {/* ===== DATOS CURIOSOS ===== */}
-      <section className="per-curiosos-section">
-        <h2 className="per-curiosos-h2">¿Sabías que...?</h2>
-        <div className="per-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="per-curioso-item">
-              <span className="per-curioso-icono">💡</span>
-              <p className="per-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  
 
       {/* ===== CONTENIDO ===== */}
       <div className="perros-container"  id="tienda-anchor"  >
@@ -572,6 +561,20 @@ function Perros() {
           </div>
         </main>
       </div>
+
+
+          {/* ===== DATOS CURIOSOS ===== */}
+      <section className="per-curiosos-section">
+        <h2 className="per-curiosos-h2">¿Sabías que...?</h2>
+        <div className="per-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="per-curioso-item">
+              <span className="per-curioso-icono">💡</span>
+              <p className="per-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ===== CARRITO FLOTANTE ===== */}
       {cart.length > 0 && (

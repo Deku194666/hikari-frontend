@@ -3,6 +3,7 @@ import { registerRequest } from "../services/authService";
 import { useNavigate, Link } from "react-router-dom";
 import "./Register.css";
 import NavBar2 from "../components/NavBar2";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 
 function Register() {
@@ -119,6 +120,7 @@ function Register() {
   return (
     <div className="register-container">
       <NavBar2 />
+      <WhatsAppButton />
       <div className="register-wrapper">
         
         {/* SIDE INFO (IZQUIERDA) */}

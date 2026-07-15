@@ -16,7 +16,7 @@ function Cuy() {
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
     "/images/imagen96.jpg",
-    "https://images.unsplash.com/photo-1591561582301-7ce6588cc286?w=600&h=500&fit=crop",
+    "/images/imagen156.webp",
     "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=600&h=500&fit=crop",
   ];
 
@@ -389,17 +389,6 @@ function Cuy() {
         </div>
       </section>
 
-      <section className="cuy-curiosos-section">
-        <h2 className="cuy-curiosos-h2">¿Sabías que...?</h2>
-        <div className="cuy-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="cuy-curioso-item">
-              <span className="cuy-curioso-icono">💡</span>
-              <p className="cuy-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="cuy-container">
         <aside className="cuy-sidebar">
@@ -474,6 +463,18 @@ function Cuy() {
           🛒 {totalItems}
         </button>
       )}
+
+            <section className="cuy-curiosos-section">
+        <h2 className="cuy-curiosos-h2">¿Sabías que...?</h2>
+        <div className="cuy-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="cuy-curioso-item">
+              <span className="cuy-curioso-icono">💡</span>
+              <p className="cuy-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {showCart && cart.length > 0 && (
         <aside className="cuy-cart-panel">

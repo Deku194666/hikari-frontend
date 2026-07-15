@@ -10,8 +10,13 @@ export const getMyAppointmentsRequest = async () => {
   return res.data;
 };
 
-export const createAppointmentRequest = async ({ petId, date, time, reason, notes }) => {
-  const res = await api.post("/appointments", { petId, date, time, reason, notes });
+export const getVetsRequest = async () => {
+  const res = await api.get("/appointments/vets");
+  return res.data;
+};
+
+export const createAppointmentRequest = async ({ petId, vetId, date, time, reason, notes }) => {
+  const res = await api.post("/appointments", { petId, vetId, date, time, reason, notes });
   return res.data;
 };
 
@@ -30,8 +35,8 @@ export const deleteAppointmentRequest = async (id) => {
   return res.data;
 };
 
-export const getAvailabilityRequest = async (date) => {
-  const res = await api.get(`/appointments/availability?date=${date}`);
+export const getAvailabilityRequest = async (date, vetId) => {
+  const res = await api.get(`/appointments/availability?date=${date}&vetId=${vetId}`);
   return res.data;
 };
 

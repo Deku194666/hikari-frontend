@@ -30,6 +30,7 @@ function ClientPets() {
     breed: "",
     age: "",
     weight: "",
+    sex: "",
   });
 
   useEffect(() => {
@@ -69,10 +70,10 @@ function ClientPets() {
   const handleAddPet = async (e) => {
     e.preventDefault();
 
-    if (!newPet.name || !newPet.type || !newPet.breed || !newPet.age || !newPet.weight) {
-      alert("⚠️ Por favor completa todos los campos");
-      return;
-    }
+    if (!newPet.name || !newPet.type || !newPet.breed || !newPet.age || !newPet.weight || !newPet.sex) {
+  alert("⚠️ Por favor completa todos los campos");
+  return;
+}
 
     setSubmitting(true);
     setError("");
@@ -84,10 +85,11 @@ function ClientPets() {
         breed: newPet.breed,
         age: parseInt(newPet.age),
         weight: parseFloat(newPet.weight),
+        sex: newPet.sex,
       });
 
       setPets([...pets, created]);
-      setNewPet({ name: "", type: "", breed: "", age: "", weight: "" });
+      setNewPet({ name: "", type: "", breed: "", age: "", weight: "", sex: ""  });
       alert("✅ Mascota registrada correctamente");
     } catch (err) {
       setError(
@@ -172,19 +174,23 @@ function ClientPets() {
                 <span className="cp-type-chip">{style.label}</span>
 
                 <div className="cp-stats">
-                  <div className="cp-stat">
-                    <span className="cp-stat-label">Raza</span>
-                    <span className="cp-stat-value">{pet.breed}</span>
-                  </div>
-                  <div className="cp-stat">
-                    <span className="cp-stat-label">Edad</span>
-                    <span className="cp-stat-value">{pet.age} años</span>
-                  </div>
-                  <div className="cp-stat">
-                    <span className="cp-stat-label">Peso</span>
-                    <span className="cp-stat-value">{pet.weight} kg</span>
-                  </div>
-                </div>
+  <div className="cp-stat">
+    <span className="cp-stat-label">Raza</span>
+    <span className="cp-stat-value">{pet.breed}</span>
+  </div>
+  <div className="cp-stat">
+    <span className="cp-stat-label">Edad</span>
+    <span className="cp-stat-value">{pet.age} años</span>
+  </div>
+  <div className="cp-stat">
+    <span className="cp-stat-label">Peso</span>
+    <span className="cp-stat-value">{pet.weight} kg</span>
+  </div>
+  <div className="cp-stat">
+    <span className="cp-stat-label">Sexo</span>
+    <span className="cp-stat-value">{pet.sex || "—"}</span>
+  </div>
+</div>
 
                 <button className="cp-history-btn">Ver historial</button>
               </div>
@@ -212,45 +218,55 @@ function ClientPets() {
   ))}
 </div>
 
-          <div className="cp-form-grid">
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              value={newPet.name}
-              onChange={handleInputChange}
-              disabled={submitting}
-              required
-            />
-            <input
-              type="text"
-              name="breed"
-              placeholder="Raza"
-              value={newPet.breed}
-              onChange={handleInputChange}
-              disabled={submitting}
-              required
-            />
-            <input
-              type="number"
-              name="age"
-              placeholder="Edad (años)"
-              value={newPet.age}
-              onChange={handleInputChange}
-              disabled={submitting}
-              required
-            />
-            <input
-              type="number"
-              name="weight"
-              placeholder="Peso (kg)"
-              value={newPet.weight}
-              onChange={handleInputChange}
-              disabled={submitting}
-              required
-            />
-          </div>
-
+         <div className="cp-form-grid">
+  <input
+    type="text"
+    name="name"
+    placeholder="Nombre"
+    value={newPet.name}
+    onChange={handleInputChange}
+    disabled={submitting}
+    required
+  />
+  <input
+    type="text"
+    name="breed"
+    placeholder="Raza"
+    value={newPet.breed}
+    onChange={handleInputChange}
+    disabled={submitting}
+    required
+  />
+  <input
+    type="number"
+    name="age"
+    placeholder="Edad (años)"
+    value={newPet.age}
+    onChange={handleInputChange}
+    disabled={submitting}
+    required
+  />
+  <input
+    type="number"
+    name="weight"
+    placeholder="Peso (kg)"
+    value={newPet.weight}
+    onChange={handleInputChange}
+    disabled={submitting}
+    required
+  />
+  <select
+    name="sex"
+    value={newPet.sex}
+    onChange={handleInputChange}
+    disabled={submitting}
+    required
+  >
+    <option value="">Sexo</option>
+    <option value="Macho">Macho</option>
+    <option value="Hembra">Hembra</option>
+  </select>
+</div>
           <button type="submit" className="cp-submit-btn" disabled={submitting}>
             {submitting ? "Registrando..." : "🚀 Registrar mascota"}
           </button>

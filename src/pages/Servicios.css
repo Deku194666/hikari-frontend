@@ -1,16 +1,16 @@
 :root {
-  --pine: #1f4b43;
-  --pine-dark: #15332d;
-  --pine-light: #e6efec;
-  --coral: #ff6b4a;
-  --coral-dark: #e2573a;
-  --paper: #fbf7f0;
+  --pine: #dc9552;
+  --pine-dark: #c17d3d;
+  --pine-light: #f5ece2;
+  --coral: #c1573f;
+  --coral-dark: #a3432f;
+  --paper: #f0ded1;
   --sand: #e8dcc8;
-  --ink: #2d2a26;
+  --ink: #2a2420;
   --ink-soft: #5c574f;
-  --line: rgba(45, 42, 38, 0.12);
-  --shadow: 0 10px 26px -14px rgba(31, 75, 67, 0.35);
-  --shadow-lg: 0 26px 50px -20px rgba(31, 75, 67, 0.4);
+  --line: rgba(42, 36, 32, 0.12);
+  --shadow: 0 10px 26px -14px rgba(193, 87, 63, 0.35);
+  --shadow-lg: 0 26px 50px -20px rgba(193, 87, 63, 0.4);
   --error: #dc3545;
   --success: #28a745;
 }
@@ -569,7 +569,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(21, 51, 45, 0.85), transparent);
+  background: linear-gradient(to top, rgba(42, 36, 32, 0.85), transparent);
   color: white;
   padding: 18px;
   font-weight: 700;
@@ -582,6 +582,89 @@
 
 .servicios-page .gallery-item:hover p {
   transform: translateY(0);
+}
+
+
+/* ===== CARRUSEL DENTRO DE LA GALERÍA (solo Gatit@s por ahora) ===== */
+.servicios-page .gallery-carousel-wrap {
+  position: relative;
+}
+
+.servicios-page .gallery-carousel-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--pine-dark);
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 3;
+  line-height: 1;
+}
+
+.servicios-page .gallery-carousel-btn:hover {
+  background: var(--coral);
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.servicios-page .gallery-carousel-prev {
+  left: 10px;
+}
+
+.servicios-page .gallery-carousel-next {
+  right: 10px;
+}
+
+.servicios-page .gallery-carousel-dots {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+
+.servicios-page .gallery-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.servicios-page .gallery-carousel-dot.active {
+  background: var(--coral);
+  width: 18px;
+  border-radius: 5px;
+}
+
+/* ===== AJUSTE: contenedor cuadrado, mas chico y centrado ===== */
+.servicios-page .gallery-carousel-wrap {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--paper);
+}
+
+.servicios-page .gallery-carousel-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ===== IMPORTANT SECTION ===== */
@@ -903,5 +986,83 @@
 
   .servicios-page .important-card {
     padding: 20px 15px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* En landscape la altura de pantalla es chica; evitamos que el carrusel
+   del hero se corra o desborde, y volvemos el hero a fila (no columna) */
+@media (max-width: 900px) and (orientation: landscape) {
+  .servicios-page .hero-section {
+    flex-direction: row;
+    padding: 24px 4vw;
+    gap: 20px;
+  }
+
+  .servicios-page .hero-contentservicios {
+    max-width: 55%;
+  }
+
+  .servicios-page .hero-contentservicios h1 {
+    font-size: 1.4rem !important;
+    margin-left: 0;
+    margin-top: 4rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .servicios-page .hero-contentservicios p {
+    font-size: 0.9rem;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .servicios-page .hero-buttons {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .servicios-page .hero-imageservicio {
+    max-width: 45%;
+  }
+
+  .servicios-page .servicios-hero-carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 160px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+
+/* ===== ALINEACIÓN Y SEPARACIÓN de las tarjetas de galería en mobile ===== */
+.servicios-page .gallery-grid {
+  align-items: start;
+}
+
+/* Los puntos se envuelven en varias líneas si son muchos (ej: 10 fotos),
+   pero se mantienen centrados y no empujan el tamaño de la tarjeta */
+.servicios-page .gallery-carousel-dots {
+  max-width: 85%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .servicios-page .gallery-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .servicios-page .gallery-grid {
+    gap: 16px;
+  }
+
+  .servicios-page .gallery-carousel-wrap {
+    max-width: 100%;
   }
 }

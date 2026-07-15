@@ -12,7 +12,7 @@
 .navbar {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-bottom: 2px solid var(--primary);
-  padding: 15px 0;
+  padding: 14px 0;
   box-shadow: 0 2px 12px rgba(0, 166, 111, 0.1);
   position: sticky;
   top: 0;
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  height: 2.8rem; /* Solo aplica en desktop, en 1 sola fila */
+  height: 2.5rem; /* Solo aplica en desktop, en 1 sola fila */
 }
 
 /* ===== LOGO ===== */

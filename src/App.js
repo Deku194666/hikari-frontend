@@ -1,12 +1,15 @@
 ﻿import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import VetDashboard from "./pages/vet/VetDashboard.jsx";
+import VetPatientRecord from "./pages/vet/VetPatientRecord.jsx";
 import ClientDashboard from "./pages/clientes/ClientDashboard.jsx";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PrivateVetRoute from "./routes/PrivateVetRoute.jsx";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import Register from "./pages/Register";
 import Servicios from "./pages/Servicios";
 import Tienda from "./pages/Tienda";
@@ -32,21 +35,15 @@ import Huron from "./pages/Huron";
 import Erizo from "./pages/Erizo";
 import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
-
-
-
-
-
-
-
-
-
- 
+import VideoCall from "./pages/VideoCall.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 function AppContent() {
   const location = useLocation();
-  const hideNavbar = ["/dashboard-vet", "/dashboard-cliente"].includes(location.pathname);
-   
+  const hideNavbar =
+    ["/dashboard-vet", "/dashboard-cliente"].includes(location.pathname) ||
+    location.pathname.startsWith("/vet/paciente");
+
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <ScrollToTop />
@@ -56,6 +53,8 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/tienda" element={<Tienda />} />
           <Route path="/contacto" element={<Contacto />} />
@@ -79,21 +78,28 @@ function AppContent() {
           <Route path="/erizo"  element={ <Erizo  />}   />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
-          
 
-
-
-
-
-
-
- 
           <Route path="/dashboard-vet" element={
             <PrivateVetRoute>
               <VetDashboard />
             </PrivateVetRoute>
           } />
-          <Route path="/dashboard-cliente" element={<ClientDashboard />} />
+          <Route path="/vet/paciente/:id" element={
+            <PrivateVetRoute>
+              <VetPatientRecord />
+            </PrivateVetRoute>
+          } />
+
+          <Route path="/videollamada/:roomId" element={
+            <PrivateRoute>
+              <VideoCall />
+            </PrivateRoute>
+          } />
+          <Route path="/dashboard-cliente" element={
+            <PrivateRoute>
+              <ClientDashboard />
+            </PrivateRoute>
+          } />
         </Routes>
       </div>
       <Footer />

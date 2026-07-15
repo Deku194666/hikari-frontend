@@ -426,17 +426,7 @@ function Conejos() {
         </div>
       </section>
 
-      <section className="con-curiosos-section">
-        <h2 className="con-curiosos-h2">¿Sabías que...?</h2>
-        <div className="con-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="con-curioso-item">
-              <span className="con-curioso-icono">💡</span>
-              <p className="con-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     
 
       <div className="con-container">
         <aside className="con-sidebar">
@@ -505,6 +495,19 @@ function Conejos() {
           </div>
         </main>
       </div>
+
+
+       <section className="con-curiosos-section">
+        <h2 className="con-curiosos-h2">¿Sabías que...?</h2>
+        <div className="con-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="con-curioso-item">
+              <span className="con-curioso-icono">💡</span>
+              <p className="con-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {cart.length > 0 && (
         <button className="con-cart-toggle" onClick={() => setShowCart(!showCart)}>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import NavBar2 from "../components/NavBar2";
 import WhatsAppButton from "../components/WhatsAppButton";
@@ -54,8 +55,7 @@ function Home() {
             Tu mascota es familia, nosotros la cuidamos como tal.
           </h2>
           <div className="hero-buttons">
-            <button className="btn-primary">📱 Agenda una visita</button>
-            <button className="btn-secondary">📞 Llamar ahora</button>
+            <Link to="/login" className="btn-primary">📱 Agenda una visita</Link>
           </div>
         </div>
         <div className="hero-image1">
@@ -199,6 +199,31 @@ function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* ===== TELEMEDICINA ===== */}
+<section className="telemedicine-section">
+  <div className="section-header">
+    <h2>📹 Telemedicina Hikari</h2>
+    <h3>Consulta a nuestro equipo veterinario sin salir de casa</h3>
+  </div>
+
+  <div className="telemedicine-card">
+    <div className="telemedicine-icon">📹</div>
+    <p>
+      Con una videollamada resuelves dudas rápidas, haces seguimiento a un
+      tratamiento o simplemente preguntas antes de decidir si necesitas una
+      visita presencial. Todo desde tu cuenta, cuando lo necesites.
+    </p>
+    <div className="telemedicine-features">
+      <span>✓ Videollamada en tiempo real</span>
+      <span>✓ Ideal para seguimientos</span>
+      <span>✓ Sin desplazamientos</span>
+      <span>✓ Disponible cuando la necesites</span>
+    </div>
+    <Link to="/login" className="btn-primary">📹 Probar telemedicina</Link>
+  </div>
+</section>
 
       {/* ===== TIENDA ===== */}
       <section className="shop-section">
@@ -401,7 +426,8 @@ function Home() {
         <h2>¿Tu mascota necesita atención?</h2>
         <p>Agenda una visita hoy y conoce nuestro servicio premium</p>
         <div className="cta-buttons">
-          <button className="btn-primary ">📱 Agendar Cita</button>
+           
+          <Link to="/login" className="btn-primary">📱 Agenda Cita </Link>
           <button className="btn-secondary">📞 +56 9 2831 2359</button>
         </div>
       </section>

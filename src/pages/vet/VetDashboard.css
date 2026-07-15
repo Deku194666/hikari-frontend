@@ -139,6 +139,21 @@ body {
   transform: scale(1.2);
 }
 
+
+.sidebar-logo-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  transition: opacity 0.15s;
+}
+
+.sidebar-logo-btn:hover {
+  opacity: 0.75;
+}
+
 /* ===== SIDEBAR NAV ===== */
 .sidebar-nav {
   flex: 1;
@@ -228,28 +243,59 @@ body {
 
 .user-text {
   min-width: 0;
-  overflow: hidden;
 }
 
-.user-name {
+
+.user-info-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.user-info-btn:hover {
+  background: rgba(83, 74, 183, 0.06);
+}
+
+.user-avatar-img,
+.user-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.vet-dashboard .user-name {
   font-weight: 700;
   color: var(--text-dark);
   font-size: 0.9em;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.3;
 }
 
-.user-status {
+.vet-dashboard .user-status {
   font-size: 0.8em;
   color: var(--success);
   margin: 0;
   font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.3;
 }
+
+
+
+
 
 /* ===== LOGOUT BUTTON ===== */
 .logout-btn {
@@ -966,7 +1012,12 @@ body {
   color: var(--text-gray);
 }
 
-/* ===== RESPONSIVE ===== */
+
+.mobile-logout-btn {
+  display: none;
+}
+
+/* ===== RESPONSIVE (reemplaza el bloque completo desde aqui hasta el final) ===== */
 @media (max-width: 1024px) {
   .sidebar {
     width: 240px;
@@ -998,6 +1049,10 @@ body {
   .overview-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .vet-badge {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1005,25 +1060,44 @@ body {
     flex-direction: column;
   }
 
-  .sidebar {
+  /* 👇 Clave: se fuerzan AMBOS estados (.sidebar y .sidebar.closed) igual,
+     así no importa si el usuario lo "cerró" antes en desktop */
+  .sidebar,
+  .sidebar.closed {
     position: relative;
     width: 100%;
     height: auto;
+    left: auto;
+    top: auto;
     border-right: none;
     border-bottom: 2px solid var(--border-light);
-    flex-direction: row;
+    flex-direction: column;
+    overflow: visible;
   }
 
   .sidebar-header {
-    flex: 1;
+    width: 100%;
+  }
+
+  /* el botón de colapsar no tiene sentido en mobile, se esconde */
+  .sidebar-toggle {
+    display: none;
   }
 
   .sidebar-nav {
-    display: flex;
-    padding: 10px 0;
-    overflow-x: auto;
-    overflow-y: visible;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  overflow-x: auto;
+  overflow-y: visible;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+  .sidebar.closed .nav-label,
+  .sidebar .nav-label {
+    display: inline;
+    font-size: 0.75em;
   }
 
   .nav-item {
@@ -1040,25 +1114,52 @@ body {
     border-left: none;
   }
 
-  .nav-label {
-    font-size: 0.75em;
+  /* pie del sidebar: visible siempre, en fila compacta */
+  .sidebar-footer,
+  .sidebar.closed .sidebar-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 15px;
   }
 
-  .sidebar.closed .nav-label {
-    display: inline;
+  .sidebar.closed .user-info,
+  .user-info {
+    justify-content: flex-start;
   }
 
-  .sidebar-footer {
+  .user-info-btn {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sidebar.closed .user-text,
+  .user-text {
+    display: block;
+  }
+
+  .user-name,
+  .user-status {
+    font-size: 0.78em;
+  }
+
+  .logout-btn {
+    width: auto;
+    padding: 8px 12px;
+    flex-shrink: 0;
+  }
+
+  .logout-label {
     display: none;
   }
 
-  .main-content {
-    margin-left: 0;
-    padding: 20px;
-  }
-
+  .main-content,
   .sidebar.closed ~ .main-content {
     margin-left: 0;
+    padding: 20px;
   }
 
   .dashboard-header {
@@ -1101,6 +1202,10 @@ body {
   .vet-column {
     min-width: 100%;
   }
+
+  .vet-badge {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1131,6 +1236,7 @@ body {
   .btn-export {
     width: 100%;
     justify-content: center;
+    margin-left: 0;
   }
 
   .nav-item {
@@ -1187,5 +1293,264 @@ body {
 
   .big-number {
     font-size: 2em;
+  }
+
+  .sidebar.closed .user-text,
+  .user-text {
+    display: none;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .vet-dashboard {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 220px;
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    border-right: 2px solid var(--border-light);
+    border-bottom: none;
+  }
+
+  /* 👇 Clave: cerrado debe ser angosto, del ancho del icono, no igual que abierto */
+  .sidebar.closed {
+    width: 68px;
+  }
+
+  .sidebar-toggle {
+    display: inline-block;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    border-left: 4px solid transparent;
+    border-bottom: none;
+    min-width: auto;
+    flex-shrink: 0;
+  }
+
+  .nav-item.active {
+    border-left-color: var(--primary);
+    border-bottom: none;
+  }
+
+  /* 👇 Cerrado: el resaltado del item activo se ajusta al icono, no a todo el ancho */
+  .sidebar.closed .nav-item {
+    padding: 10px 0;
+    justify-content: center;
+    border-left: none;
+  }
+
+  .sidebar.closed .nav-item.active {
+    background: rgba(0, 166, 111, 0.15);
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: none;
+  }
+
+  .sidebar.closed .nav-icon {
+    min-width: auto;
+    flex-shrink: 0;
+  }
+
+  .sidebar.closed .sidebar-header {
+    padding: 20px 10px;
+  }
+
+  .sidebar-footer,
+  .sidebar.closed .sidebar-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-text {
+    display: block;
+  }
+
+  .logout-label {
+    display: inline;
+  }
+
+  /* 👇 En cerrado, ocultamos todos los textos: solo iconos */
+  .sidebar.closed .nav-label,
+  .sidebar.closed .user-text,
+  .sidebar.closed .logout-label {
+    display: none;
+  }
+
+  .sidebar.closed .user-info {
+    justify-content: center;
+  }
+
+  .sidebar.closed .logout-btn {
+    padding: 8px;
+  }
+
+  .main-content,
+  .sidebar.closed ~ .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    padding: 20px;
+  }
+
+  .vet-badge {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .vet-dashboard {
+    flex-direction: column !important;
+  }
+
+  .sidebar,
+  .sidebar.closed {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-right: none !important;
+    border-bottom: 2px solid var(--border-light);
+    overflow: visible !important;
+  }
+
+  .sidebar-toggle {
+    display: none !important;
+  }
+
+  .sidebar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 10px 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+
+  .nav-item {
+    padding: 10px 15px;
+    min-width: 100px;
+    justify-content: center;
+    flex-direction: column;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    flex-shrink: 0;
+  }
+
+  .nav-item.active {
+    border-bottom-color: var(--primary);
+    border-left: none;
+  }
+
+  .sidebar-footer,
+  .sidebar.closed .sidebar-footer {
+    display: none !important;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .main-content,
+  .sidebar.closed ~ .main-content {
+    margin-left: 0 !important;
+    padding: 20px;
+  }
+}
+
+/* ===== AJUSTE: iconos compactos en la barra superior mobile (vertical) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .sidebar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 6px;
+    padding: 8px 10px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav-item {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+    border-bottom: none !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item.active {
+    background: var(--primary-light);
+    border-bottom: none !important;
+  }
+
+  .nav-icon {
+    font-size: 1.3em;
+    margin: 0;
+  }
+
+  .nav-label {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .sidebar-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 15px !important;
+  }
+
+  .sidebar-logo,
+  .sidebar-logo-btn {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .logo-text {
+    display: inline !important;
+    font-size: 1.1em !important;
+  }
+
+  .mobile-logout-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    background: #fcebeb !important;
+    color: #791f1f !important;
+    font-size: 1.1em !important;
+    cursor: pointer !important;
   }
 }

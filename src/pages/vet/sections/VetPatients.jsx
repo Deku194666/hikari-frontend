@@ -5,6 +5,7 @@ import {
   updateAppointmentStatusRequest,
 } from "../../../services/appointmentService";
 import "./VetPatients.css";
+import { Link } from "react-router-dom";
 
 const RECENT_DAYS = 7;
 
@@ -219,6 +220,7 @@ function VetPatients() {
                 <th>Paciente</th>
                 <th>Propietario</th>
                 <th>Raza</th>
+                <th>Ficha Clínica</th>
                 <th>Registrado</th>
                 <th>Última atención</th>
                 <th>Estado</th>
@@ -239,6 +241,11 @@ function VetPatients() {
                     </td>
                     <td>{patient.owner?.name || "—"}</td>
                     <td className="breed">{patient.breed}</td>
+                     <td>
+                      <Link to={`/vet/paciente/${patient._id}`} className="vp-ficha-link">
+                      📋 Ver ficha
+                      </Link>
+                    </td>
                     <td>{new Date(patient.createdAt).toLocaleDateString("es-CL")}</td>
                     <td>{lastAttended ? new Date(lastAttended).toLocaleDateString("es-CL") : "—"}</td>
                     <td>
@@ -251,7 +258,7 @@ function VetPatients() {
               })}
               {patients.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="vp-empty-row">
+                  <td colSpan={7} className="vp-empty-row">
                     Aún no hay pacientes registrados.
                   </td>
                 </tr>

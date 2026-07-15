@@ -5,6 +5,7 @@
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./SeguimientoMédico.css";
+import { Link } from "react-router-dom";
 
 function SeguimientoMédico() {
   const [formData, setFormData] = useState({
@@ -85,8 +86,8 @@ function SeguimientoMédico() {
             Monitoreo continuo de la salud de tu mascota. Control de medicinas, coordinación con laboratorios y recordatorios automáticos en un solo lugar.
           </p>
           <div className="seg-hero-cta">
-            <button className="seg-btn-primary">Iniciar Seguimiento</button>
-            <button className="seg-btn-secondary">📞 Consultar</button>
+            <Link to="/login" className="seg-btn-primary">Iniciar Seguimiento</Link>
+             <button className="seg-btn-secondary">📞 Consultar</button>
           </div>
         </div>
         

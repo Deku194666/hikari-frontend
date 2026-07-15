@@ -89,7 +89,7 @@ function Aves() {
       categoria: "alimento",
       precio: 7900,
       precioOriginal: 11000,
-      imagen: "/images/imagen107.jpg",
+      imagen: "/images/imagen187.jpg",
       descripcion: "Mezcla balanceada para loros y aves",
       stock: 40,
       rating: 4.9,
@@ -100,7 +100,7 @@ function Aves() {
       categoria: "alimento",
       precio: 9900,
       precioOriginal: 13000,
-      imagen: "/images/imagen108.jpg",
+      imagen: "/images/imagen86.jpg",
       descripcion: "Alimento formulado veterinariamente",
       stock: 30,
       rating: 4.8,
@@ -111,7 +111,7 @@ function Aves() {
       categoria: "alimento",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen109.jpg",
+      imagen: "/images/imagen188.avif",
       descripcion: "Manzana, plátano, naranja y más",
       stock: 25,
       rating: 4.7,
@@ -122,7 +122,7 @@ function Aves() {
       categoria: "alimento",
       precio: 6900,
       precioOriginal: 9000,
-      imagen: "/images/imagen110.jpg",
+      imagen: "/images/imagen191.jpg",
       descripcion: "Alimento especializado para colibríes",
       stock: 35,
       rating: 4.9,
@@ -133,7 +133,7 @@ function Aves() {
       categoria: "jaulas",
       precio: 89900,
       precioOriginal: 120000,
-      imagen: "/images/imagen111.jpg",
+      imagen: "/images/imagen189.jpg",
       descripcion: "Jaula amplia con múltiples accesorios",
       stock: 8,
       rating: 4.9,
@@ -144,84 +144,44 @@ function Aves() {
       categoria: "jaulas",
       precio: 49900,
       precioOriginal: 65000,
-      imagen: "/images/imagen112.jpg",
+      imagen: "/images/imagen190.webp",
       descripcion: "Ideal para canarios y periquitos",
       stock: 12,
       rating: 4.8,
     },
-    {
-      id: 7,
-      nombre: "Voladora de Vuelo Libre",
-      categoria: "jaulas",
-      precio: 129900,
-      precioOriginal: 170000,
-      imagen: "/images/imagen113.jpg",
-      descripcion: "Espacio amplio para loros grandes",
-      stock: 5,
-      rating: 4.9,
-    },
+    
     {
       id: 8,
       nombre: "Perchas Naturales Pack 5",
       categoria: "accesorios",
       precio: 9900,
       precioOriginal: 13000,
-      imagen: "/images/imagen114.jpg",
+      imagen: "/images/imagen204.jpg",
       descripcion: "Madera natural para aferrarse",
       stock: 28,
       rating: 4.8,
     },
-    {
-      id: 9,
-      nombre: "Nidos para Canarios",
-      categoria: "accesorios",
-      precio: 12900,
-      precioOriginal: 17000,
-      imagen: "/images/imagen115.jpg",
-      descripcion: "Nido seguro para reproducción",
-      stock: 20,
-      rating: 4.7,
-    },
+  
     {
       id: 10,
       nombre: "Comederos y Bebederos Set",
       categoria: "accesorios",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen116.jpg",
+      imagen: "/images/imagen191.jpg",
       descripcion: "Set de 3 comederos automáticos",
       stock: 35,
       rating: 4.8,
     },
-    {
-      id: 11,
-      nombre: "Juguetes Interactivos Pack",
-      categoria: "accesorios",
-      precio: 14900,
-      precioOriginal: 19000,
-      imagen: "/images/imagen117.webp",
-      descripcion: "Estimulación mental y diversión",
-      stock: 25,
-      rating: 4.9,
-    },
-    {
-      id: 12,
-      nombre: "Bombilla LED Espectro Completo",
-      categoria: "iluminacion",
-      precio: 16900,
-      precioOriginal: 22000,
-      imagen: "/images/imagen118.webp",
-      descripcion: "Simula luz natural para ciclo diario",
-      stock: 20,
-      rating: 4.8,
-    },
+ 
+ 
     {
       id: 13,
       nombre: "Lámpara de Clip Regulable",
       categoria: "iluminacion",
       precio: 12900,
       precioOriginal: 17000,
-      imagen: "/images/imagen119.jpg",
+      imagen: "/images/imagen192.jpg",
       descripcion: "Instalación fácil en jaulas",
       stock: 22,
       rating: 4.7,
@@ -232,73 +192,32 @@ function Aves() {
       categoria: "suplementos",
       precio: 7900,
       precioOriginal: 11000,
-      imagen: "/images/imagen120.jpg",
+      imagen: "/images/imagen193.jpg",
       descripcion: "Fortalece huesos y plumaje",
       stock: 40,
       rating: 4.8,
     },
-    {
-      id: 15,
-      nombre: "Multivitamínico para Aves",
-      categoria: "suplementos",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen121.jpg",
-      descripcion: "Nutrientes completos en agua",
-      stock: 35,
-      rating: 4.9,
-    },
-    {
-      id: 16,
-      nombre: "Pasta de Cría Seasonal",
-      categoria: "suplementos",
-      precio: 11900,
-      precioOriginal: 15000,
-      imagen: "/images/imagen122.jpg",
-      descripcion: "Especial para época de reproducción",
-      stock: 18,
-      rating: 4.8,
-    },
+     
     {
       id: 17,
       nombre: "Arena Baño Aves 2kg",
       categoria: "higiene",
       precio: 4900,
       precioOriginal: 7000,
-      imagen: "/images/imagen123.jpg",
+      imagen: "/images/imagen205.jpg",
       descripcion: "Para mantener plumaje limpio",
       stock: 50,
       rating: 4.7,
     },
-    {
-      id: 18,
-      nombre: "Spray Desinfectante Seguro",
-      categoria: "higiene",
-      precio: 6900,
-      precioOriginal: 9000,
-      imagen: "/images/imagen124.jpg",
-      descripcion: "Elimina bacterias sin dañar",
-      stock: 30,
-      rating: 4.8,
-    },
-    {
-      id: 19,
-      nombre: "Papel Toalla Biodegradable",
-      categoria: "higiene",
-      precio: 3900,
-      precioOriginal: 5500,
-      imagen: "/images/imagen125.jpg",
-      descripcion: "Recubrimiento seguro para jaulas",
-      stock: 60,
-      rating: 4.6,
-    },
+    
+    
     {
       id: 20,
       nombre: "Transportín Viaje Seguro",
       categoria: "transportes",
       precio: 19900,
       precioOriginal: 26000,
-      imagen: "/images/imagen126.jpg",
+      imagen: "/images/imagen196.jpg",
       descripcion: "Seguro y ventilado para viajes",
       stock: 15,
       rating: 4.8,
@@ -467,17 +386,7 @@ function Aves() {
         </div>
       </section>
 
-      <section className="ave-curiosos-section">
-        <h2 className="ave-curiosos-h2">¿Sabías que...?</h2>
-        <div className="ave-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="ave-curioso-item">
-              <span className="ave-curioso-icono">💡</span>
-              <p className="ave-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       <div className="ave-container">
         <aside className="ave-sidebar">
@@ -546,6 +455,18 @@ function Aves() {
           </div>
         </main>
       </div>
+
+            <section className="ave-curiosos-section">
+        <h2 className="ave-curiosos-h2">¿Sabías que...?</h2>
+        <div className="ave-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="ave-curioso-item">
+              <span className="ave-curioso-icono">💡</span>
+              <p className="ave-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {cart.length > 0 && (
         <button className="ave-cart-toggle" onClick={() => setShowCart(!showCart)}>

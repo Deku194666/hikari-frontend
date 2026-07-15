@@ -94,6 +94,7 @@
   font-size: 0.92rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none
 }
 
 .dom-page .dom-btn-primary:hover {
@@ -660,8 +661,68 @@
   background: var(--coral-dark);
   transform: translateY(-2px);
 }
-
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .dom-page .dom-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .dom-page 
+  .dom-page .dom-h1,
+  .dom-page .dom-p,
+  .dom-page .dom-hero-cta {
+    margin-left: 0;
+  }
+
+
+  .dom-badge {
+    margin-left: -2rem;
+    margin-top: 3rem;
+
+  }
+
+
+
+  .dom-page .dom-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .dom-page .dom-p {
+    font-size: 1.15rem;
+  }
+
+  .dom-page .dom-hero-img-full {
+    max-width: 380px;
+    height: 300px;
+    margin-top: 1.5rem;
+  }
+
+  .dom-page .dom-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .dom-page .dom-description-text {
+    font-size: 1.1rem;
+  }
+
+  .dom-page .dom-description-grid,
+  .dom-page .dom-benefits-grid,
+  .dom-page .dom-process-timeline,
+  .dom-page .dom-vets-grid,
+  .dom-page .dom-prices-grid,
+  .dom-page .dom-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dom-page .dom-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .dom-page .dom-hero {
     flex-direction: column;
@@ -704,4 +765,115 @@
   .dom-page .dom-cta-final {
     padding: 50px 5vw;
   }
+
+  .dom-page .dom-description-grid,
+  .dom-page .dom-benefits-grid,
+  .dom-page .dom-process-timeline,
+  .dom-page .dom-vets-grid,
+  .dom-page .dom-prices-grid,
+  .dom-page .dom-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .dom-page .dom-hero {
+    padding: 40px 4vw;
+  }
+
+  .dom-page .dom-badge {
+    font-size: 0.78rem;
+    margin-left: 0rem;
+  }
+
+  .dom-page .dom-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .dom-page .dom-p {
+    font-size: 1rem;
+  }
+
+  .dom-page .dom-hero-emoji {
+    font-size: 60px;
+  }
+
+  .dom-page .dom-hero-img-full {
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .dom-page .dom-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dom-page .dom-btn-primary,
+  .dom-page .dom-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .dom-page .dom-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .dom-page .dom-description-text {
+    font-size: 1rem;
+  }
+
+  .dom-page .dom-desc-card,
+  .dom-page .dom-benefit-card,
+  .dom-page .dom-process-item,
+  .dom-page .dom-vet-card,
+  .dom-page .dom-price-card,
+  .dom-page .dom-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .dom-page .dom-price-amount {
+    font-size: 1.6rem;
+  }
+
+  .dom-page .dom-form {
+    padding: 24px 18px;
+  }
+
+  .dom-page .dom-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .dom-page .dom-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .dom-page .dom-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .dom-page .dom-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  /* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+/* La imagen del hero se ve chica en vertical porque el ancho es menor;
+   aquí la agrandamos específicamente para esa orientación */
+@media (max-width: 768px) and (orientation: portrait) {
+  .dom-page .dom-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .dom-page .dom-hero-img-full {
+    height: 360px;
+  }
+}
 }

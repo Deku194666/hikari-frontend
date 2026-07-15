@@ -93,6 +93,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .vac-page .vac-btn-primary:hover {
@@ -599,6 +600,65 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .vac-page .vac-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .vac-page .vac-badge {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  
+
+  .vac-page .vac-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .vac-page .vac-p {
+    font-size: 1.15rem;
+  }
+
+  .vac-page .vac-hero-img-full {
+    max-width: 380px;
+    height: 300px;
+  }
+
+  .vac-page .vac-hero-image {
+    margin-top: 1.5rem;
+  }
+
+  .vac-page .vac-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .vac-page .vac-description-text {
+    font-size: 1.1rem;
+  }
+
+  .vac-page .vac-description-grid,
+  .vac-page .vac-benefits-grid,
+  .vac-page .vac-process-timeline,
+  .vac-page .vac-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vac-page .vac-table-header,
+  .vac-page .vac-table-row {
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+
+  .vac-page .vac-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .vac-page .vac-hero {
     flex-direction: column;
@@ -645,5 +705,105 @@
   .vac-page .vac-contact,
   .vac-page .vac-cta-final {
     padding: 50px 5vw;
+  }
+
+  .vac-page .vac-description-grid,
+  .vac-page .vac-benefits-grid,
+  .vac-page .vac-process-timeline,
+  .vac-page .vac-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .vac-page .vac-hero {
+    padding: 40px 4vw;
+  }
+
+  .vac-page .vac-badge {
+    font-size: 0.82rem;
+    margin-top: 3rem;
+  }
+
+  .vac-page .vac-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .vac-page .vac-p {
+    font-size: 1rem;
+  }
+
+  .vac-page .vac-hero-emoji {
+    font-size: 60px;
+  }
+
+  .vac-page .vac-hero-img-full {
+    height: 220px;
+  }
+
+  .vac-page .vac-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .vac-page .vac-btn-primary,
+  .vac-page .vac-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .vac-page .vac-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .vac-page .vac-description-text {
+    font-size: 1rem;
+  }
+
+  .vac-page .vac-desc-card,
+  .vac-page .vac-benefit-card,
+  .vac-page .vac-process-item,
+  .vac-page .vac-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .vac-page .vac-form {
+    padding: 24px 18px;
+  }
+
+  .vac-page .vac-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .vac-page .vac-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .vac-page .vac-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .vac-page .vac-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .vac-page .vac-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .vac-page .vac-hero-img-full {
+    height: 300px;
   }
 }

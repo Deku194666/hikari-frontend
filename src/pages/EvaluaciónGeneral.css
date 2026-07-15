@@ -588,6 +588,60 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .eval-page .eval-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .eval-page .eval-badge,
+  .eval-page .eval-h1,
+  .eval-page .eval-p,
+  .eval-page .eval-hero-cta {
+    margin-left: 0;
+  }
+
+  .eval-page .eval-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .eval-page .eval-p {
+    font-size: 1.15rem;
+  }
+
+  .eval-page .eval-hero-img-full {
+    max-width: 380px;
+    height: 300px;
+  }
+
+  .eval-page .eval-hero-image {
+    margin-top: 1.5rem;
+  }
+
+  .eval-page .eval-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .eval-page .eval-description-text {
+    font-size: 1.1rem;
+  }
+
+  .eval-page .eval-description-grid,
+  .eval-page .eval-benefits-grid,
+  .eval-page .eval-checks-grid,
+  .eval-page .eval-process-timeline,
+  .eval-page .eval-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eval-page .eval-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .eval-page .eval-hero {
     flex-direction: column;
@@ -628,5 +682,107 @@
   .eval-page .eval-contact,
   .eval-page .eval-cta-final {
     padding: 50px 5vw;
+  }
+
+  .eval-page .eval-description-grid,
+  .eval-page .eval-benefits-grid,
+  .eval-page .eval-checks-grid,
+  .eval-page .eval-process-timeline,
+  .eval-page .eval-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .eval-page .eval-hero {
+    padding: 40px 4vw;
+  }
+
+  .eval-page .eval-badge {
+    font-size: 0.82rem;
+    margin-top: 2rem;
+  }
+
+  .eval-page .eval-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .eval-page .eval-p {
+    font-size: 1rem;
+  }
+
+  .eval-page .eval-hero-emoji {
+    font-size: 60px;
+  }
+
+  .eval-page .eval-hero-img-full {
+    height: 220px;
+  }
+
+  .eval-page .eval-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .eval-page .eval-btn-primary,
+  .eval-page .eval-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .eval-page .eval-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .eval-page .eval-description-text {
+    font-size: 1rem;
+  }
+
+  .eval-page .eval-desc-card,
+  .eval-page .eval-benefit-card,
+  .eval-page .eval-check-card,
+  .eval-page .eval-process-item,
+  .eval-page .eval-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .eval-page .eval-form {
+    padding: 24px 18px;
+  }
+
+  .eval-page .eval-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .eval-page .eval-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .eval-page .eval-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .eval-page .eval-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .eval-page .eval-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .eval-page .eval-hero-img-full {
+    height: 300px;
   }
 }

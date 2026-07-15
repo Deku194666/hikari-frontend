@@ -109,7 +109,7 @@ function NavBar2() {
   return (
     <nav className="navbar2">
       <div className="navbar2-logo">
-        <span className="logo-icon">🐾</span>
+        <span className="logo-icon"></span>
       </div>
       <div className="navbar2-container">
         {menuItems.map((menu) => (

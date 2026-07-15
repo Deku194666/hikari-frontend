@@ -16,8 +16,8 @@ function Iguanas() {
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
     "/images/imagen117.webp",
-    "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=600&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&h=500&fit=crop",
+    "/images/imagen118.webp",
+    "/images/imagen123.webp",
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
@@ -438,17 +438,7 @@ function Iguanas() {
         </div>
       </section>
 
-      <section className="igu-curiosos-section">
-        <h2 className="igu-curiosos-h2">¿Sabías que...?</h2>
-        <div className="igu-curiosos-list">
-          {datosCuriosos.map((dato, idx) => (
-            <div key={idx} className="igu-curioso-item">
-              <span className="igu-curioso-icono">💡</span>
-              <p className="igu-curioso-texto">{dato}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  
 
       <div className="igu-container">
         <aside className="igu-sidebar">
@@ -523,6 +513,18 @@ function Iguanas() {
           🛒 {totalItems}
         </button>
       )}
+
+          <section className="igu-curiosos-section">
+        <h2 className="igu-curiosos-h2">¿Sabías que...?</h2>
+        <div className="igu-curiosos-list">
+          {datosCuriosos.map((dato, idx) => (
+            <div key={idx} className="igu-curioso-item">
+              <span className="igu-curioso-icono">💡</span>
+              <p className="igu-curioso-texto">{dato}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {showCart && cart.length > 0 && (
         <aside className="igu-cart-panel">

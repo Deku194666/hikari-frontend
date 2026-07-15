@@ -1,6 +1,6 @@
 /* Home.css - Hikari - Paleta Tienda Unificada (SCOPED a .home) */
 
-:root {
+.home {
   --pine: #1f4b43;
   --pine-dark: #15332d;
   --pine-light: #e6efec;
@@ -213,6 +213,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  text-align: center;
 }
 
 .home .btn-primary {
@@ -377,7 +378,64 @@
 
 .home .service-card a:hover::before {
   transform: translateX(3px);
+  
 }
+
+/* ===== TELEMEDICINA ===== */
+
+.home .telemedicine-section {
+  background: var(--sand);
+  text-align: center;
+}
+
+.home .telemedicine-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: white;
+  padding: 48px 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.home .telemedicine-icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--pine-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+ 
+
+.home .telemedicine-card p {
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.home .telemedicine-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  margin-bottom: 30px;
+}
+
+.home .telemedicine-features span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pine-dark);
+  background: var(--pine-light);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+ 
 
 /* ===== TIENDA ===== */
 

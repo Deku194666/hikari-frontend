@@ -1,4 +1,4 @@
-:root {
+.tienda-page {
   --pine: #1f4b43;
   --pine-dark: #15332d;
   --pine-light: #e6efec;
@@ -771,7 +771,7 @@
 /* ===== CARRITO FLOTANTE ===== */
 .tienda-page .cart-toggle {
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: 30px;
   width: 65px;
   height: 65px;
@@ -1135,5 +1135,71 @@
 
   .tienda-page .product-info {
     padding: 14px;
+  }
+
+  .tienda-page .cart-toggle {
+    bottom: 82px;
+    right: 18px;
+  }
+}
+
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* En landscape la altura de pantalla es chica; evitamos que el carrusel
+   del hero se corra o desborde, y volvemos el hero a fila (no columna) */
+@media (max-width: 900px) and (orientation: landscape) {
+  .tienda-page .hero-section {
+    flex-direction: row;
+    padding: 24px 4vw;
+    gap: 20px;
+  }
+
+  .tienda-page .hero-content {
+    max-width: 55%;
+  }
+
+  .tienda-page .hero-badge {
+    margin-left: 0;
+    margin-top: 5rem;
+    margin-bottom: -7rem;
+    
+    
+  }
+
+  .tienda-page .hero-content h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-top: 6rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tienda-page .hero-content p {
+    font-size: 0.9rem;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .tienda-page .hero-stats {
+    gap: 14px;
+    padding: 10px 0;
+  }
+
+  .tienda-page .hero-image {
+    max-width: 65%;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto !important;
+  }
+
+  .tienda-page .tienda-hero-carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 160px;
+    margin-left: 4rem !important;
+    margin-right: -1rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: -2rem !important;
   }
 }

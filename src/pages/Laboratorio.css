@@ -93,6 +93,7 @@
   font-size: 0.92rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .lab-page .lab-btn-primary:hover {
@@ -601,6 +602,67 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ===== TABLETS / PANTALLAS MEDIANAS (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .lab-page .lab-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .lab-page .lab-badge,
+  .lab-page .lab-h1,
+  .lab-page .lab-p,
+  .lab-page .lab-hero-cta {
+    margin-left: 0;
+    
+  }
+
+  .lab-badge { 
+    margin-left: 0;
+    margin-top: 2rem;
+
+  }
+
+  .lab-page .lab-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .lab-page .lab-p {
+    font-size: 1.15rem;
+  }
+
+  .lab-page .lab-hero-img-full {
+    max-width: 380px;
+    height: 300px;
+  }
+
+  .lab-page .lab-hero-image {
+    margin-top: 1.5rem;
+  }
+
+  .lab-page .lab-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .lab-page .lab-description-text {
+    font-size: 1.1rem;
+  }
+
+  .lab-page .lab-description-grid,
+  .lab-page .lab-benefits-grid,
+  .lab-page .lab-exams-grid,
+  .lab-page .lab-process-timeline,
+  .lab-page .lab-testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lab-page .lab-form {
+    padding: 30px;
+  }
+}
+
+/* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .lab-page .lab-hero {
     flex-direction: column;
@@ -641,5 +703,117 @@
   .lab-page .lab-contact,
   .lab-page .lab-cta-final {
     padding: 50px 5vw;
+  }
+
+  .lab-page .lab-description-grid,
+  .lab-page .lab-benefits-grid,
+  .lab-page .lab-exams-grid,
+  .lab-page .lab-process-timeline,
+  .lab-page .lab-testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lab-page .lab-exam-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ===== CELULARES CHICOS (480px y menos) ===== */
+@media (max-width: 480px) {
+  .lab-page .lab-hero {
+    padding: 40px 4vw;
+  }
+
+  .lab-page .lab-badge {
+    font-size: 0.82rem;
+    margin-top: 2rem;
+  }
+
+  .lab-page .lab-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .lab-page .lab-p {
+    font-size: 1rem;
+  }
+
+  .lab-page .lab-hero-emoji {
+    font-size: 60px;
+  }
+
+  .lab-page .lab-hero-img-full {
+    height: 220px;
+  }
+
+  .lab-page .lab-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lab-page .lab-btn-primary,
+  .lab-page .lab-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .lab-page .lab-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .lab-page .lab-description-text {
+    font-size: 1rem;
+  }
+
+  .lab-page .lab-desc-card,
+  .lab-page .lab-benefit-card,
+  .lab-page .lab-exam-card,
+  .lab-page .lab-process-item,
+  .lab-page .lab-testimonio-card {
+    padding: 22px 18px;
+  }
+
+  .lab-page .lab-exam-price {
+    font-size: 1.05rem;
+  }
+
+  .lab-page .lab-form {
+    padding: 24px 18px;
+  }
+
+  .lab-page .lab-faq-question {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .lab-page .lab-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .lab-page .lab-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .lab-page .lab-btn-large {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .lab-page .lab-hero-img-full {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .lab-page .lab-hero-img-full {
+    height: 300px;
   }
 }

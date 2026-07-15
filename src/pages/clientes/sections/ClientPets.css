@@ -339,6 +339,21 @@
 .cp-submit-btn:hover { background: var(--cp-accent-dark); }
 .cp-submit-btn:active { transform: scale(0.98); }
 .cp-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.cp-form-grid select {
+  padding: 11px 14px;
+  border: 1px solid var(--cp-border);
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: white;
+  color: var(--cp-text);
+}
+
+.cp-form-grid select:focus {
+  border-color: var(--cp-accent);
+  box-shadow: 0 0 0 3px rgba(83,74,183,0.12);
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 640px) {

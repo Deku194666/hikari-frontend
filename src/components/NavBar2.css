@@ -15,7 +15,7 @@
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 166, 111, 0.08);
   position: fixed;
-  top: 40px;
+  top: 19px;
   left: 0;
   right: 0;
   width: 100%;
@@ -41,7 +41,7 @@
   align-items: center;
   min-width: 60px;
   margin-left: 8rem;
-  margin-top: 2.7rem;
+  margin-top: 5.7rem;
   order: 999;         /* ← AL FINAL */
 }
 
@@ -300,6 +300,7 @@
     font-size: 1.3em;
     line-height: 1;
     display: inline-block;
+     
   }
 
   .navbar2-item {
@@ -329,6 +330,81 @@
     width: 220px;
     max-width: 75vw;
     max-height: 60vh;
+    overflow-y: auto;
+    z-index: 200;
+  }
+
+  .dropdown-submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid var(--border-light);
+    border-radius: 0;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
+
+  .dropdown-item {
+    padding: 9px 12px;
+    font-size: 0.85em;
+    white-space: normal;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* El scroll horizontal del menú solo se activaba con max-width:600px,
+   pero un celular acostado suele medir más de eso. Usamos orientation:landscape
+   para que el mismo comportamiento se aplique también ahí. */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .navbar2 {
+    top: 60px;
+  }
+
+  .navbar2-container {
+    gap: 6px;
+    height: 30px;
+    padding: 0 10px;
+    margin-top: 0.5rem;
+
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar2-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar2-logo {
+    display: none;
+  }
+
+  .navbar2-item {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .navbar2-link,
+  .dropdown-button {
+    font-size: 0.85em;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 105px;
+    left: auto;
+    right: 10px;
+    width: 220px;
+    max-width: 75vw;
+    max-height: 55vh;
     overflow-y: auto;
     z-index: 200;
   }

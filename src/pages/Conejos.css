@@ -1,13 +1,27 @@
 /* Conejos.css - Hikari - AISLADO */
 
 .con-page {
+  --con-page-bg: #F9FAFB;
+  --con-soft-pink: #FFF5F8;
+  --con-mint: #D4E8DD;
+  --con-mint-dark: #A9CFC0;
+  --con-text-dark: #4A3A40;
+  --con-text-gray: #7A6A70;
+  --con-border: #F0D5E0;
+  --con-accent: #F4A6C1;
+  --con-accent-light: #FFC9DA;
+  --con-badge-bg: #FFE8F1;
+  --con-badge-text: #E88BA3;
+
   min-height: 100vh;
-  background: #FFF5F8;
+  background: var(--con-page-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .con-hero {
-  background: linear-gradient(135deg, #F0D5E0 0%, #D8959B 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,19 +38,19 @@
 .con-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #4A3A40;
+  color: var(--con-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
   margin-bottom: 16px;
   font-size: 1.1em;
   margin-left: 7rem;
-  margin-top: -13rem!important;
+  margin-top: -1rem;
 }
 
 .con-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--con-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 7rem;
@@ -45,7 +59,7 @@
 
 .con-p {
   font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--con-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
@@ -60,7 +74,7 @@
 }
 
 .con-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -71,13 +85,13 @@
 .con-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--con-text-dark);
   margin-bottom: 4px;
 }
 
 .con-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--con-text-gray);
 }
 
 .con-hero-image {
@@ -119,7 +133,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -132,7 +146,7 @@
 }
 
 .con-hero-carousel-btn:hover {
-  background: #F4A6C1;
+  background: var(--con-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
@@ -167,7 +181,7 @@
 }
 
 .con-hero-carousel-dot.active {
-  background: #F4A6C1;
+  background: var(--con-accent);
   width: 24px;
   border-radius: 5px;
 }
@@ -189,8 +203,8 @@
 
 .con-precio-badge {
   display: inline-block;
-  background: #FFE8F1;
-  color: #E88BA3;
+  background: var(--con-badge-bg);
+  color: var(--con-badge-text);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -200,12 +214,12 @@
 
 .con-precio-h2 {
   font-size: 1.6em;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   margin: 0 0 12px;
 }
 
 .con-precio-texto {
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 1.3em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -225,18 +239,19 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #FFF5F8;
-  border: 2px solid #F0D5E0;
+  background: var(--con-soft-pink);
+  border: 2px solid var(--con-border);
+  
 }
 
 .con-precio-item.con-precio-destacado {
-  background: linear-gradient(135deg, #F4A6C1 0%, #FFC9DA 100%);
+  background: linear-gradient(135deg, var(--con-accent) 0%, var(--con-accent-light) 100%);
   border-color: transparent;
 }
 
 .con-precio-label {
   font-weight: 600;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size:  1.1em;
   text-align: left;
 }
@@ -248,11 +263,11 @@
 .con-precio-valor {
   font-size: 1.3em;
   font-weight: 800;
-  color: #E88BA3;
+  color: var(--con-badge-text);
 }
 
 .con-precio-valor-normal {
-  color: #7A6A70;
+  color: var(--con-text-gray);
 }
 
 .con-precio-destacado .con-precio-valor {
@@ -260,7 +275,7 @@
 }
 
 .con-precio-nota {
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 1em;
   margin: 0;
   font-style: italic;
@@ -276,12 +291,12 @@
 
 .con-info-h2 {
   font-size: 2em;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   margin: 0 0 12px;
 }
 
 .con-info-p {
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -306,7 +321,7 @@
 .con-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(244, 166, 193, 0.2);
-  border-top-color: #F4A6C1;
+  border-top-color: var(--con-accent);
 }
 
 .con-feature-icono {
@@ -318,14 +333,14 @@
 
 .con-feature-titulo {
   margin: 0 0 8px;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size: 1.3em;
   text-align: center;
 }
 
 .con-feature-texto {
   margin: 0;
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -333,14 +348,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .con-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--con-badge-bg);
 }
 
 .con-curiosos-h2 {
   font-size: 1.8em;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -356,10 +372,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #F4A6C1;
+  border-left: 4px solid var(--con-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(216, 149, 155, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .con-curioso-icono {
@@ -369,7 +387,7 @@
 
 .con-curioso-texto {
   margin: 0;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -396,7 +414,7 @@
 }
 
 .con-sidebar-h3 {
-  color: #4A3A40;
+  color: var(--con-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -409,7 +427,7 @@
 
 .con-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #F0D5E0;
+  border: 2px solid var(--con-border);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -418,20 +436,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size: 0.95em;
 }
 
 .con-categoria-btn:hover {
-  border-color: #F4A6C1;
-  background: #FFE8F1;
+  border-color: var(--con-mint-dark);
+  background: white;
   transform: translateX(3px);
 }
 
 .con-categoria-btn.con-active {
-  background: linear-gradient(135deg, #F4A6C1 0%, #FFC9DA 100%);
-  color: white;
-  border-color: #F4A6C1;
+  background: linear-gradient(135deg, var(--con-mint) 0%, var(--con-mint-dark) 100%);
+  color: var(--con-text-dark);
+  border-color: var(--con-mint-dark);
 }
 
 .con-count {
@@ -456,12 +474,12 @@
 
 .con-main-h2 {
   font-size: 1.8em;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   margin: 0 0 8px;
 }
 
 .con-main-p {
-  color: #7A6A70;
+  color: var(--con-text-gray);
   margin: 0;
 }
 
@@ -485,14 +503,14 @@
 
 .con-producto-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(244, 166, 193, 0.25);
-  border-left-color: #F4A6C1;
+  box-shadow: 0 12px 30px rgba(169, 207, 192, 0.3);
+  border-left-color: var(--con-mint-dark);
 }
 
 .con-producto-imagen {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #FFF5F8 0%, #F0D5E0 100%);
+  background: linear-gradient(135deg, #F5FBF8 0%, #D4E8DD 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -519,12 +537,12 @@
 
 .con-producto-h3 {
   margin: 0;
-  color: #4A3A40;
+  color: var(--con-text-dark);
   font-size: 1.05em;
 }
 
 .con-descripcion {
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -535,11 +553,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #4A3A40;
+  color: var(--con-text-dark);
 }
 
 .con-stock {
-  color: #E88BA3;
+  color: var(--con-badge-text);
   font-weight: 600;
   font-size: 0.8em;
 }
@@ -552,20 +570,20 @@
 
 .con-precio-original {
   text-decoration: line-through;
-  color: #7A6A70;
+  color: var(--con-text-gray);
   font-size: 0.9em;
 }
 
 .con-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #F4A6C1;
+  color: var(--con-text-dark);
 }
 
 .con-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #F4A6C1 0%, #FFC9DA 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--con-mint) 0%, var(--con-mint-dark) 100%);
+  color: var(--con-text-dark);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -577,7 +595,7 @@
 
 .con-btn-agregar:hover:not(:disabled) {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(244, 166, 193, 0.5);
+  box-shadow: 0 4px 12px rgba(169, 207, 192, 0.5);
 }
 
 .con-btn-agregar:disabled {
@@ -588,12 +606,12 @@
 /* ===== CARRITO ===== */
 .con-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #F4A6C1 0%, #FFC9DA 100%);
+  background: linear-gradient(135deg, var(--con-accent) 0%, var(--con-accent-light) 100%);
   color: white;
   border: none;
   font-size: 1.2em;
@@ -630,7 +648,7 @@
 
 .con-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #F0D5E0;
+  border-bottom: 2px solid var(--con-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -638,7 +656,7 @@
 
 .con-cart-h3 {
   margin: 0;
-  color: #4A3A40;
+  color: var(--con-text-dark);
 }
 
 .con-close-cart {
@@ -646,7 +664,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #7A6A70;
+  color: var(--con-text-gray);
   padding: 5px 10px;
 }
 
@@ -660,13 +678,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #F0D5E0;
+  border-bottom: 1px solid var(--con-border);
 }
 
 .con-item-imagen {
   width: 60px;
   height: 60px;
-  background: #FFF5F8;
+  background: var(--con-soft-pink);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -696,7 +714,7 @@
 }
 
 .con-item-precio {
-  color: #F4A6C1;
+  color: var(--con-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -712,17 +730,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #F0D5E0;
+  border: 1px solid var(--con-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #4A3A40;
+  color: var(--con-text-dark);
 }
 
 .con-item-controls button:hover {
-  background: #F4A6C1;
+  background: var(--con-accent);
   color: white;
-  border-color: #F4A6C1;
+  border-color: var(--con-accent);
 }
 
 .con-btn-eliminar {
@@ -735,7 +753,7 @@
 
 .con-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #F0D5E0;
+  border-top: 2px solid var(--con-border);
 }
 
 .con-cart-total {
@@ -748,14 +766,14 @@
 
 .con-cart-total span {
   font-weight: 700;
-  color: #F4A6C1;
+  color: var(--con-accent);
   font-size: 1.2em;
 }
 
 .con-btn-checkout {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #F4A6C1 0%, #FFC9DA 100%);
+  background: linear-gradient(135deg, var(--con-accent) 0%, var(--con-accent-light) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -861,7 +879,13 @@
     width: 100%;
   }
 
-  /* ===== CELULARES (480px y menos) ===== */
+  .con-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
 @media (max-width: 480px) {
   .con-hero {
     padding: 100px 16px 30px;
@@ -913,4 +937,67 @@
     height: 170px;
   }
 }
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .con-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .con-badge {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .con-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .con-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .con-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .con-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .con-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .con-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .con-curiosos-section,
+  .con-precio-section,
+  .con-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

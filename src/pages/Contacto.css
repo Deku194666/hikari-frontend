@@ -732,3 +732,70 @@
     font-size: 1.6rem;
   }
 }
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* En landscape la altura de pantalla es chica; evitamos que el carrusel
+   del hero se corra o desborde, y volvemos el hero a su formato en fila */
+@media (max-width: 900px) and (orientation: landscape) {
+  .contact-hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 20px 4vw;
+    gap: 20px;
+  }
+
+  .hero-image {
+    order: 0;
+    transform: none !important;
+    margin-bottom: -3rem !important;
+  }
+
+  .contacto-hero-carousel {
+    height: 150px;
+    margin-left: 5rem;
+    margin-right: -5rem;
+    margin-top: 5rem;
+  }
+
+  .eyebrow {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .contact-hero h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-hero p {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: auto;
+    height: auto;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+
+  .hero-badge {
+    padding: 8px 12px;
+    left: 8px;
+    bottom: -12px;
+    margin-left: 0;
+  }
+
+  .hero-badge strong {
+    font-size: 1rem;
+  }
+
+  .hero-badge span {
+    font-size: 0.65rem;
+  }
+}

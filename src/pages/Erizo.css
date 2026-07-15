@@ -1,13 +1,25 @@
 /* Erizo.css - Hikari - AISLADO */
 
 .eri-page {
+  --eri-page-bg: #F9FAFB;
+  --eri-soft: #F4F1FB;
+  --eri-text-dark: #2E2140;
+  --eri-text-gray: #6E6280;
+  --eri-border: #D6CCEE;
+  --eri-accent: #6B4F9B;
+  --eri-accent-light: #8F6FC4;
+  --eri-badge-bg: #EDE7F7;
+  --eri-mint: #D4E8DD;
+
   min-height: 100vh;
-  background: #F4F1FB;
+  background: var(--eri-page-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .eri-hero {
-  background: linear-gradient(135deg, #D6CCEE 0%, #6B4F9B 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,7 +36,7 @@
 .eri-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #2E2140;
+  color: var(--eri-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -36,7 +48,7 @@
 
 .eri-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--eri-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 6rem;
@@ -44,7 +56,7 @@
 
 .eri-p {
   font-size: 1.5em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--eri-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
@@ -59,7 +71,7 @@
 }
 
 .eri-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -70,13 +82,13 @@
 .eri-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--eri-text-dark);
   margin-bottom: 4px;
 }
 
 .eri-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--eri-text-gray);
 }
 
 .eri-hero-image {
@@ -118,7 +130,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -131,7 +143,7 @@
 }
 
 .eri-hero-carousel-btn:hover {
-  background: #6B4F9B;
+  background: var(--eri-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
@@ -166,7 +178,7 @@
 }
 
 .eri-hero-carousel-dot.active {
-  background: #6B4F9B;
+  background: white;
   width: 24px;
   border-radius: 5px;
 }
@@ -188,8 +200,8 @@
 
 .eri-precio-badge {
   display: inline-block;
-  background: #EDE7F7;
-  color: #6B4F9B;
+  background: var(--eri-badge-bg);
+  color: var(--eri-accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -199,12 +211,12 @@
 
 .eri-precio-h2 {
   font-size: 1.6em;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   margin: 0 0 12px;
 }
 
 .eri-precio-texto {
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 1.1em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -224,18 +236,18 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #F4F1FB;
-  border: 2px solid #D6CCEE;
+  background: var(--eri-soft);
+  border: 2px solid var(--eri-border);
 }
 
 .eri-precio-item.eri-precio-destacado {
-  background: linear-gradient(135deg, #6B4F9B 0%, #8F6FC4 100%);
+  background: linear-gradient(135deg, var(--eri-accent) 0%, var(--eri-accent-light) 100%);
   border-color: transparent;
 }
 
 .eri-precio-label {
   font-weight: 600;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 1.1em;
   text-align: left;
 }
@@ -247,11 +259,11 @@
 .eri-precio-valor {
   font-size: 1.3em;
   font-weight: 800;
-  color: #6B4F9B;
+  color: var(--eri-accent);
 }
 
 .eri-precio-valor-normal {
-  color: #6E6280;
+  color: var(--eri-text-gray);
 }
 
 .eri-precio-destacado .eri-precio-valor {
@@ -259,7 +271,7 @@
 }
 
 .eri-precio-nota {
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 1em;
   margin: 0;
   font-style: italic;
@@ -275,12 +287,12 @@
 
 .eri-info-h2 {
   font-size: 2em;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   margin: 0 0 12px;
 }
 
 .eri-info-p {
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -305,7 +317,7 @@
 .eri-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(107, 79, 155, 0.2);
-  border-top-color: #6B4F9B;
+  border-top-color: var(--eri-accent);
 }
 
 .eri-feature-icono {
@@ -317,14 +329,14 @@
 
 .eri-feature-titulo {
   margin: 0 0 8px;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 1.4em;
   text-align: center;
 }
 
 .eri-feature-texto {
   margin: 0;
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -332,14 +344,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .eri-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--eri-badge-bg);
 }
 
 .eri-curiosos-h2 {
   font-size: 1.8em;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -355,10 +368,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #6B4F9B;
+  border-left: 4px solid var(--eri-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(107, 79, 155, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .eri-curioso-icono {
@@ -368,7 +383,7 @@
 
 .eri-curioso-texto {
   margin: 0;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -395,7 +410,7 @@
 }
 
 .eri-sidebar-h3 {
-  color: #2E2140;
+  color: var(--eri-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -408,7 +423,7 @@
 
 .eri-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #D6CCEE;
+  border: 2px solid var(--eri-mint);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -417,20 +432,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 0.95em;
 }
 
 .eri-categoria-btn:hover {
-  border-color: #6B4F9B;
-  background: #EDE7F7;
+  border-color: var(--eri-accent);
+  background: white;
   transform: translateX(3px);
 }
 
 .eri-categoria-btn.eri-active {
-  background: linear-gradient(135deg, #6B4F9B 0%, #8F6FC4 100%);
-  color: white;
-  border-color: #6B4F9B;
+  background: var(--eri-mint);
+  color: var(--eri-text-dark);
+  border-color: var(--eri-mint);
 }
 
 .eri-count {
@@ -441,7 +456,7 @@
 }
 
 .eri-categoria-btn.eri-active .eri-count {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== MAIN ===== */
@@ -455,12 +470,12 @@
 
 .eri-main-h2 {
   font-size: 1.8em;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   margin: 0 0 8px;
 }
 
 .eri-main-p {
-  color: #6E6280;
+  color: var(--eri-text-gray);
   margin: 0;
 }
 
@@ -485,7 +500,7 @@
 .eri-producto-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(107, 79, 155, 0.25);
-  border-left-color: #6B4F9B;
+  border-left-color: var(--eri-accent);
 }
 
 .eri-producto-imagen {
@@ -518,12 +533,12 @@
 
 .eri-producto-h3 {
   margin: 0;
-  color: #2E2140;
+  color: var(--eri-text-dark);
   font-size: 1.05em;
 }
 
 .eri-descripcion {
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -534,7 +549,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #2E2140;
+  color: var(--eri-text-dark);
 }
 
 .eri-stock {
@@ -551,20 +566,20 @@
 
 .eri-precio-original {
   text-decoration: line-through;
-  color: #6E6280;
+  color: var(--eri-text-gray);
   font-size: 0.9em;
 }
 
 .eri-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #6B4F9B;
+  color: var(--eri-text-dark);
 }
 
 .eri-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #6B4F9B 0%, #8F6FC4 100%);
-  color: white;
+  background: var(--eri-mint);
+  color: var(--eri-text-dark);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -587,12 +602,12 @@
 /* ===== CARRITO ===== */
 .eri-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6B4F9B 0%, #8F6FC4 100%);
+  background: linear-gradient(135deg, var(--eri-accent) 0%, var(--eri-accent-light) 100%);
   color: white;
   border: none;
   font-size: 1.2em;
@@ -629,7 +644,7 @@
 
 .eri-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #D6CCEE;
+  border-bottom: 2px solid var(--eri-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -637,7 +652,7 @@
 
 .eri-cart-h3 {
   margin: 0;
-  color: #2E2140;
+  color: var(--eri-text-dark);
 }
 
 .eri-close-cart {
@@ -645,7 +660,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #6E6280;
+  color: var(--eri-text-gray);
   padding: 5px 10px;
 }
 
@@ -659,13 +674,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #D6CCEE;
+  border-bottom: 1px solid var(--eri-border);
 }
 
 .eri-item-imagen {
   width: 60px;
   height: 60px;
-  background: #F4F1FB;
+  background: var(--eri-soft);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -695,7 +710,7 @@
 }
 
 .eri-item-precio {
-  color: #6B4F9B;
+  color: var(--eri-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -711,17 +726,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #D6CCEE;
+  border: 1px solid var(--eri-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #2E2140;
+  color: var(--eri-text-dark);
 }
 
 .eri-item-controls button:hover {
-  background: #6B4F9B;
+  background: var(--eri-accent);
   color: white;
-  border-color: #6B4F9B;
+  border-color: var(--eri-accent);
 }
 
 .eri-btn-eliminar {
@@ -734,7 +749,7 @@
 
 .eri-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #D6CCEE;
+  border-top: 2px solid var(--eri-border);
 }
 
 .eri-cart-total {
@@ -747,14 +762,14 @@
 
 .eri-cart-total span {
   font-weight: 700;
-  color: #6B4F9B;
+  color: var(--eri-accent);
   font-size: 1.2em;
 }
 
 .eri-btn-checkout {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #6B4F9B 0%, #8F6FC4 100%);
+  background: linear-gradient(135deg, var(--eri-accent) 0%, var(--eri-accent-light) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -840,5 +855,121 @@
 
   .eri-cart-panel {
     width: 100%;
+  }
+
+  .eri-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
+@media (max-width: 480px) {
+  .eri-hero {
+    padding: 100px 16px 30px;
+  }
+
+  .eri-h1 {
+    font-size: 1.5em;
+  }
+
+  .eri-p {
+    font-size: 1.1rem;
+  }
+
+  .eri-badge {
+    font-size: 0.95em;
+  }
+
+  .eri-hero-stats {
+    gap: 14px;
+  }
+
+  .eri-hero-carousel {
+    height: 220px;
+  }
+
+  .eri-precio-card {
+    padding: 24px 20px;
+  }
+
+  .eri-precio-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .eri-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eri-productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eri-producto-imagen {
+    height: 170px;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .eri-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .eri-badge {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .eri-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .eri-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .eri-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .eri-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .eri-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .eri-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .eri-curiosos-section,
+  .eri-precio-section,
+  .eri-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

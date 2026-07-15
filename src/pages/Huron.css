@@ -1,13 +1,25 @@
 /* Huron.css - Hikari - AISLADO */
 
 .hur-page {
+  --hur-page-bg: #F9FAFB;
+  --hur-soft: #F6F4F0;
+  --hur-text-dark: #2E251C;
+  --hur-text-gray: #6E6153;
+  --hur-border: #D9D2C4;
+  --hur-accent: #6B5B4A;
+  --hur-accent-light: #8B7A66;
+  --hur-badge-bg: #EFEBE3;
+  --hur-mint: #D4E8DD;
+
   min-height: 100vh;
-  background: #F6F4F0;
+  background: var(--hur-page-bg);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO ===== */
 .hur-hero {
-  background: linear-gradient(135deg, #D9D2C4 0%, #6B5B4A 100%);
+  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
@@ -24,7 +36,7 @@
 .hur-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.9);
-  color: #2E251C;
+  color: var(--hur-text-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -36,7 +48,7 @@
 
 .hur-h1 {
   font-size: 2.5em;
-  color: white;
+  color: var(--cuy-text-dark);
   margin: 0 0 16px;
   font-weight: 800;
   margin-left: 6rem;
@@ -44,7 +56,7 @@
 
 .hur-p {
   font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--cuy-text-dark);
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
@@ -58,7 +70,7 @@
 }
 
 .hur-stat {
-  background: rgba(255, 255, 255, 0.15);
+  background: white;
   padding: 16px 24px;
   border-radius: 12px;
   text-align: center;
@@ -69,13 +81,13 @@
 .hur-stat strong {
   display: block;
   font-size: 1.5em;
-  color: white;
+  color: var(--cuy-text-dark);
   margin-bottom: 4px;
 }
 
 .hur-stat span {
   font-size: 0.85em;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--cuy-text-gray);
 }
 
 .hur-hero-image {
@@ -117,7 +129,7 @@
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.9);
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 1.6em;
   font-weight: 700;
   cursor: pointer;
@@ -130,7 +142,7 @@
 }
 
 .hur-hero-carousel-btn:hover {
-  background: #6B5B4A;
+  background: var(--hur-accent);
   color: white;
   transform: translateY(-50%) scale(1.08);
 }
@@ -165,7 +177,7 @@
 }
 
 .hur-hero-carousel-dot.active {
-  background: #6B5B4A;
+  background: var(--hur-accent);
   width: 24px;
   border-radius: 5px;
 }
@@ -187,8 +199,8 @@
 
 .hur-precio-badge {
   display: inline-block;
-  background: #EFEBE3;
-  color: #6B5B4A;
+  background: var(--hur-badge-bg);
+  color: var(--hur-accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -198,12 +210,12 @@
 
 .hur-precio-h2 {
   font-size: 1.6em;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   margin: 0 0 12px;
 }
 
 .hur-precio-texto {
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 1.1em;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -223,18 +235,18 @@
   align-items: center;
   padding: 16px 22px;
   border-radius: 12px;
-  background: #F6F4F0;
-  border: 2px solid #D9D2C4;
+  background: var(--hur-soft);
+  border: 2px solid var(--hur-border);
 }
 
 .hur-precio-item.hur-precio-destacado {
-  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  background: linear-gradient(135deg, var(--hur-accent) 0%, var(--hur-accent-light) 100%);
   border-color: transparent;
 }
 
 .hur-precio-label {
   font-weight: 600;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 1.1em;
   text-align: left;
 }
@@ -246,11 +258,11 @@
 .hur-precio-valor {
   font-size: 1.3em;
   font-weight: 800;
-  color: #6B5B4A;
+  color: var(--hur-accent);
 }
 
 .hur-precio-valor-normal {
-  color: #6E6153;
+  color: var(--hur-text-gray);
 }
 
 .hur-precio-destacado .hur-precio-valor {
@@ -258,7 +270,7 @@
 }
 
 .hur-precio-nota {
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 1em;
   margin: 0;
   font-style: italic;
@@ -274,12 +286,12 @@
 
 .hur-info-h2 {
   font-size: 2em;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   margin: 0 0 12px;
 }
 
 .hur-info-p {
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 1.3em;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -304,7 +316,7 @@
 .hur-feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(107, 91, 74, 0.2);
-  border-top-color: #6B5B4A;
+  border-top-color: var(--hur-accent);
 }
 
 .hur-feature-icono {
@@ -316,14 +328,14 @@
 
 .hur-feature-titulo {
   margin: 0 0 8px;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 1.4em;
   text-align: center;
 }
 
 .hur-feature-texto {
   margin: 0;
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
@@ -331,14 +343,15 @@
 
 /* ===== SECCIÓN DATOS CURIOSOS ===== */
 .hur-curiosos-section {
-  max-width: 900px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px 30px 50px;
+  background: var(--hur-badge-bg);
 }
 
 .hur-curiosos-h2 {
   font-size: 1.8em;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   text-align: center;
   margin: 0 0 30px;
 }
@@ -354,10 +367,12 @@
   align-items: flex-start;
   gap: 14px;
   background: white;
-  border-left: 4px solid #6B5B4A;
+  border-left: 4px solid var(--hur-accent);
   border-radius: 10px;
   padding: 16px 20px;
   box-shadow: 0 3px 12px rgba(107, 91, 74, 0.08);
+  width: 60rem;
+  margin-left: 18rem;
 }
 
 .hur-curioso-icono {
@@ -367,7 +382,7 @@
 
 .hur-curioso-texto {
   margin: 0;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 1.2em;
   line-height: 1.5;
 }
@@ -394,7 +409,7 @@
 }
 
 .hur-sidebar-h3 {
-  color: #2E251C;
+  color: var(--hur-text-dark);
   margin: 0 0 20px;
   font-size: 1.2em;
 }
@@ -407,7 +422,7 @@
 
 .hur-categoria-btn {
   padding: 12px 16px;
-  border: 2px solid #D9D2C4;
+  border: 2px solid var(--hur-mint);
   background: white;
   border-radius: 10px;
   cursor: pointer;
@@ -416,20 +431,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 0.95em;
 }
 
 .hur-categoria-btn:hover {
-  border-color: #6B5B4A;
-  background: #EFEBE3;
+  border-color: var(--hur-accent);
+  background: white;
   transform: translateX(3px);
 }
 
 .hur-categoria-btn.hur-active {
-  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
-  color: white;
-  border-color: #6B5B4A;
+  background: var(--hur-mint);
+  color: var(--hur-text-dark);
+  border-color: var(--hur-mint);
 }
 
 .hur-count {
@@ -440,7 +455,7 @@
 }
 
 .hur-categoria-btn.hur-active .hur-count {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== MAIN ===== */
@@ -454,12 +469,12 @@
 
 .hur-main-h2 {
   font-size: 1.8em;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   margin: 0 0 8px;
 }
 
 .hur-main-p {
-  color: #6E6153;
+  color: var(--hur-text-gray);
   margin: 0;
 }
 
@@ -484,13 +499,13 @@
 .hur-producto-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(107, 91, 74, 0.25);
-  border-left-color: #6B5B4A;
+  border-left-color: var(--hur-accent);
 }
 
 .hur-producto-imagen {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #F6F4F0 0%, #D9D2C4 100%);
+  background: linear-gradient(135deg, #FBF6F0 0%, #E8D5C4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -517,12 +532,12 @@
 
 .hur-producto-h3 {
   margin: 0;
-  color: #2E251C;
+  color: var(--hur-text-dark);
   font-size: 1.05em;
 }
 
 .hur-descripcion {
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 0.9em;
   margin: 0;
   flex-grow: 1;
@@ -533,7 +548,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85em;
-  color: #2E251C;
+  color: var(--hur-text-dark);
 }
 
 .hur-stock {
@@ -550,20 +565,20 @@
 
 .hur-precio-original {
   text-decoration: line-through;
-  color: #6E6153;
+  color: var(--hur-text-gray);
   font-size: 0.9em;
 }
 
 .hur-precio {
   font-size: 1.3em;
   font-weight: 700;
-  color: #6B5B4A;
+  color: var(--hur-accent);
 }
 
 .hur-btn-agregar {
   padding: 12px;
-  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
-  color: white;
+  background: var(--hur-mint);
+  color: var(--hur-text-dark);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -586,12 +601,12 @@
 /* ===== CARRITO ===== */
 .hur-cart-toggle {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 110px;
+  right: 25px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  background: linear-gradient(135deg, var(--hur-accent) 0%, var(--hur-accent-light) 100%);
   color: white;
   border: none;
   font-size: 1.2em;
@@ -628,7 +643,7 @@
 
 .hur-cart-header {
   padding: 25px;
-  border-bottom: 2px solid #D9D2C4;
+  border-bottom: 2px solid var(--hur-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -636,7 +651,7 @@
 
 .hur-cart-h3 {
   margin: 0;
-  color: #2E251C;
+  color: var(--hur-text-dark);
 }
 
 .hur-close-cart {
@@ -644,7 +659,7 @@
   border: none;
   font-size: 1.3em;
   cursor: pointer;
-  color: #6E6153;
+  color: var(--hur-text-gray);
   padding: 5px 10px;
 }
 
@@ -658,13 +673,13 @@
   display: flex;
   gap: 15px;
   padding: 15px 0;
-  border-bottom: 1px solid #D9D2C4;
+  border-bottom: 1px solid var(--hur-border);
 }
 
 .hur-item-imagen {
   width: 60px;
   height: 60px;
-  background: #F6F4F0;
+  background: var(--hur-soft);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -694,7 +709,7 @@
 }
 
 .hur-item-precio {
-  color: #6B5B4A;
+  color: var(--hur-accent);
   font-weight: 700;
   margin: 0 0 8px;
   font-size: 0.9em;
@@ -710,17 +725,17 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid #D9D2C4;
+  border: 1px solid var(--hur-border);
   background: white;
   cursor: pointer;
   font-weight: 700;
-  color: #2E251C;
+  color: var(--hur-text-dark);
 }
 
 .hur-item-controls button:hover {
-  background: #6B5B4A;
+  background: var(--hur-accent);
   color: white;
-  border-color: #6B5B4A;
+  border-color: var(--hur-accent);
 }
 
 .hur-btn-eliminar {
@@ -733,7 +748,7 @@
 
 .hur-cart-footer {
   padding: 20px 25px;
-  border-top: 2px solid #D9D2C4;
+  border-top: 2px solid var(--hur-border);
 }
 
 .hur-cart-total {
@@ -746,14 +761,14 @@
 
 .hur-cart-total span {
   font-weight: 700;
-  color: #6B5B4A;
+  color: var(--hur-accent);
   font-size: 1.2em;
 }
 
 .hur-btn-checkout {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #6B5B4A 0%, #8B7A66 100%);
+  background: linear-gradient(135deg, var(--hur-accent) 0%, var(--hur-accent-light) 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -819,8 +834,7 @@
   .hur-hero-carousel {
     width: 100%;
     height: 260px;
-    margin-left: 3rem
-    ;
+    margin-left: 3rem;
   }
 
 
@@ -852,7 +866,14 @@
   .hur-cart-panel {
     width: 100%;
   }
-  /* ===== CELULARES (480px y menos) ===== */
+
+  .hur-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ===== CELULARES (480px y menos) ===== */
 @media (max-width: 480px) {
   .hur-hero {
     padding: 100px 16px 30px;
@@ -904,4 +925,65 @@
     height: 170px;
   }
 }
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .hur-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .hur-badge {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .hur-h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  .hur-p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .hur-hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hur-hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .hur-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .hur-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hur-curiosos-section,
+  .hur-precio-section,
+  .hur-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

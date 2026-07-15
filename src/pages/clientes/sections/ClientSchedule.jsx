@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { getPetsRequest } from "../../../services/petService";
 import {
+  getVetsRequest,
   getAvailabilityRequest,
   getMonthSummaryRequest,
   createAppointmentRequest,
@@ -25,6 +26,10 @@ function ClientSchedule({ setActiveSection }) {
   const [pets, setPets] = useState([]);
   const [loadingPets, setLoadingPets] = useState(true);
 
+  const [vets, setVets] = useState([]);
+  const [loadingVets, setLoadingVets] = useState(true);
+  const [selectedVet, setSelectedVet] = useState("");
+
   const today = new Date();
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth()); // 0-11
@@ -46,6 +51,7 @@ function ClientSchedule({ setActiveSection }) {
 
   useEffect(() => {
     loadPets();
+    loadVets();
   }, []);
 
   useEffect(() => {
@@ -53,9 +59,13 @@ function ClientSchedule({ setActiveSection }) {
   }, [viewYear, viewMonth]);
 
   useEffect(() => {
-    loadAvailability(selectedDate);
+    if (selectedVet) {
+      loadAvailability(selectedDate, selectedVet);
+    } else {
+      setBookedTimes([]);
+    }
     setSelectedTime("");
-  }, [selectedDate]);
+  }, [selectedDate, selectedVet]);
 
   const loadPets = async () => {
     setLoadingPets(true);
@@ -69,6 +79,18 @@ function ClientSchedule({ setActiveSection }) {
     }
   };
 
+  const loadVets = async () => {
+    setLoadingVets(true);
+    try {
+      const data = await getVetsRequest();
+      setVets(data);
+    } catch (err) {
+      setVets([]);
+    } finally {
+      setLoadingVets(false);
+    }
+  };
+
   const loadMonthSummary = async () => {
     try {
       const data = await getMonthSummaryRequest(viewYear, viewMonth + 1);
@@ -78,10 +100,10 @@ function ClientSchedule({ setActiveSection }) {
     }
   };
 
-  const loadAvailability = async (date) => {
+  const loadAvailability = async (date, vetId) => {
     setLoadingAvailability(true);
     try {
-      const data = await getAvailabilityRequest(date);
+      const data = await getAvailabilityRequest(date, vetId);
       setBookedTimes(data.bookedTimes || []);
     } catch (err) {
       setBookedTimes([]);
@@ -90,7 +112,9 @@ function ClientSchedule({ setActiveSection }) {
     }
   };
 
+   
   const todayStr = formatDate(today);
+const currentTimeStr = `${String(today.getHours()).padStart(2, "0")}:${String(today.getMinutes()).padStart(2, "0")}`;
 
   const monthNames = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -143,7 +167,7 @@ function ClientSchedule({ setActiveSection }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!selectedPet || !selectedService || !selectedDate || !selectedTime) {
+    if (!selectedVet || !selectedPet || !selectedService || !selectedDate || !selectedTime) {
       alert("⚠️ Por favor completa todos los campos obligatorios");
       return;
     }
@@ -152,6 +176,7 @@ function ClientSchedule({ setActiveSection }) {
     try {
       await createAppointmentRequest({
         petId: selectedPet,
+        vetId: selectedVet,
         date: selectedDate,
         time: selectedTime,
         reason: selectedService,
@@ -160,13 +185,14 @@ function ClientSchedule({ setActiveSection }) {
 
       alert("✅ Cita agendada correctamente. Espera confirmación del veterinario.");
       setSelectedPet("");
+      setSelectedVet("");
       setSelectedService("");
       setSelectedTime("");
       setNotes("");
       setActiveSection("appointments");
     } catch (err) {
       alert(err.response?.data?.msg || "No se pudo agendar la cita, intenta con otro horario");
-      loadAvailability(selectedDate);
+      loadAvailability(selectedDate, selectedVet);
     } finally {
       setSubmitting(false);
     }
@@ -184,7 +210,7 @@ function ClientSchedule({ setActiveSection }) {
     <section className="section-content csch-section">
       <div className="section-title">
         <h2>📅 Agendar Cita</h2>
-        <p>Revisa la disponibilidad del veterinario y elige tu horario</p>
+        <p>Elige un veterinario y revisa su disponibilidad</p>
       </div>
 
       <div className="csch-layout">
@@ -247,6 +273,28 @@ function ClientSchedule({ setActiveSection }) {
           <form onSubmit={handleSubmit} className="csch-form">
 
             <div className="csch-field">
+              <label>👨‍⚕️ Selecciona un veterinario *</label>
+              {loadingVets ? (
+                <p className="csch-hint">Cargando veterinarios...</p>
+              ) : vets.length === 0 ? (
+                <p className="csch-hint">No hay veterinarios disponibles por el momento.</p>
+              ) : (
+                <select
+                  value={selectedVet}
+                  onChange={(e) => setSelectedVet(e.target.value)}
+                  required
+                >
+                  <option value="">-- Elige veterinario --</option>
+                  {vets.map((vet) => (
+                    <option key={vet._id} value={vet._id}>
+                      Dr(a). {vet.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+
+            <div className="csch-field">
               <label>🐾 Selecciona tu mascota *</label>
               {loadingPets ? (
                 <p className="csch-hint">Cargando tus mascotas...</p>
@@ -286,25 +334,29 @@ function ClientSchedule({ setActiveSection }) {
 
             <div className="csch-field">
               <label>⏰ Horarios disponibles para este día *</label>
-              {loadingAvailability ? (
+              {!selectedVet ? (
+                <p className="csch-hint">Primero elige un veterinario para ver su disponibilidad.</p>
+              ) : loadingAvailability ? (
                 <p className="csch-hint">Cargando horarios...</p>
               ) : (
                 <div className="csch-slots-grid">
-                  {TIME_SLOTS.map((slot) => {
-                    const isTaken = bookedTimes.includes(slot);
-                    const isChosen = selectedTime === slot;
-                    return (
-                      <button
-                        type="button"
-                        key={slot}
-                        disabled={isTaken}
-                        className={`csch-slot ${isChosen ? "chosen" : ""} ${isTaken ? "taken" : ""}`}
-                        onClick={() => setSelectedTime(slot)}
-                      >
-                        {slot}
-                      </button>
-                    );
-                  })}
+                 {TIME_SLOTS.map((slot) => {
+  const isTaken = bookedTimes.includes(slot);
+  const isPastToday = selectedDate === todayStr && slot <= currentTimeStr;
+  const isDisabled = isTaken || isPastToday;
+  const isChosen = selectedTime === slot;
+  return (
+    <button
+      type="button"
+      key={slot}
+      disabled={isDisabled}
+      className={`csch-slot ${isChosen ? "chosen" : ""} ${isTaken ? "taken" : ""} ${isPastToday && !isTaken ? "past-time" : ""}`}
+      onClick={() => setSelectedTime(slot)}
+    >
+      {slot}
+    </button>
+  );
+})}
                 </div>
               )}
             </div>
@@ -321,7 +373,7 @@ function ClientSchedule({ setActiveSection }) {
             <button
               type="submit"
               className="csch-submit-btn"
-              disabled={submitting || pets.length === 0}
+              disabled={submitting || pets.length === 0 || vets.length === 0}
             >
               {submitting ? "Agendando..." : "✅ Confirmar cita"}
             </button>
