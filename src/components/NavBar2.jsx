@@ -1,10 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import "./NavBar2.css";
+
+// 👇 Estas dos condiciones son las MISMAS que usa NavBar2.css para activar
+// el modo "celular" (scroll horizontal + dropdown con position:fixed).
+// Fuera de este rango (desktop/tablet grande), el dropdown se comporta
+// exactamente igual que antes, sin ningún cambio.
+const MOBILE_QUERY = "(max-width: 600px)";
+const LANDSCAPE_QUERY = "(orientation: landscape) and (max-width: 1000px)";
+
+function useIsMobileNav() {
+  const [isMobileNav, setIsMobileNav] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return (
+      window.matchMedia(MOBILE_QUERY).matches ||
+      window.matchMedia(LANDSCAPE_QUERY).matches
+    );
+  });
+
+  useEffect(() => {
+    const mqMobile = window.matchMedia(MOBILE_QUERY);
+    const mqLandscape = window.matchMedia(LANDSCAPE_QUERY);
+
+    const update = () => {
+      setIsMobileNav(mqMobile.matches || mqLandscape.matches);
+    };
+
+    update();
+    mqMobile.addEventListener("change", update);
+    mqLandscape.addEventListener("change", update);
+
+    return () => {
+      mqMobile.removeEventListener("change", update);
+      mqLandscape.removeEventListener("change", update);
+    };
+  }, []);
+
+  return isMobileNav;
+}
 
 function NavBar2() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const isMobileNav = useIsMobileNav();
 
   const menuItems = [
     {
@@ -106,6 +145,48 @@ function NavBar2() {
     setOpenSubmenu(openSubmenu === idx ? null : idx);
   };
 
+  const renderDropdownMenu = (menu) => (
+    <div className="dropdown-menu">
+      {menu.items.map((item, idx) =>
+        !item.subitems ? (
+          <Link
+            key={idx}
+            to={item.path}
+            className="dropdown-item"
+            onMouseEnter={() => setOpenSubmenu(null)}
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <div
+            key={idx}
+            className="dropdown-item-wrapper"
+            onMouseEnter={() => setOpenSubmenu(idx)}
+          >
+            <Link
+              to={item.path || "#"}
+              className="dropdown-item dropdown-item-parent"
+              onClick={(e) => handleSubmenuClick(idx, e)}
+            >
+              {item.label}
+              <span className="submenu-arrow">▶</span>
+            </Link>
+
+            {openSubmenu === idx && (
+              <div className="dropdown-submenu">
+                {item.subitems.map((sub, subIdx) => (
+                  <Link key={subIdx} to={sub.path} className="dropdown-subitem">
+                    {sub.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      )}
+    </div>
+  );
+
   return (
     <nav className="navbar2">
       <div className="navbar2-logo">
@@ -135,51 +216,17 @@ function NavBar2() {
                   <span className="dropdown-arrow">▼</span>
                 </button>
 
-                {openDropdown === menu.id && (
-                  <div className="dropdown-menu">
-                    {menu.items.map((item, idx) =>
-                      !item.subitems ? (
-                        <Link
-                          key={idx}
-                          to={item.path}
-                          className="dropdown-item"
-                          onMouseEnter={() => setOpenSubmenu(null)}
-                        >
-                          {item.label}
-                        </Link>
-                      ) : (
-                        <div
-                          key={idx}
-                          className="dropdown-item-wrapper"
-                          onMouseEnter={() => setOpenSubmenu(idx)}
-                        >
-                          <Link
-                            to={item.path || "#"}
-                            className="dropdown-item dropdown-item-parent"
-                            onClick={(e) => handleSubmenuClick(idx, e)}
-                          >
-                            {item.label}
-                            <span className="submenu-arrow">▶</span>
-                          </Link>
-
-                          {openSubmenu === idx && (
-                            <div className="dropdown-submenu">
-                              {item.subitems.map((sub, subIdx) => (
-                                <Link
-                                  key={subIdx}
-                                  to={sub.path}
-                                  className="dropdown-subitem"
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      )
-                    )}
-                  </div>
-                )}
+                {openDropdown === menu.id &&
+                  (isMobileNav
+                    ? // 👇 En mobile (donde ocurre el bug de Safari/iOS), el dropdown
+                      // se renderiza directo en document.body vía Portal, saltándose
+                      // el contenedor con overflow-x/scroll que lo estaba recortando.
+                      // El CSS (position:fixed, top, right) sigue aplicándose igual,
+                      // porque las reglas van por className, no por posición en el DOM.
+                      createPortal(renderDropdownMenu(menu), document.body)
+                    : // 👇 En desktop/tablet, se queda exactamente como estaba antes:
+                      // position:absolute, anclado a su .dropdown-wrapper.
+                      renderDropdownMenu(menu))}
               </div>
             )}
           </div>

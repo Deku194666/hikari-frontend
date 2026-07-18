@@ -267,7 +267,7 @@
 /* ===== CELULARES (600px y menos): scroll horizontal ===== */
 @media (max-width: 600px) {
   .navbar2 {
-    top: 80px;
+    top: 60px;
   }
 
   .navbar2-container {
@@ -322,16 +322,21 @@
 
   
 
-  .dropdown-menu {
+/* 👇 fix Safari/iOS: -webkit-overflow-scrolling: touch en el contenedor
+   crea una capa de composición que a veces tapa elementos position:fixed.
+   will-change: transform le da a este dropdown su propia capa también,
+   sin pelear con la animación slideDown (a diferencia de translate3d). */
+.dropdown-menu {
     position: fixed;
-    top: 108px;
+    top: 61px;
     left: auto; /* 👈 antes era "10px" */
     right: 10px; /* 👈 antes era "auto" */
     width: 220px;
     max-width: 75vw;
     max-height: 60vh;
     overflow-y: auto;
-    z-index: 200;
+    will-change: transform;
+    z-index: 9999;
   }
 
   .dropdown-submenu {
@@ -357,7 +362,7 @@
    para que el mismo comportamiento se aplique también ahí. */
 @media (orientation: landscape) and (max-width: 1000px) {
   .navbar2 {
-    top: 60px;
+    top: 50px;
   }
 
   .navbar2-container {
@@ -397,16 +402,18 @@
     white-space: nowrap;
   }
 
+  /* 👇 mismo fix Safari/iOS que en el bloque vertical de arriba */
   .dropdown-menu {
     position: fixed;
-    top: 105px;
+    top: 80px;
     left: auto;
     right: 10px;
     width: 220px;
     max-width: 75vw;
     max-height: 55vh;
     overflow-y: auto;
-    z-index: 200;
+    will-change: transform;
+    z-index: 9999;
   }
 
   .dropdown-submenu {
