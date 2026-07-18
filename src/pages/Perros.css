@@ -1859,3 +1859,69 @@
     height: 170px;
   }
 }
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Muchos celulares en horizontal superan los 768px de ancho, así que
+   usamos orientation:landscape (no solo max-width) para que el arreglo
+   se aplique siempre que el celular esté acostado, sin importar el modelo */
+@media (orientation: landscape) and (max-width: 1000px) {
+  .perros-hero {
+    flex-direction: row;
+    padding: 24px 4vw;
+    text-align: left;
+  }
+
+  .badge {
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .perros-hero h1 {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .perros-hero p {
+    font-size: 0.88rem;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .hero-stats {
+    margin-left: 0;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    flex: 1;
+    max-width: 45%;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+
+  .perros-hero-carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 190px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -20rem;
+  }
+
+  .per-curioso-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .per-curiosos-section,
+  .per-precio-section,
+  .per-info-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,7 +1,7 @@
 /* Iguanas.css - Hikari - AISLADO */
 
 .igu-page {
-  --igu-bg: #F5FBF8;
+  --igu-bg: #F9FAFB;
   --igu-text-dark: #1A3A2A;
   --igu-text-gray: #5A7A6F;
   --igu-border: #D4E8DD;
@@ -939,7 +939,7 @@
 
   .igu-badge {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 2rem;
     margin-bottom: 10px;
   }
 

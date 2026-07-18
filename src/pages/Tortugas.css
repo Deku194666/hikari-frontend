@@ -1,7 +1,7 @@
 /* Tortugas.css - Hikari - AISLADO */
 
 .tor-page {
-  --tor-bg: #f8ecd6;
+  --tor-bg: #F9FAFB;
   --tor-hero-start: #f8ecd6;
   --tor-hero-end: #fdf8ef;
   --tor-accent: #9fd8d3;
@@ -880,7 +880,7 @@
 
   .tor-badge {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 2rem;
     margin-bottom: 10px;
   }
 

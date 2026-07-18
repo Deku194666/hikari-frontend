@@ -750,10 +750,12 @@
   }
 
   .contacto-hero-carousel {
-    height: 150px;
-    margin-left: 5rem;
-    margin-right: -5rem;
-    margin-top: 5rem;
+    width: 160% !important;
+    max-width: 190% !important;
+    height: 230px;
+    margin-left: 4rem !important;
+    margin-top: 2rem !important;
+    margin-right: -11rem;
   }
 
   .eyebrow {

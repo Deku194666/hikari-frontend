@@ -1161,7 +1161,7 @@
   .tienda-page .hero-badge {
     margin-left: 0;
     margin-top: 5rem;
-    margin-bottom: -7rem;
+    margin-bottom: 10rem;
     
     
   }
@@ -1187,7 +1187,7 @@
   }
 
   .tienda-page .hero-image {
-    max-width: 65%;
+    max-width: 85%;
     margin-left: 0;
     margin-right: 0;
     width: auto !important;
@@ -1196,9 +1196,9 @@
   .tienda-page .tienda-hero-carousel {
     width: 100% !important;
     max-width: 100% !important;
-    height: 160px;
-    margin-left: 4rem !important;
-    margin-right: -1rem !important;
+    height: 290px;
+    margin-left: 6rem !important;
+    margin-right: -4rem !important;
     margin-top: 1rem !important;
     margin-bottom: -2rem !important;
   }

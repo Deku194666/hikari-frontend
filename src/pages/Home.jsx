@@ -17,12 +17,13 @@ import imagen13 from "../assets/imagen13.webp";
 import imagen14 from "../assets/imagen14.webp";
 import imagen15 from "../assets/imagen15.jpg";
 import imagen16 from "../assets/imagen16.avif";
+import imagen17 from "../assets/imagen17.png";
 
 function Home() {
   // ===== IMÁGENES DEL CARRUSEL DEL HERO =====
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
-    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=500&fit=crop",
+    imagen17,
     "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=500&fit=crop",
     "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=500&fit=crop",
   ];
