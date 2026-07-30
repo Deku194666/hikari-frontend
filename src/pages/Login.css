@@ -403,7 +403,29 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* === LOGIN FOOTER === */
+/* === GOOGLE BUTTON WRAPPER (botón real de Google superpuesto e invisible) === */
+.login-container .google-btn-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.login-container .google-btn-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.login-container .google-btn-overlay > div {
+  width: 100% !important;
+}
+
+.login-container .google-btn-overlay iframe {
+  width: 100% !important;
+}
 .login-container .login-footer {
   text-align: center;
   margin-top: 13px;
