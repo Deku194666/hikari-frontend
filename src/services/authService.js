@@ -29,3 +29,19 @@ export const resetPasswordRequest = async (token, newPassword) => {
   const res = await api.post("/auth/reset-password", { token, newPassword });
   return res.data;
 };
+
+
+
+export const loginWithGoogleRequest = async (credential) => {
+  try {
+    const res = await api.post("/auth/google", { credential });
+    return res.data;
+  } catch (error) {
+    const data = error.response?.data || {};
+    const err = new Error(data.msg || "Error al iniciar sesión con Google");
+    err.needsRegister = data.needsRegister;
+    err.suggestedEmail = data.suggestedEmail;
+    err.suggestedName = data.suggestedName;
+    throw err;
+  }
+};
