@@ -156,7 +156,8 @@ function Contacto() {
               <span className="info-icon">📧</span>
               <div>
                 <strong>Correo</strong>
-                <p>contacto@hikari.cl</p>
+                <p>nlmg.vet@hikarivet.com</p>
+                <p>soporteinformatico@hikarivet.com</p>
               </div>
             </li>
             <li>
