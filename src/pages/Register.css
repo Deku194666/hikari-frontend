@@ -1,9 +1,9 @@
 /* ===== VARIABLES ===== */
 :root {
-  --primary: #D98A6B;
-  --primary-dark: #C4623F;
+  --primary: #E8A583;
+  --primary-dark: #D9825A;
   --primary-light: #FBEAE0;
-  --secondary: #E39B6F;
+  --secondary: #EFB48F;
   --accent-warm: #E8A34D;
   --error: #dc3545;
   --success: #28a745;
@@ -235,7 +235,7 @@ body {
   background: linear-gradient(135deg, var(--primary-light), #fff);
   border-color: var(--primary);
   color: var(--primary);
-  box-shadow: 0 0 17px rgba(217, 138, 107, 0.25);
+  box-shadow: 0 0 17px rgba(232, 165, 131, 0.25);
   font-weight: 700;
   transform: scale(1.02);
 }
@@ -273,7 +273,7 @@ body {
   outline: none;
   border-color: var(--primary);
   background: #fafafa;
-  box-shadow: 0 0 10px rgba(217, 138, 107, 0.15);
+  box-shadow: 0 0 10px rgba(232, 165, 131, 0.15);
 }
 
 .form-group input.error {
@@ -440,7 +440,7 @@ body {
 
 .btn-register:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(217, 138, 107, 0.35);
+  box-shadow: 0 8px 20px rgba(232, 165, 131, 0.35);
 }
 
 .btn-register:disabled {

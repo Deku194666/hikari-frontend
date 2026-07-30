@@ -1,9 +1,9 @@
 /* ===== VARIABLES COMPARTIDAS (SOLO PARA LOGIN) ===== */
 .login-container {
-  --primary: #D98A6B;
-  --primary-dark: #C4623F;
+  --primary: #E8A583;
+  --primary-dark: #D9825A;
   --primary-light: #FBEAE0;
-  --secondary: #E39B6F;
+  --secondary: #EFB48F;
   --error: #dc3545;
   --error-light: #f8d7da;
   --success: #28a745;
@@ -40,7 +40,7 @@
   position: absolute;
   width: 340px;
   height: 340px;
-  background: radial-gradient(circle, rgba(217, 138, 107, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232, 165, 131, 0.1) 0%, transparent 70%);
   border-radius: 50%;
   top: -100px;
   left: -100px;
@@ -52,7 +52,7 @@
   position: absolute;
   width: 255px;
   height: 255px;
-  background: radial-gradient(circle, rgba(227, 155, 111, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(239, 180, 143, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   bottom: -50px;
   right: -50px;
@@ -310,7 +310,7 @@
 .login-container .spinner {
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(196, 98, 63, 0.3);
+  border: 2px solid rgba(217, 130, 90, 0.3);
   border-top-color: var(--primary-dark);
   border-radius: 50%;
   animation: loginSpin 0.8s linear infinite;
@@ -485,7 +485,7 @@
 
 .login-container .benefit-item:hover {
   transform: translateX(4px);
-  box-shadow: 0 6px 16px rgba(196, 98, 63, 0.15);
+  box-shadow: 0 6px 16px rgba(217, 130, 90, 0.15);
 }
 
 .login-container .benefit-item span {
@@ -499,7 +499,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(196, 98, 63, 0.15);
+  box-shadow: 0 2px 6px rgba(217, 130, 90, 0.15);
 }
 
 .login-container .benefit-item p {

@@ -1,8 +1,8 @@
 /* ===== VARIABLES ===== */
 :root {
-  --primary: #C4623F;
-  --primary-dark: #007a52;
-  --primary-light: #e8f5f0;
+  --primary: #E8A583;
+  --primary-dark: #D9825A;
+  --primary-light: #FBEAE0;
   --secondary: #ff6b9d;
   --accent-warm: #ffa500;
   --error: #dc3545;
@@ -12,7 +12,7 @@
   --text-dark: #1a1a1a;
   --text-gray: #666;
   --border-light: #e0e0e0;
-  --bg-light: #f5faf8;
+  --bg-light: #FDF6EF;
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -178,13 +178,13 @@ body {
 }
 
 .nav-item:hover {
-  background: rgba(0, 166, 111, 0.1);
+  background: rgba(232, 165, 131, 0.1);
   color: var(--primary);
   border-left-color: var(--primary);
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, rgba(0, 166, 111, 0.2), transparent);
+  background: linear-gradient(90deg, rgba(232, 165, 131, 0.2), transparent);
   color: var(--primary);
   border-left-color: var(--primary);
   box-shadow: inset -4px 0 0 var(--primary);
@@ -210,7 +210,7 @@ body {
 .sidebar-footer {
   padding: 20px 15px;
   border-top: 2px solid var(--border-light);
-  background: rgba(0, 166, 111, 0.05);
+  background: rgba(232, 165, 131, 0.05);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -383,7 +383,7 @@ body {
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.9em;
-  box-shadow: 0 4px 15px rgba(0, 166, 111, 0.3);
+  box-shadow: 0 4px 15px rgba(232, 165, 131, 0.3);
   margin-left: 3rem;
 }
 
@@ -1356,7 +1356,7 @@ body {
   }
 
   .sidebar.closed .nav-item.active {
-    background: rgba(0, 166, 111, 0.15);
+    background: rgba(232, 165, 131, 0.15);
     border-radius: 10px;
     margin: 0 10px;
     box-shadow: none;

@@ -1,9 +1,9 @@
 /* Navbar.css - Barra superior con buscador */
 
 :root {
-  --primary: #C4623F;       /* terracota (color del sol del logo) */
-  --primary-dark: #A34F32;  /* terracota más oscuro para hover */
-  --secondary: #D97D42;     /* naranja rojizo (color del gato) */
+  --primary: #E8A583;       /* terracota bien claro */
+  --primary-dark: #D9825A;  /* el terracota anterior, ahora usado para hover */
+  --secondary: #EFB48F;     /* naranja rojizo bien claro */
   --bg-light: #ffffff;
   --border-light: #E8D5C4;  /* beige/arena del logo */
   --text-dark: #2B2320;     /* marrón/carbón de las líneas del logo */
@@ -13,7 +13,7 @@
   background: linear-gradient(135deg, #ffffff 0%, #FDFBF8 100%);
   border-bottom: 2px solid var(--primary);
   padding: 14px 0;
-  box-shadow: 0 2px 12px rgba(196, 98, 63, 0.12);
+  box-shadow: 0 2px 12px rgba(217, 130, 90, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -55,7 +55,7 @@
 }
 
 .logo-text {
-  background: linear-gradient(135deg, #C4623F 0%, #D97D42 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -101,7 +101,7 @@
 .search-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(196, 98, 63, 0.12);
+  box-shadow: 0 0 0 3px rgba(217, 130, 90, 0.12);
   background: white;
 }
 
@@ -111,7 +111,7 @@
 
 .search-btn {
   padding: 12px 18px;
-  background: linear-gradient(135deg, #D97D42 0%, #C4623F 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -124,7 +124,7 @@
 
 .search-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(217, 125, 66, 0.3);
+  box-shadow: 0 4px 12px rgba(227, 148, 104, 0.3);
 }
 
 .search-btn:active {
@@ -167,26 +167,26 @@
 }
 
 .login-link {
-  color: #C4623F;
-  border: 2px solid #C4623F;
+  color: var(--primary);
+  border: 2px solid var(--primary);
   background: transparent;
 }
 
 .login-link:hover {
-  background: #C4623F;
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
 }
 
 .register-btn {
-  background: linear-gradient(135deg, #D97D42 0%, #C4623F 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
   color: white;
   border: none;
 }
 
 .register-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217, 125, 66, 0.3);
+  box-shadow: 0 4px 12px rgba(227, 148, 104, 0.3);
 }
 
 .register-btn:active {
