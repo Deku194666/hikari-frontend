@@ -1,19 +1,19 @@
 /* Navbar.css - Barra superior con buscador */
 
 :root {
-  --primary: #00a66f;
-  --primary-dark: #007a52;
-  --secondary: #ff6b9d;
+  --primary: #C4623F;       /* terracota (color del sol del logo) */
+  --primary-dark: #A34F32;  /* terracota más oscuro para hover */
+  --secondary: #D97D42;     /* naranja rojizo (color del gato) */
   --bg-light: #ffffff;
-  --border-light: #e9ecef;
-  --text-dark: #2c3e50;
+  --border-light: #E8D5C4;  /* beige/arena del logo */
+  --text-dark: #2B2320;     /* marrón/carbón de las líneas del logo */
 }
 
 .navbar {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FDFBF8 100%);
   border-bottom: 2px solid var(--primary);
   padding: 14px 0;
-  box-shadow: 0 2px 12px rgba(0, 166, 111, 0.1);
+  box-shadow: 0 2px 12px rgba(196, 98, 63, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -55,7 +55,7 @@
 }
 
 .logo-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #C4623F 0%, #D97D42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -91,17 +91,17 @@
   transition: all 0.3s ease;
   background: white;
   color: var(--text-dark);
-  min-width: 0; /* evita overflow en flex containers */
+  min-width: 0;
 }
 
 .search-input::placeholder {
-  color: #999;
+  color: #A89484;
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 166, 111, 0.1);
+  box-shadow: 0 0 0 3px rgba(196, 98, 63, 0.12);
   background: white;
 }
 
@@ -111,7 +111,7 @@
 
 .search-btn {
   padding: 12px 18px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, #D97D42 0%, #C4623F 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -124,7 +124,7 @@
 
 .search-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 166, 111, 0.3);
+  box-shadow: 0 4px 12px rgba(217, 125, 66, 0.3);
 }
 
 .search-btn:active {
@@ -167,26 +167,26 @@
 }
 
 .login-link {
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: #C4623F;
+  border: 2px solid #C4623F;
   background: transparent;
 }
 
 .login-link:hover {
-  background: var(--primary);
+  background: #C4623F;
   color: white;
   transform: translateY(-2px);
 }
 
 .register-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #D97D42 0%, #C4623F 100%);
   color: white;
   border: none;
 }
 
 .register-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 166, 111, 0.3);
+  box-shadow: 0 4px 12px rgba(217, 125, 66, 0.3);
 }
 
 .register-btn:active {
@@ -221,7 +221,7 @@
 /* ===== CELULARES GRANDES / TABLETS CHICAS (768px y menos) ===== */
 @media (max-width: 768px) {
   .navbar-container {
-    height: auto; /* 👈 clave: saca el corte que tapaba el contenido al envolver */
+    height: auto;
     flex-wrap: wrap;
     gap: 12px;
     padding: 10px 15px;
@@ -285,7 +285,7 @@
   }
 
   .logo-img {
-    width: 60px !important; /* 👈 más grande que antes */
+    width: 60px !important;
     height: 60px !important;
   }
 
@@ -300,7 +300,7 @@
   }
 
   .nav-link {
-    padding: 6px 8px; /* 👈 más chico para que quepa junto al logo */
+    padding: 6px 8px;
     font-size: 1em;
     white-space: nowrap;
   }
@@ -329,7 +329,7 @@
   }
 }
 
-/* ===== CELULARES CHICOS (380px y menos) — cubre Moto G24 Power y similares ===== */
+/* ===== CELULARES CHICOS (380px y menos) ===== */
 @media (max-width: 380px) {
   .navbar-container {
     padding: 6px 10px;
@@ -337,7 +337,7 @@
   }
 
   .logo-img {
-    width: 42px !important; /* 👈 más grande que antes, pero un poco menor que el breakpoint de arriba */
+    width: 42px !important;
     height: 42px !important;
   }
 
@@ -358,16 +358,13 @@
   .search-btn {
     padding: 8px 10px;
   }
-  
 
-    .search-bar {
+  .search-bar {
     display: none;
   }
-
 }
 
-
-/* ===== AJUSTE ESPECÍFICO: rango 381px-430px (iPhone 13/14/15, Android medianos) ===== */
+/* ===== AJUSTE ESPECÍFICO: rango 381px-430px ===== */
 @media (max-width: 430px) and (min-width: 381px) {
   .navbar-container {
     gap: 6px;
@@ -393,10 +390,7 @@
   }
 }
 
-
 /* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
-/* En horizontal hay poco alto disponible, así que achicamos el navbar
-   para que no ocupe tanto espacio vertical de la pantalla */
 @media (orientation: landscape) and (max-width: 1000px) {
   .navbar {
     padding: 6px 0;

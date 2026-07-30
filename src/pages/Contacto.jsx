@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Contacto.css";
 import NavBar2 from "../components/NavBar2";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { createLeadRequest } from "../services/leadService";
 
 
 function Contacto() {
@@ -23,13 +24,57 @@ function Contacto() {
     setHeroIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
   };
 
+  // ===== FORMULARIO DE CONTACTO (envía un Lead al vet) =====
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  const [formPetName, setFormPetName] = useState("");
+  const [formMessage, setFormMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setFormError("");
+
+    if (!formName.trim() || !formEmail.trim() || !formMessage.trim()) {
+      setFormError("Por favor completa nombre, correo y cuéntanos sobre tu mascota.");
+      return;
+    }
+
+    setSending(true);
+    try {
+      const fullMessage = formPetName.trim()
+        ? `Mascota: ${formPetName.trim()}\n\n${formMessage.trim()}`
+        : formMessage.trim();
+
+      await createLeadRequest({
+        name: formName.trim(),
+        email: formEmail.trim(),
+        message: fullMessage,
+      });
+
+      setSent(true);
+      setFormName("");
+      setFormEmail("");
+      setFormPetName("");
+      setFormMessage("");
+    } catch (err) {
+      setFormError(err.message || "No se pudo enviar tu solicitud. Intenta de nuevo.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <div className="contact-page">
       <NavBar2 />
       <WhatsAppButton />
 
       {/* HERO */}
-      <section className="contact-hero">
+      <section className="contact-hero" style={{
+  backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1654895716780-b4664497420d?w=1600&q=80")`,
+}}  >
         <div className="hero-text">
           <span className="eyebrow">Atención a domicilio · Perros, gatos y exóticos</span>
           <h1>Hablemos de tu mascota</h1>
@@ -104,7 +149,7 @@ function Contacto() {
               <span className="info-icon">📱</span>
               <div>
                 <strong>Teléfono / WhatsApp</strong>
-                <p>+56 9 XXXX XXXX</p>
+                <p>+56 9 28312359</p>
               </div>
             </li>
             <li>
@@ -137,7 +182,7 @@ function Contacto() {
         </div>
 
         {/* FORM ESTILO TICKET */}
-        <form className="contact-form" id="form">
+        <form className="contact-form" id="form" onSubmit={handleContactSubmit}>
           <div className="ticket-header">
             <span>Hikari</span>
             <span>Orden de visita</span>
@@ -145,41 +190,63 @@ function Contacto() {
 
           <h2>Solicitar atención</h2>
 
+          {sent && (
+            <p style={{ color: "#1f4b43", fontWeight: 600, marginBottom: "14px" }}>
+              ✅ ¡Listo! Recibimos tu solicitud, te contactamos pronto.
+            </p>
+          )}
+          {formError && (
+            <p style={{ color: "#c94f4f", fontWeight: 600, marginBottom: "14px" }}>
+              ⚠️ {formError}
+            </p>
+          )}
+
           <label>
             Nombre
-            <input type="text" placeholder="Tu nombre" />
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              value={formName}
+              onChange={(e) => setFormName(e.target.value)}
+              disabled={sending}
+            />
           </label>
 
           <label>
             Correo
-            <input type="email" placeholder="tucorreo@mail.com" />
+            <input
+              type="email"
+              placeholder="tucorreo@mail.com"
+              value={formEmail}
+              onChange={(e) => setFormEmail(e.target.value)}
+              disabled={sending}
+            />
           </label>
 
           <label>
             Nombre de tu mascota
-            <input type="text" placeholder="Ej: Toby" />
-          </label>
-
-          <label>
-            Motivo de consulta
-            <select defaultValue="">
-              <option value="" disabled>
-                Selecciona un motivo
-              </option>
-              <option>Vacuna</option>
-              <option>Evaluación general</option>
-              <option>Toma de muestra / examen</option>
-              <option>Consulta a domicilio</option>
-              <option>Animales exóticos</option>
-            </select>
+            <input
+              type="text"
+              placeholder="Ej: Toby"
+              value={formPetName}
+              onChange={(e) => setFormPetName(e.target.value)}
+              disabled={sending}
+            />
           </label>
 
           <label>
             Cuéntanos sobre tu mascota
-            <textarea placeholder="Edad, síntomas, dirección aproximada, etc." />
+            <textarea
+              placeholder="Edad, síntomas, dirección aproximada, etc."
+              value={formMessage}
+              onChange={(e) => setFormMessage(e.target.value)}
+              disabled={sending}
+            />
           </label>
 
-          <button type="submit">Enviar solicitud 🐾</button>
+          <button type="submit" disabled={sending}>
+            {sending ? "Enviando..." : "Enviar solicitud 🐾"}
+          </button>
 
           <div className="ticket-footer">
             Te confirmamos por WhatsApp en menos de 24 hrs

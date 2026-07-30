@@ -268,7 +268,9 @@ function Erizo() {
       <NavBar2 />
       <WhatsAppButton />
 
-      <section className="eri-hero">
+      <section className="eri-hero"  style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1635384280816-5b841263863c?q=80&w=1236&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+  }}     >
         <div className="eri-hero-content">
           <span className="eri-badge">🦔 Mundo Erizo</span>
           <h1 className="eri-h1">Todo para tu erizo</h1>

@@ -34,7 +34,9 @@
   align-items: center;
   gap: 48px;
   padding: 120px 8vw 64px;
-  background: linear-gradient(135deg, #f4e4c1 0%, #fbf7f0 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .eyebrow {

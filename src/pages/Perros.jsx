@@ -386,7 +386,9 @@ function Perros() {
       <WhatsAppButton />
 
       {/* ===== HERO ===== */}
-      <section className="perros-hero">
+      <section className="perros-hero" style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1494947665470-20322015e3a8?w=1600&q=80")`,
+  }} >
         <div className="hero-content">
           <span className="badge">🐕 Todo para tu Perro</span>
           <h1>Productos premium para tu mejor amigo</h1>

@@ -166,7 +166,9 @@ const nextPerritosImage = () => {
       <WhatsAppButton />
 
       {/* ===== HERO SECTION ===== */}
-      <section className="hero-section">
+      <section className="hero-section" style={{
+  backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1725409796872-8b41e8eca929?w=1600&q=80")`,
+}}>
         <div className="hero-contentservicios">
            <h1>Cuidado profesional para tus mascotas</h1>
           <p>

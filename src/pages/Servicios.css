@@ -93,7 +93,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 56px;
-  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  background: linear-gradient(180deg, #F5DFCE 0%, #FCF6EF 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .servicios-page .hero-content {
@@ -885,6 +888,9 @@
   .servicios-page .hero-section {
     flex-direction: column;
     gap: 36px;
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 
   .servicios-page .hero-badge,
@@ -962,6 +968,12 @@
     padding: 40px 4vw;
   }
 
+  .servicios-page .hero-section {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+
   .servicios-page .hero-contentservicios h1 {
     font-size: 1.7rem !important;
   }
@@ -989,6 +1001,18 @@
   }
 }
 
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+/* Igual que en Home: en vertical "cover" recorta más por los costados,
+   así que el punto de enfoque necesita su propio ajuste. Solo toca el
+   fondo, nada más de la maqueta cambia aquí. */
+@media (max-width: 768px) and (orientation: portrait) {
+  .servicios-page .hero-section {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
 /* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
 /* En landscape la altura de pantalla es chica; evitamos que el carrusel
    del hero se corra o desborde, y volvemos el hero a fila (no columna) */
@@ -997,6 +1021,9 @@
     flex-direction: row;
     padding: 24px 4vw;
     gap: 20px;
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 
   .servicios-page .hero-contentservicios {

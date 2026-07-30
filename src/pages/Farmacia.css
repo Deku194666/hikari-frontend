@@ -33,13 +33,16 @@
 /* ===== HERO ===== */
 
 .farmacia .hero {
-  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  background: linear-gradient(135deg, #F3D9BE 0%, #F0E4D8 50%, #FDFAF6 100%);
   color: var(--ink);
   padding: 80px 6vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 56px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .farmacia .hero-content {
@@ -588,6 +591,12 @@
 }
 
 @media (max-width: 768px) {
+  .farmacia .hero {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+
   .farmacia .medicamentos-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -617,6 +626,12 @@
 }
 
 @media (max-width: 600px) {
+  .farmacia .hero {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+
   .farmacia .farmacia-container {
     padding: 40px 4vw;
   }
@@ -631,6 +646,17 @@
   }
 }
 
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+/* Igual que en Home, Servicios y Tienda: en vertical "cover" recorta más
+   por los costados, así que el punto de enfoque necesita su propio
+   ajuste. Solo toca el fondo, nada más de la maqueta cambia aquí. */
+@media (max-width: 768px) and (orientation: portrait) {
+  .farmacia .hero {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+}
 
 /* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
 /* En landscape la altura de pantalla es chica; evitamos que el carrusel
@@ -640,6 +666,9 @@
     flex-direction: row;
     padding: 24px 4vw;
     gap: 20px;
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 
   .farmacia .hero-content {

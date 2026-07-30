@@ -35,7 +35,7 @@
 .vpay-summary-value {
   font-size: 26px;
   font-weight: 800;
-  color: #00a66f;
+  color: #C4623F;
 }
 
 .vpay-empty {
@@ -92,7 +92,7 @@
 
 .vpay-service {
   font-size: 0.88em;
-  color: #00a66f;
+  color: #C4623F;
   font-weight: 600;
   margin-bottom: 3px;
 }
@@ -109,7 +109,7 @@
 .vpay-amount-value {
   font-size: 1.3em;
   font-weight: 800;
-  color: #00a66f;
+  color: #C4623F;
   margin-bottom: 4px;
 }
 

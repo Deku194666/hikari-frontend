@@ -51,7 +51,7 @@ function Login() {
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-      
+
       // Guardar usuario en el contexto
       login(data.user);
 
@@ -64,7 +64,7 @@ function Login() {
 
     } catch (error) {
       setError(
-        error.response?.data?.message || 
+        error.response?.data?.message ||
         "Error al iniciar sesión. Verifica tus credenciales"
       );
     } finally {
@@ -72,15 +72,21 @@ function Login() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    // TODO: conectar con el flujo real de OAuth de Google (redirect a tu backend
+    // o a Google Identity Services). Por ahora solo deja el botón listo en UI.
+    console.log("Iniciar sesión con Google");
+  };
+
   return (
     <div className="login-container">
       <NavBar2 />
       <WhatsAppButton />
       <div className="login-wrapper">
-        
-        {/* CARD PRINCIPAL */}
+
+        {/* CARD PRINCIPAL (FORMULARIO) */}
         <div className="login-card">
-          
+
           {/* HEADER */}
           <div className="login-header">
             <div className="login-icon">🐾</div>
@@ -90,7 +96,7 @@ function Login() {
 
           {/* FORMULARIO */}
           <form onSubmit={handleSubmit} className="login-form">
-            
+
             {/* MENSAJE DE ERROR */}
             {error && (
               <div className="error-message">
@@ -153,8 +159,8 @@ function Login() {
             </div>
 
             {/* BOTÓN SUBMIT */}
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="btn-login"
               disabled={loading}
             >
@@ -169,6 +175,27 @@ function Login() {
             </button>
 
           </form>
+
+          {/* DIVIDER "O" PARA LOGIN SOCIAL */}
+          <div className="form-divider">
+            <span>o continúa con</span>
+          </div>
+
+          {/* BOTÓN GOOGLE */}
+          <button
+            type="button"
+            className="btn-google"
+            onClick={handleGoogleLogin}
+            disabled={loading}
+          >
+            <svg className="google-icon" viewBox="0 0 48 48" width="20" height="20" aria-hidden="true">
+              <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+              <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+              <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+              <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+            </svg>
+            Entrar con Google
+          </button>
 
           {/* DIVIDER */}
           <div className="form-divider">
@@ -187,28 +214,28 @@ function Login() {
 
         </div>
 
-        {/* SIDE IMAGE (OPCIONAL PARA DESKTOP) */}
- <div className="login-side">
-  <div className="side-content">
-    <img 
-      src="/images/logovet1.png" 
-      alt="Logo Hikari" 
-      className="side-logo"
-    />
-    <h2>Hikari</h2>
-    <h4 style={{ marginBottom: 18,  }} >Cuidado veterinario profesional a domicilio</h4>
+        {/* SIDE IMAGE (LOGO) */}
+        <div className="login-side">
+          <div className="side-content">
+            <img
+              src="/images/logovet1.png"
+              alt="Logo Hikari"
+              className="side-logo"
+            />
+            <h2>Hikari</h2>
+            <h4 style={{ marginBottom: 18 }}>Cuidado veterinario profesional a domicilio</h4>
             <div className="side-benefits">
               <div className="benefit-item">
                 <span>✓</span>
-                <p style={{ fontSize: 17,  }}>Atención veterinaria en tu hogar</p>
+                <p style={{ fontSize: 17 }}>Atención veterinaria en tu hogar</p>
               </div>
               <div className="benefit-item">
                 <span>✓</span>
-                <p style={{ fontSize: 17,  }}  >Profesionales capacitados y certificados</p>
+                <p style={{ fontSize: 17 }}>Profesionales capacitados y certificados</p>
               </div>
               <div className="benefit-item">
                 <span>✓</span>
-                <p style={{ fontSize: 17,  }}  >Productos premium para tu mascota</p>
+                <p style={{ fontSize: 17 }}>Productos premium para tu mascota</p>
               </div>
             </div>
           </div>

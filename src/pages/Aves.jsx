@@ -279,7 +279,9 @@ function Aves() {
       <NavBar2 />
       <WhatsAppButton />
 
-      <section className="ave-hero">
+      <section className="ave-hero" style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1470167494176-c2e966a4eb3d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+  }}     >
         <div className="ave-hero-content">
           <span className="ave-badge">🦜 Mundo de Aves</span>
           <h1 className="ave-h1">Todo para tus aves exóticas</h1>

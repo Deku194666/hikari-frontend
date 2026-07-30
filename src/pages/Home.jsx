@@ -44,7 +44,9 @@ function Home() {
       <WhatsAppButton />
 
       {/* ===== HERO / PORTADA ===== */}
-      <section className="hero">
+      <section className="hero" style={{
+  backgroundImage: `linear-gradient(135deg, rgba(243, 217, 190, 0.9), rgba(253, 250, 246, 0.85)), url("https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?w=1600&q=80")`,
+}}>
         <div className="hero-content">
           <span className="badge">🐾 Veterinaria Premium a Domicilio</span>
           <h1>El cuidado  que tu mascota merece, en la comodidad de tu hogar.</h1>

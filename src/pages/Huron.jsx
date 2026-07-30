@@ -288,7 +288,9 @@ function Huron() {
       <NavBar2 />
       <WhatsAppButton />
 
-      <section className="hur-hero">
+      <section className="hur-hero"  style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://media.istockphoto.com/id/117541080/photo/ferret-mustela-putorius-furo.jpg?s=1024x1024&w=is&k=20&c=KVsxaUUFX8Y-kWhzZj31Gv8gjpX_qzNWtyFIxExomME=")`,
+  }}      >
         <div className="hur-hero-content">
           <span className="hur-badge">🦡 Mundo Hurón</span>
           <h1 className="hur-h1">Todo para tu hurón</h1>

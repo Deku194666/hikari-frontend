@@ -10,6 +10,8 @@ import VetInventory from "./sections/VetInventory";
 import VetAlerts from "./sections/VetAlerts";
 import VetTelemedicine from "./sections/VetTelemedicine";
 import VetExams from "./sections/VetExams";
+import MessagesSection from "./sections/MessagesSection";
+import LeadsSection from "./sections/LeadsSection";
 import UserProfile from "../../components/UserProfile";
 import { getPhotoUrl } from "../../utils/getFileUrl";
 import UserSettings from "../../components/UserSettings";
@@ -26,6 +28,8 @@ function VetDashboard() {
     { id: "patients", label: "Pacientes", icon: "🐾" },
     { id: "exams", label: "Exámenes", icon: "🧪" },
     { id: "telemedicine", label: "Telemedicina", icon: "📹" },
+    { id: "messages", label: "Mensajes", icon: "💬" },
+    { id: "leads", label: "Leads", icon: "📨" },
     { id: "payments", label: "Pagos", icon: "💳" },
     { id: "inventory", label: "Stock", icon: "📦" },
     { id: "alerts", label: "Alertas", icon: "⚠️" },
@@ -49,6 +53,10 @@ function VetDashboard() {
         return <VetExams />;
       case "telemedicine":
         return <VetTelemedicine />;
+      case "messages":
+        return <MessagesSection />;
+      case "leads":
+        return <LeadsSection />;
       case "payments":
         return <VetPayments />;
       case "inventory":

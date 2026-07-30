@@ -1,6 +1,7 @@
 /* Gatos.css - Hikari */
 
-:root {
+
+.gatos-page {
   --primary: #A8D8D8;
   --primary-dark: #7FD8BE;
   --secondary: #C4D59A;
@@ -24,13 +25,16 @@
 
 /* ===== HERO ===== */
 .gatos-hero {
-  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
+  background: linear-gradient(180deg, #F2E6D9 0%, #FEFCFA 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat
 }
 
 .hero-content {
@@ -981,5 +985,38 @@
   .gat-info-section {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+/* ===== FIX: SOLO EL FONDO DEL HERO EN RESPONSIVE (no toca nada del formato de arriba) ===== */
+@media (max-width: 1024px) {
+  .gatos-hero {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .gatos-hero {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gatos-hero {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+  .gatos-hero {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 }

@@ -12,6 +12,7 @@ import ClientHistory from "./sections/ClientHistory";
 import ClientTips from "./sections/ClientTips";
 import ClientTelemedicine from "./sections/ClientTelemedicine";
 import ClientExams from "./sections/ClientExams";
+import MensajesSection from "./sections/MensajesSection";
 import UserProfile from "../../components/UserProfile";
 import { getPhotoUrl } from "../../utils/getFileUrl";
 import UserSettings from "../../components/UserSettings";
@@ -43,6 +44,7 @@ function ClientDashboard() {
     { id: "appointments", label: "Mis citas", icon: "🕐" },
     { id: "exams", label: "Exámenes", icon: "🧪" },
     { id: "telemedicine", label: "Telemedicina", icon: "📹" },
+    { id: "messages", label: "Mensajes", icon: "💬" },
     { id: "shop", label: "Tienda", icon: "🛒" },
     { id: "orders", label: "Mis compras", icon: "📦" },
     { id: "history", label: "Historial", icon: "📋" },
@@ -63,6 +65,8 @@ function ClientDashboard() {
           return <ClientExams />;
       case "telemedicine":
         return <ClientTelemedicine />;
+      case "messages":
+        return <MensajesSection />;
       case "shop":
         return <ClientShop />;
       case "orders":

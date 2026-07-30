@@ -319,7 +319,11 @@ function Conejos() {
       <NavBar2 />
       <WhatsAppButton />
 
-      <section className="con-hero">
+      <section className="con-hero"
+  style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1583301286816-f4f05e1e8b25?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+  }}
+>
         <div className="con-hero-content">
           <span className="con-badge">🐰 Mundo Conejo</span>
           <h1 className="con-h1">Todo para tu conejo adorable</h1>

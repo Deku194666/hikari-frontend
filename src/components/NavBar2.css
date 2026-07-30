@@ -1,19 +1,19 @@
 /* NavBar2.css - Barra de navegación secundaria */
 
 :root {
-  --primary: #00a66f;
-  --primary-dark: #007a52;
-  --secondary: #ff6b9d;
-  --bg-light: #f8f9fa;
-  --border-light: #e9ecef;
-  --text-dark: #2c3e50;
+  --primary: #C4623F;
+  --primary-dark: #A34F32;
+  --secondary: #D97D42;
+  --bg-light: #FDFBF8;
+  --border-light: #E8D5C4;
+  --text-dark: #2B2320;
 }
 
 .navbar2 {
-  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
-  border-bottom: 2px solid var(--primary);
+  background: linear-gradient(135deg, #FDFBF8 0%, #ffffff 100%);
+  border-bottom: 2px solid #D97D42;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 166, 111, 0.08);
+  box-shadow: 0 2px 8px rgba(217, 125, 66, 0.08);
   position: fixed;
   top: 19px;
   left: 0;
@@ -35,7 +35,7 @@
 }
 
 .navbar2-logo {
-  border-right: 2px solid var(--border-light);
+  border-right: 2px solid #E8D5C4;
   height: 100%;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@
 .navbar2-link {
   font-size: 1em;
   font-weight: 600;
-  color: var(--text-dark);
+  color: #2B2320;
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
@@ -73,8 +73,8 @@
  }
 
 .navbar2-link:hover {
-  background: rgba(0, 166, 111, 0.1);
-  color: var(--primary);
+  background: rgba(217, 125, 66, 0.1);
+  color: #D97D42;
   transform: translateY(-2px);
 }
 
@@ -98,7 +98,7 @@
   border: none;
   font-size: 1em;
   font-weight: 600;
-  color: var(--text-dark);
+  color: #2B2320;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -110,8 +110,8 @@
 }
 
 .dropdown-button:hover {
-  background: rgba(0, 166, 111, 0.1);
-  color: var(--primary);
+  background: rgba(217, 125, 66, 0.1);
+  color: #D97D42;
   transform: translateY(-2px);
 }
 
@@ -127,7 +127,7 @@
 
 .dropdown-wrapper:hover .dropdown-arrow {
   transform: rotate(180deg);
-  color: var(--primary);
+  color: #D97D42;
 }
 
 /* ===== DROPDOWN MENU ===== */
@@ -137,7 +137,7 @@
   top: 100%;
   left: 0;
   background: white;
-  border: 1px solid var(--border-light);
+  border: 1px solid #E8D5C4;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   min-width: 200px;
@@ -163,7 +163,7 @@
 .dropdown-item {
   display: block;
   padding: 12px 18px;
-  color: var(--text-dark);
+  color: #2B2320;
   text-decoration: none;
   font-size: 0.95em;
   font-weight: 500;
@@ -173,14 +173,14 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(0, 166, 111, 0.08);
-  color: var(--primary);
-  border-left-color: var(--primary);
+  background: rgba(217, 125, 66, 0.08);
+  color: #D97D42;
+  border-left-color: #D97D42;
   padding-left: 22px;
 }
 
 .dropdown-item:active {
-  background: rgba(0, 166, 111, 0.15);
+  background: rgba(217, 125, 66, 0.15);
 }
 
 
@@ -208,7 +208,7 @@
   left: 100%;
   min-width: 180px;
   background: white;
-  border: 1px solid var(--border-light);
+  border: 1px solid #E8D5C4;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 8px 0;
@@ -218,7 +218,7 @@
 .dropdown-subitem {
   display: block;
   padding: 12px 18px;
-  color: var(--text-dark);
+  color: #2B2320;
   text-decoration: none;
   font-size: 0.95em;
   font-weight: 500;
@@ -227,9 +227,9 @@
 }
 
 .dropdown-subitem:hover {
-  background: rgba(0, 166, 111, 0.08);
-  color: var(--primary);
-  border-left-color: var(--primary);
+  background: rgba(217, 125, 66, 0.08);
+  color: #D97D42;
+  border-left-color: #D97D42;
   padding-left: 22px;
 }
 
@@ -343,7 +343,7 @@
     position: static;
     box-shadow: none;
     border: none;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid #E8D5C4;
     border-radius: 0;
     margin-top: 6px;
     padding-top: 6px;
@@ -357,9 +357,6 @@
 }
 
 /* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
-/* El scroll horizontal del menú solo se activaba con max-width:600px,
-   pero un celular acostado suele medir más de eso. Usamos orientation:landscape
-   para que el mismo comportamiento se aplique también ahí. */
 @media (orientation: landscape) and (max-width: 1000px) {
   .navbar2 {
     top: 50px;
@@ -420,7 +417,7 @@
     position: static;
     box-shadow: none;
     border: none;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid #E8D5C4;
     border-radius: 0;
     margin-top: 6px;
     padding-top: 6px;

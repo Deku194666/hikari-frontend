@@ -234,7 +234,9 @@ function Tienda() {
 
 
       {/* ===== HERO ===== */}
-      <section className="hero-section">
+      <section className="hero-section"  style={{
+  backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=1600&q=80")`,
+}}  >
         <div className="hero-content">
           <span className="hero-badge">Tienda Hikari</span>
           <h1>Todo lo que tu mascota necesita, en un solo lugar</h1>

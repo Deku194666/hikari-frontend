@@ -281,7 +281,9 @@ function Cuy() {
 
 
 
-      <section className="cuy-hero">
+      <section className="cuy-hero"    style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1612267168669-679c961c5b31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+  }}    >
         <div className="cuy-hero-content">
           <span className="cuy-badge">🐹 Mundo Cuyi</span>
           <h1 className="cuy-h1">Todo para tu cuyi</h1>

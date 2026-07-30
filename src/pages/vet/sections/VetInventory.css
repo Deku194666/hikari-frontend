@@ -31,13 +31,13 @@
 }
 
 .vinv-search:focus {
-  border-color: #00a66f;
+  border-color: #C4623F;
   box-shadow: 0 0 0 3px rgba(0, 166, 111, 0.12);
 }
 
 .vinv-add-btn {
   padding: 10px 18px;
-  background: linear-gradient(135deg, #00a66f, #007a52);
+  background: linear-gradient(135deg, #C4623F, #007a52);
   color: white;
   border: none;
   border-radius: 10px;
@@ -76,13 +76,13 @@
 }
 
 .vinv-cat-btn:hover {
-  border-color: #00a66f;
-  color: #00a66f;
+  border-color: #C4623F;
+  color: #C4623F;
 }
 
 .vinv-cat-btn.active {
-  background: linear-gradient(135deg, #00a66f, #007a52);
-  border-color: #00a66f;
+  background: linear-gradient(135deg, #C4623F, #007a52);
+  border-color: #C4623F;
   color: white;
 }
 
@@ -184,7 +184,7 @@
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-top: 4px solid #00a66f;
+  border-top: 4px solid #C4623F;
 }
 
 .vinv-card:hover {
@@ -309,7 +309,7 @@
 
 .vinv-card-quantity .quantity-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00a66f, #ff6b9d);
+  background: linear-gradient(90deg, #C4623F, #ff6b9d);
 }
 
 .vinv-qty-text {
@@ -322,7 +322,7 @@
 .vinv-card-price {
   font-size: 17px;
   font-weight: 800;
-  color: #00a66f;
+  color: #C4623F;
 }
 
 /* ===========================
@@ -438,7 +438,7 @@
 .vinv-field input:focus,
 .vinv-field select:focus,
 .vinv-field textarea:focus {
-  border-color: #00a66f;
+  border-color: #C4623F;
   box-shadow: 0 0 0 3px rgba(0, 166, 111, 0.12);
 }
 
@@ -473,7 +473,7 @@
   padding: 10px 18px;
   border-radius: 8px;
   border: none;
-  background: linear-gradient(135deg, #00a66f, #007a52);
+  background: linear-gradient(135deg, #C4623F, #007a52);
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -572,7 +572,7 @@
 }
 
 .vinv-stock-btn:hover:not(:disabled) {
-  background: #00a66f;
+  background: #C4623F;
   color: white;
 }
 

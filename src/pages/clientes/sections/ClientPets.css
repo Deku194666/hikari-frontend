@@ -285,9 +285,9 @@
 .cp-type-option:hover { border-color: var(--cp-border); background: var(--cp-border-soft); }
 
 .cp-type-option.selected {
-  background: var(--primary, #00a66f);
+  background: var(--primary, #C4623F);
   color: white;
-  border-color: var(--primary, #00a66f);
+  border-color: var(--primary, #C4623F);
   box-shadow: 0 4px 12px rgba(0, 166, 111, 0.3);
   transform: scale(1.02);
 }

@@ -21,13 +21,16 @@
 
 /* ===== HERO ===== */
 .con-hero {
-  background: linear-gradient(135deg, #E8F0ED 0%, #F4E4C1 100%);
+  background: linear-gradient(180deg, #F2E6D9 0%, #FEFCFA 100%);
   padding: 130px 50px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
   overflow: hidden;
+  background-size: cover ;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .con-hero-content {
@@ -787,6 +790,9 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(244, 166, 193, 0.5);
 }
+
+
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {

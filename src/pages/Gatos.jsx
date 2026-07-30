@@ -403,7 +403,9 @@ function Gatos() {
 
 
       {/* ===== HERO ===== */}
-      <section className="gatos-hero">
+      <section className="gatos-hero"   style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1677126573075-8a15fcd0f51a?w=1600&q=80")`,
+  }}   >
         <div className="hero-content">
           <span className="badge">🐱 Todo para tu Gato</span>
           <h1>Productos premium para tu felino consentido</h1>

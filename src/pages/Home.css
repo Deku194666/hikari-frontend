@@ -43,8 +43,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 56px;
-  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  background: linear-gradient(180deg, #F3D9BE 0%, #FDFAF6 100%);
   padding: 80px 6vw;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home .hero-content {
@@ -726,6 +729,9 @@
     flex-direction: column;
     gap: 36px;
     padding: 50px 5vw;
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 
   .home .hero-content {
@@ -800,6 +806,9 @@
 
   .home .hero {
     padding: 40px 4vw;
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 
   .home .hero h1 {
@@ -835,5 +844,28 @@
   .home .services-grid,
   .home .products-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en VERTICAL (portrait) ===== */
+/* En vertical la pantalla es angosta y alta, así que "cover" recorta más
+   por los costados y el punto de enfoque necesita su propio ajuste,
+   distinto al de horizontal. Toca solo el background, nada más. */
+@media (max-width: 768px) and (orientation: portrait) {
+  .home .hero {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+/* ===== AJUSTE ESPECIAL: celular en HORIZONTAL (landscape) ===== */
+/* Aquí ya te había funcionado bien con estos valores, se deja explícito
+   por si el navegador prioriza mal las reglas anteriores. */
+@media (max-width: 900px) and (orientation: landscape) {
+  .home .hero {
+    background-size: cover !important;
+    background-position: center 70% !important;
+    background-repeat: no-repeat !important;
   }
 }

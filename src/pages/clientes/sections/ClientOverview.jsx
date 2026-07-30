@@ -41,7 +41,6 @@ function ClientOverview() {
     .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
   const attendedAppointments = appointments.filter((a) => a.status === "atendida");
 
-  const totalSpent = orders.reduce((sum, o) => sum + o.total, 0);
   const nextAppointment = upcomingAppointments[0];
 
   const formatDate = (dateStr) => {
@@ -64,12 +63,7 @@ function ClientOverview() {
       icon: "📅", color: "green",
       change: "pendientes",
     },
-    {
-      label: "Gastos totales",
-      value: loading ? "..." : `$${totalSpent.toLocaleString("es-CL")}`,
-      icon: "💰", color: "orange",
-      change: `${orders.length} pedidos`,
-    },
+
     {
       label: "Citas atendidas",
       value: loading ? "..." : String(attendedAppointments.length),
@@ -119,12 +113,7 @@ function ClientOverview() {
           <h3>📦 Pedidos realizados</h3>
           <p className="big-number">{loading ? "..." : orders.length}</p>
         </div>
-        <div className="overview-card">
-          <h3>💰 Gastos totales</h3>
-          <p className="big-number" style={{ fontSize: "1.9rem" }}>
-            {loading ? "..." : `$${totalSpent.toLocaleString("es-CL")}`}
-          </p>
-        </div>
+      
       </div>
 
       <div className="alerts-preview">

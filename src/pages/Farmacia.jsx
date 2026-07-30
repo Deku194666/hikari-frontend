@@ -171,7 +171,9 @@ function Farmacia() {
       <WhatsAppButton />
 
       {/* ===== HERO ===== */}
-      <section className="hero">
+      <section className="hero" style={{
+  backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1631669969504-f35518bf96ba?w=1600&q=80")`,
+}} >
         <div className="hero-content">
           <span className="badge">💊 Farmacia Veterinaria Online</span>
           <h1>Medicamentos y tratamientos para tu mascota</h1>

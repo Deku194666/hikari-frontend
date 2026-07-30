@@ -319,7 +319,9 @@ function Tortugas() {
       <NavBar2 />
       <WhatsAppButton />
 
-      <section className="tor-hero">
+      <section className="tor-hero"  style={{
+    backgroundImage: `linear-gradient(135deg, rgba(251, 247, 240, 0.93), rgba(232, 220, 200, 0.88)), url("https://images.unsplash.com/photo-1625229060848-ff0c42daaf17?w=1600&q=80")`,
+  }}   >
         <div className="tor-hero-content">
           <span className="tor-badge">🐢 Mundo Acuático</span>
           <h1 className="tor-h1">Todo para tu tortuga acuática</h1>

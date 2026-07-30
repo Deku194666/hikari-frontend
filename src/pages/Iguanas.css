@@ -24,6 +24,9 @@
   justify-content: space-between;
   gap: 40px;
   overflow: hidden;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
 }
 
 .igu-hero-content {
@@ -809,6 +812,12 @@
     max-width: 420px;
     height: 340px;
   }
+
+  .igu-hero {
+    background-size: cover !important;
+    background-position: center 40% !important;
+    background-repeat: no-repeat !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -816,6 +825,9 @@
     flex-direction: column;
     padding: 120px 20px 40px;
     text-align: center;
+    background-size: cover !important;
+    background-position: center 35% !important;
+    background-repeat: no-repeat !important;
   }
 
   .igu-h1 {
@@ -877,6 +889,9 @@
 @media (max-width: 480px) {
   .igu-hero {
     padding: 100px 16px 30px;
+    background-size: cover !important;
+    background-position: center 35% !important;
+    background-repeat: no-repeat !important;
   }
 
   .igu-h1 {
@@ -935,6 +950,9 @@
     flex-direction: row;
     padding: 24px 4vw;
     text-align: left;
+    background-size: cover !important;
+    background-position: center 40% !important;
+    background-repeat: no-repeat !important;
   }
 
   .igu-badge {
