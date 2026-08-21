@@ -185,11 +185,11 @@
   overflow: hidden;
 }
 
-.cshop-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.cshop-card-image img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  padding: 8px; }
 
 .cshop-card-placeholder {
   font-size: 48px;
@@ -454,4 +454,112 @@
   .cshop-cart-panel {
     width: 100%;
   }
+}
+
+
+.cshop-zoom-overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background: rgba(0, 0, 0, 0.85); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 3000; 
+  cursor: zoom-out; 
+  padding: 2rem; 
+} 
+  
+  .cshop-zoom-image { 
+    max-width: 90vw; 
+    max-height: 90vh; 
+    object-fit: contain; 
+    border-radius: 12px; 
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); 
+  } 
+  
+  
+  .cshop-zoom-close { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    border: none; 
+    background: white; 
+    color: #333; 
+    font-size: 18px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  
+  }
+
+
+  .cshop-desc-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  background: white;
+  color: #534ab7;
+  border: 1px solid #534ab7;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cshop-desc-btn:hover {
+  background: #eeedfe;
+}
+
+.cshop-desc-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 1.5rem;
+}
+
+.cshop-desc-modal {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.cshop-desc-modal h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-right: 24px;
+}
+
+.cshop-desc-modal p {
+  font-size: 14px;
+  color: #5f5e5a;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.cshop-desc-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #888780;
 }

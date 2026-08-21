@@ -96,39 +96,19 @@ function Gatos() {
       stock: 25,
       rating: 4.8,
     },
-    {
-      id: 2,
-      nombre: "Alimento Gatitos",
-      categoria: "comida",
-      precio: 22900,
-      precioOriginal: 28000,
-      imagen: "/images/imagen59.jpg",
-      descripcion: "Especial para gatitos en crecimiento",
-      stock: 18,
-      rating: 4.9,
-    },
+   
     {
       id: 3,
       nombre: "Snacks Naturales",
       categoria: "comida",
       precio: 6900,
       precioOriginal: 9000,
-      imagen: "/images/imagen60.avif",
+      imagen: "/images/Chicken Jerky & Codfish Sushi.png",
       descripcion: "Snacks con sabor pescado",
       stock: 35,
       rating: 4.7,
     },
-    {
-      id: 4,
-      nombre: "Alimento Húmedo Atún",
-      categoria: "comida",
-      precio: 3900,
-      precioOriginal: 5500,
-      imagen: "/images/imagen61.png",
-      descripcion: "Lata individual sabor atún",
-      stock: 50,
-      rating: 4.8,
-    },
+   
 
     // JUGUETES
     {
@@ -144,11 +124,11 @@ function Gatos() {
     },
     {
       id: 6,
-      nombre: "Caña con Pluma",
+      nombre: "Caña con Juguete",
       categoria: "juguetes",
       precio: 8900,
       precioOriginal: 12000,
-      imagen: "/images/imagen63.webp",
+      imagen: "/images/CAÑA PARA GATO PELUCHE RANA 2.png",
       descripcion: "Estimula el instinto cazador",
       stock: 25,
       rating: 4.9,
@@ -166,17 +146,7 @@ function Gatos() {
     },
 
     // CAMAS
-    {
-      id: 8,
-      nombre: "Cama Suave Iglú",
-      categoria: "camas",
-      precio: 29900,
-      precioOriginal: 38000,
-      imagen: "/images/imagen65.webp",
-      descripcion: "Cama estilo iglú acolchada",
-      stock: 12,
-      rating: 4.9,
-    },
+ 
     {
       id: 9,
       nombre: "Cama Hamaca Ventana",
@@ -188,17 +158,7 @@ function Gatos() {
       stock: 8,
       rating: 4.8,
     },
-    {
-      id: 10,
-      nombre: "Cojín Térmico",
-      categoria: "camas",
-      precio: 24900,
-      precioOriginal: 32000,
-      imagen: "/images/imagen67.jpg",
-      descripcion: "Cojín que mantiene el calor",
-      stock: 15,
-      rating: 4.7,
-    },
+
 
     // RASCADORES
     {
@@ -212,28 +172,8 @@ function Gatos() {
       stock: 14,
       rating: 4.8,
     },
-    {
-      id: 12,
-      nombre: "Torre Rascador 120cm",
-      categoria: "rascadores",
-      precio: 49900,
-      precioOriginal: 65000,
-      imagen: "/images/imagen69.avif",
-      descripcion: "Torre completa con múltiples niveles",
-      stock: 6,
-      rating: 4.9,
-    },
-    {
-      id: 13,
-      nombre: "Tabla Rascadora",
-      categoria: "rascadores",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen70.jpg",
-      descripcion: "Tabla plana de cartón corrugado",
-      stock: 30,
-      rating: 4.6,
-    },
+   
+ 
 
     // HIGIENE
     {
@@ -247,17 +187,7 @@ function Gatos() {
       stock: 40,
       rating: 4.8,
     },
-    {
-      id: 15,
-      nombre: "Champú para Gatos",
-      categoria: "higiene",
-      precio: 10900,
-      precioOriginal: 14000,
-      imagen: "/images/imagen76.avif",
-      descripcion: "Champú suave hipoalergénico",
-      stock: 22,
-      rating: 4.7,
-    },
+  
     {
       id: 16,
       nombre: "Cepillo Desenredante",
@@ -271,11 +201,11 @@ function Gatos() {
     },
     {
       id: 17,
-      nombre: "Caja de Arena con Tapa",
+      nombre: " Fuente Bebedero para Gatos",
       categoria: "higiene",
       precio: 22900,
       precioOriginal: 30000,
-      imagen: "/images/imagen78.avif",
+      imagen: "/images/ChatGPT Image 17 ago 2026, 01_46_11 p.m..png",
       descripcion: "Caja cubierta con filtro",
       stock: 10,
       rating: 4.9,
@@ -284,11 +214,11 @@ function Gatos() {
     // ROPA
     {
       id: 18,
-      nombre: "Collar con Cascabel",
+      nombre: "Collar Tipo Dona",
       categoria: "ropa",
       precio: 4900,
       precioOriginal: 7000,
-      imagen: "/images/imagen79.jpg",
+      imagen: "/images/DONA AMARILLA.png",
       descripcion: "Collar elegante ajustable",
       stock: 45,
       rating: 4.7,
@@ -296,39 +226,9 @@ function Gatos() {
     
 
     // MEDICAMENTOS
-    {
-      id: 20,
-      nombre: "Antiparasitario Mensual",
-      categoria: "medicamentos",
-      precio: 16900,
-      precioOriginal: 22000,
-      imagen: "/images/imagen81.jpg",
-      descripcion: "Protege contra pulgas y garrapatas",
-      stock: 30,
-      rating: 4.9,
-    },
-    {
-      id: 21,
-      nombre: "Vitaminas para Gatos",
-      categoria: "medicamentos",
-      precio: 13900,
-      precioOriginal: 18000,
-      imagen: "/images/imagen82.jpg",
-      descripcion: "Refuerza el sistema inmunológico",
-      stock: 25,
-      rating: 4.8,
-    },
-    {
-      id: 22,
-      nombre: "Pasta Antibolas de Pelo",
-      categoria: "medicamentos",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen83.jpg",
-      descripcion: "Ayuda a eliminar bolas de pelo",
-      stock: 20,
-      rating: 4.7,
-    },
+    
+
+
 
     // ROPA HIKARI (tejidos artesanales)
     {

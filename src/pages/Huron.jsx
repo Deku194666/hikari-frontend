@@ -106,39 +106,8 @@ function Huron() {
       rating: 4.8,
     },
      
-    {
-      id: 4,
-      nombre: "Aceite de Salmón para Pelaje",
-      categoria: "alimento",
-      precio: 7900,
-      precioOriginal: 11000,
-      imagen: "/images/imagen171.jpg",
-      descripcion: "Favorece un pelaje brillante y saludable",
-      stock: 28,
-      rating: 4.8,
-    },
-    {
-      id: 5,
-      nombre: "Jaula Multinivel 100x70x150",
-      categoria: "jaulas",
-      precio: 139900,
-      precioOriginal: 180000,
-      imagen: "/images/imagen172.jpg",
-      descripcion: "Varios pisos para trepar y explorar",
-      stock: 6,
-      rating: 4.9,
-    },
-    {
-      id: 6,
-      nombre: "Hamaca Colgante Suave",
-      categoria: "jaulas",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen173.jpg",
-      descripcion: "Lugar favorito para dormir de los hurones",
-      stock: 30,
-      rating: 4.9,
-    },
+     
+   
     {
       id: 7,
       nombre: "Túnel de Tela Extra Largo",
@@ -162,76 +131,10 @@ function Huron() {
       stock: 26,
       rating: 4.8,
     },
-    {
-      id: 10,
-      nombre: "Arnés y Correa Ajustable",
-      categoria: "accesorios",
-      precio: 13900,
-      precioOriginal: 18000,
-      imagen: "/images/imagen176.jpg",
-      descripcion: "Para paseos seguros y supervisados",
-      stock: 20,
-      rating: 4.8,
-    },
     
-    {
-      id: 12,
-      nombre: "Bandeja Sanitaria Esquinera",
-      categoria: "higiene",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen177.webp",
-      descripcion: "Aprovecha el hábito de entrenar rincones",
-      stock: 24,
-      rating: 4.8,
-    },
-     
-    {
-      id: 14,
-      nombre: "Desinfectante Seguro 500ml",
-      categoria: "higiene",
-      precio: 5900,
-      precioOriginal: 8000,
-      imagen: "/images/imagen178.jpg",
-      descripcion: "No tóxico para hurones",
-      stock: 30,
-      rating: 4.7,
-    },
-    {
-      id: 15,
-      nombre: "Shampoo Especial para Hurones",
-      categoria: "cuidado",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen179.jpg",
-      descripcion: "Controla el olor natural de su piel",
-      stock: 25,
-      rating: 4.8,
-    },
-    {
-      id: 16,
-      nombre: "Cortauñas de Precisión",
-      categoria: "cuidado",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen180.jpg",
-      descripcion: "Corte seguro y sin estrés",
-      stock: 20,
-      rating: 4.9,
-    },
+
     
-    {
-      id: 19,
-      nombre: "Transportín Ventilado",
-      categoria: "transportes",
-      precio: 24900,
-      precioOriginal: 32000,
-      imagen: "/images/imagen181.jpg",
-      descripcion: "Seguro para viajes y visitas al veterinario",
-      stock: 14,
-      rating: 4.8,
-    },
-     
+    
   ];
 
   const categorias = [

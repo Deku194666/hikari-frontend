@@ -116,28 +116,8 @@ function Aves() {
       stock: 25,
       rating: 4.7,
     },
-    {
-      id: 4,
-      nombre: "Néctar Concentrado Colibríes",
-      categoria: "alimento",
-      precio: 6900,
-      precioOriginal: 9000,
-      imagen: "/images/imagen191.jpg",
-      descripcion: "Alimento especializado para colibríes",
-      stock: 35,
-      rating: 4.9,
-    },
-    {
-      id: 5,
-      nombre: "Jaula Lujo 90x60x90cm",
-      categoria: "jaulas",
-      precio: 89900,
-      precioOriginal: 120000,
-      imagen: "/images/imagen189.jpg",
-      descripcion: "Jaula amplia con múltiples accesorios",
-      stock: 8,
-      rating: 4.9,
-    },
+ 
+    
     {
       id: 6,
       nombre: "Jaula Mediana 60x40x60cm",
@@ -174,54 +154,6 @@ function Aves() {
       rating: 4.8,
     },
  
- 
-    {
-      id: 13,
-      nombre: "Lámpara de Clip Regulable",
-      categoria: "iluminacion",
-      precio: 12900,
-      precioOriginal: 17000,
-      imagen: "/images/imagen192.jpg",
-      descripcion: "Instalación fácil en jaulas",
-      stock: 22,
-      rating: 4.7,
-    },
-    {
-      id: 14,
-      nombre: "Calcio para Aves",
-      categoria: "suplementos",
-      precio: 7900,
-      precioOriginal: 11000,
-      imagen: "/images/imagen193.jpg",
-      descripcion: "Fortalece huesos y plumaje",
-      stock: 40,
-      rating: 4.8,
-    },
-     
-    {
-      id: 17,
-      nombre: "Arena Baño Aves 2kg",
-      categoria: "higiene",
-      precio: 4900,
-      precioOriginal: 7000,
-      imagen: "/images/imagen205.jpg",
-      descripcion: "Para mantener plumaje limpio",
-      stock: 50,
-      rating: 4.7,
-    },
-    
-    
-    {
-      id: 20,
-      nombre: "Transportín Viaje Seguro",
-      categoria: "transportes",
-      precio: 19900,
-      precioOriginal: 26000,
-      imagen: "/images/imagen196.jpg",
-      descripcion: "Seguro y ventilado para viajes",
-      stock: 15,
-      rating: 4.8,
-    },
   ];
 
   const categorias = [

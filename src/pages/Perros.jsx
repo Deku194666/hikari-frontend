@@ -133,17 +133,7 @@ function Perros() {
       stock: 12,
       rating: 4.8,
     },
-    {
-      id: 5,
-      nombre: "Arnés Reflectante",
-      categoria: "arnes",
-      precio: 18900,
-      precioOriginal: 24000,
-      imagen: "/images/imagen47.jpg",
-      descripcion: "Con bandas reflectantes para paseos nocturnos",
-      stock: 8,
-      rating: 4.7,
-    },
+    
 
     // CORREAS
     {
@@ -194,28 +184,7 @@ function Perros() {
     },
 
     // CAMAS
-    {
-      id: 10,
-      nombre: "Cama Ortopédica Grande",
-      categoria: "camas",
-      precio: 49900,
-      precioOriginal: 65000,
-      imagen: "/images/imagen21.jpg",
-      descripcion: "Cama con soporte ergonómico",
-      stock: 8,
-      rating: 4.9,
-    },
-    {
-      id: 11,
-      nombre: "Cama Suave Mediana",
-      categoria: "camas",
-      precio: 29900,
-      precioOriginal: 38000,
-      imagen: "/images/imagen51.webp",
-      descripcion: "Cama acolchada y suave",
-      stock: 14,
-      rating: 4.8,
-    },
+    
 
     // ROPA (NUEVA)
     {
@@ -240,17 +209,7 @@ function Perros() {
       stock: 10,
       rating: 4.8,
     },
-    {
-      id: 14,
-      nombre: "Polera de Verano",
-      categoria: "ropa",
-      precio: 12900,
-      precioOriginal: 16000,
-      imagen: "/images/imagen53.avif",
-      descripcion: "Fresca y cómoda para días calurosos",
-      stock: 22,
-      rating: 4.6,
-    },
+    
 
     // MEDICAMENTOS (NUEVA)
     {
@@ -264,41 +223,10 @@ function Perros() {
       stock: 25,
       rating: 4.9,
     },
-    {
-      id: 16,
-      nombre: "Vitaminas Multivitamínicas",
-      categoria: "medicamentos",
-      precio: 15900,
-      precioOriginal: 20000,
-      imagen: "/images/imagen55.jpg",
-      descripcion: "Refuerza el sistema inmunológico",
-      stock: 30,
-      rating: 4.8,
-    },
-    {
-      id: 17,
-      nombre: "Desparasitante Interno",
-      categoria: "medicamentos",
-      precio: 13900,
-      precioOriginal: 17000,
-      imagen: "/images/imagen56.jpg",
-      descripcion: "Elimina gusanos intestinales",
-      stock: 20,
-      rating: 4.7,
-    },
+     
 
     // HIGIENE (NUEVA)
-    {
-      id: 18,
-      nombre: "Champú Hipoalergénico",
-      categoria: "higiene",
-      precio: 11900,
-      precioOriginal: 15000,
-      imagen: "/images/imagen57.jpg",
-      descripcion: "Suave para pieles sensibles",
-      stock: 28,
-      rating: 4.8,
-    },
+ 
     {
       id: 19,
       nombre: "Cepillo Desenredante",

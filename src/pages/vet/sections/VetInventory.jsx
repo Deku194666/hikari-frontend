@@ -9,9 +9,9 @@ import "./VetInventory.css";
 
 const CATEGORIES = [
   { id: "todos", name: "Todos", icon: "📦" },
-  { id: "Productos", name: "Productos", icon: "🧴" },
+  { id: "Alimentos", name: "Alimentos", icon: "🧴" },
   { id: "Ropa", name: "Ropa", icon: "👕" },
-  { id: "Ropa Hikari", name: "Ropa Hikari", icon: "🏷️" },
+  { id: "Productos Hikari", name: "Productos Hikari", icon: "🏷️" },
   { id: "Medicamentos", name: "Medicamentos", icon: "💊" },
   { id: "Accesorios", name: "Accesorios", icon: "🦴" },
   { id: "Higiene", name: "Higiene", icon: "🧼" },
@@ -65,6 +65,10 @@ function VetInventory() {
 
   const [adjustingId, setAdjustingId] = useState(null); // para deshabilitar botones mientras guarda
 
+  const [zoomImage, setZoomImage] = useState(null);
+
+  
+
   useEffect(() => {
     loadProducts();
   }, []);
@@ -103,21 +107,43 @@ function VetInventory() {
   };
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  const file = e.target.files[0];
+  if (!file) return;
 
-    if (file.size > 2 * 1024 * 1024) {
-      alert("⚠️ La imagen es muy pesada, usa una menor a 2MB");
-      return;
-    }
+  const img = new Image();
+  const reader = new FileReader();
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      setForm((prev) => ({ ...prev, image: reader.result }));
-      setImagePreview(reader.result);
+  reader.onload = (event) => {
+    img.onload = () => {
+      // Redimensiona si es muy grande (máximo 1000px de ancho/alto)
+      const MAX_SIZE = 1000;
+      let { width, height } = img;
+
+      if (width > height && width > MAX_SIZE) {
+        height *= MAX_SIZE / width;
+        width = MAX_SIZE;
+      } else if (height > MAX_SIZE) {
+        width *= MAX_SIZE / height;
+        height = MAX_SIZE;
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, width, height);
+
+      // Comprime a JPEG calidad 0.8 (baja más si sigue pesada)
+      const compressed = canvas.toDataURL("image/jpeg", 0.8);
+
+      setForm((prev) => ({ ...prev, image: compressed }));
+      setImagePreview(compressed);
     };
-    reader.readAsDataURL(file);
+    img.src = event.target.result;
   };
+
+  reader.readAsDataURL(file);
+};
 
   const openAddModal = () => {
     setEditingId(null);
@@ -295,9 +321,14 @@ function VetInventory() {
                       </button>
                     </div>
 
-                    <div className="vinv-card-image">
+                                        <div className="vinv-card-image">
                       {item.image ? (
-                        <img src={item.image} alt={item.name} />
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          onClick={() => setZoomImage(item.image)}
+                          style={{ cursor: "zoom-in" }}
+                        />
                       ) : (
                         <span className="vinv-card-placeholder">
                           {CATEGORY_ICON[item.category] || "📦"}
@@ -461,6 +492,12 @@ function VetInventory() {
               </div>
             </form>
           </div>
+        </div>
+      )}     
+       {zoomImage && (
+        <div className="vinv-zoom-overlay" onClick={() => setZoomImage(null)}>
+          <img src={zoomImage} alt="Vista ampliada" className="vinv-zoom-image" />
+          <button className="vinv-zoom-close" onClick={() => setZoomImage(null)}>✕</button>
         </div>
       )}
     </section>

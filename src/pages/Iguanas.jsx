@@ -105,39 +105,9 @@ function Iguanas() {
       stock: 25,
       rating: 4.8,
     },
-    {
-      id: 3,
-      nombre: "Flores Comestibles Deshidratadas",
-      categoria: "alimento",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen119.jpg",
-      descripcion: "Complemento natural rico en nutrientes",
-      stock: 20,
-      rating: 4.7,
-    },
-    {
-      id: 4,
-      nombre: "Fruta Tropical Mix",
-      categoria: "alimento",
-      precio: 6900,
-      precioOriginal: 9000,
-      imagen: "/images/imagen120.jpg",
-      descripcion: "Snack ocasional rico en vitaminas",
-      stock: 40,
-      rating: 4.6,
-    },
-    {
-      id: 5,
-      nombre: "Terrario Vertical 100x50x150",
-      categoria: "terrario",
-      precio: 149900,
-      precioOriginal: 190000,
-      imagen: "/images/imagen121.jpg",
-      descripcion: "Terrario en altura, ideal para iguanas adultas",
-      stock: 5,
-      rating: 4.9,
-    },
+    
+     
+    
     {
       id: 6,
       nombre: "Sustrato Coco Fibra 10L",
@@ -161,29 +131,6 @@ function Iguanas() {
       rating: 4.8,
     },
     
- 
-    {
-      id: 9,
-      nombre: "Bombilla UV-B 10.0 75W",
-      categoria: "iluminacion",
-      precio: 34900,
-      precioOriginal: 45000,
-      imagen: "/images/imagen124.jpg",
-      descripcion: "Luz UV esencial para la salud ósea",
-      stock: 15,
-      rating: 4.9,
-    },
-    {
-      id: 10,
-      nombre: "Lámpara Basking 150W",
-      categoria: "iluminacion",
-      precio: 21900,
-      precioOriginal: 28000,
-      imagen: "/images/imagen125.jpg",
-      descripcion: "Calor concentrado, iguanas necesitan altas temperaturas",
-      stock: 20,
-      rating: 4.8,
-    },
     {
       id: 11,
       nombre: "Temporizador Automático 12h",
@@ -196,17 +143,7 @@ function Iguanas() {
       rating: 4.7,
     },
    
-    {
-      id: 13,
-      nombre: "Termostato Digital Regulable",
-      categoria: "calefaccion",
-      precio: 24900,
-      precioOriginal: 32000,
-      imagen: "/images/imagen127.jpg",
-      descripcion: "Control preciso de temperatura, clave para iguanas",
-      stock: 18,
-      rating: 4.9,
-    },
+  
     {
       id: 14,
       nombre: "Piedra Térmica Natural",
@@ -218,28 +155,8 @@ function Iguanas() {
       stock: 20,
       rating: 4.7,
     },
-    {
-      id: 15,
-      nombre: "Calcio con Vitamina D3",
-      categoria: "suplementos",
-      precio: 11900,
-      precioOriginal: 15000,
-      imagen: "/images/imagen129.jpg",
-      descripcion: "Previene enfermedad ósea metabólica, común en iguanas",
-      stock: 40,
-      rating: 4.9,
-    },
-    {
-      id: 16,
-      nombre: "Multivitamínico para Iguanas",
-      categoria: "suplementos",
-      precio: 13900,
-      precioOriginal: 18000,
-      imagen: "/images/imagen130.avif",
-      descripcion: "Nutrientes esenciales completos",
-      stock: 32,
-      rating: 4.8,
-    },
+
+  
      
     {
       id: 18,
@@ -252,28 +169,8 @@ function Iguanas() {
       stock: 30,
       rating: 4.8,
     },
-    {
-      id: 19,
-      nombre: "Medidor Humedad/Temperatura",
-      categoria: "accesorios",
-      precio: 9900,
-      precioOriginal: 13000,
-      imagen: "/images/imagen132.webp",
-      descripcion: "Monitoreo en tiempo real",
-      stock: 28,
-      rating: 4.9,
-    },
-    {
-      id: 20,
-      nombre: "Correa y Arnés para Iguana",
-      categoria: "accesorios",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen133.jpg",
-      descripcion: "Para paseos seguros y supervisados",
-      stock: 20,
-      rating: 4.7,
-    },
+   
+    
   ];
 
   const categorias = [

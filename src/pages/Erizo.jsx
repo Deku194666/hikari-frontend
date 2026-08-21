@@ -117,17 +117,7 @@ function Erizo() {
       stock: 40,
       rating: 4.8,
     },
-    {
-      id: 5,
-      nombre: "Jaula/Terrario 90x50x40",
-      categoria: "habitat",
-      precio: 69900,
-      precioOriginal: 90000,
-      imagen: "/images/imagen153.jpg",
-      descripcion: "Espacio amplio con buena ventilación",
-      stock: 8,
-      rating: 4.9,
-    },
+   
     {
       id: 6,
       nombre: "Rueda de Ejercicio Silenciosa",
@@ -140,17 +130,7 @@ function Erizo() {
       rating: 4.9,
     },
   
-    {
-      id: 9,
-      nombre: "Casa Refugio Oscura",
-      categoria: "accesorios",
-      precio: 12900,
-      precioOriginal: 17000,
-      imagen: "/images/imagen196.jpg",
-      descripcion: "Espacio para esconderse durante el día",
-      stock: 20,
-      rating: 4.9,
-    },
+    
      
     {
       id: 11,
@@ -175,17 +155,7 @@ function Erizo() {
       stock: 24,
       rating: 4.8,
     },
-    {
-      id: 14,
-      nombre: "Cortauñas de Precisión",
-      categoria: "cuidado",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen182.jpg",
-      descripcion: "Corte seguro y sin estrés",
-      stock: 20,
-      rating: 4.9,
-    },
+   
      
    
      
@@ -200,18 +170,7 @@ function Erizo() {
       stock: 20,
       rating: 4.8,
     },
-    {
-      id: 19,
-      nombre: "Transportín Compacto Ventilado",
-      categoria: "transportes",
-      precio: 18900,
-      precioOriginal: 24000,
-      imagen: "/images/imagen173.jpg",
-      descripcion: "Seguro para viajes cortos",
-      stock: 14,
-      rating: 4.8,
-    },
-     
+   
   ];
 
   const categorias = [

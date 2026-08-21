@@ -17,15 +17,21 @@ import imagen13 from "../assets/imagen13.webp";
 import imagen14 from "../assets/imagen14.webp";
 import imagen15 from "../assets/imagen15.jpg";
 import imagen16 from "../assets/imagen16.avif";
-import imagen17 from "../assets/imagen17.png";
+import imagen18 from "../assets/imagen18.jpg";
+import imagen19 from "../assets/imagen19.jpg";
+import imagen20 from "../assets/imagen20.jpg";
+import imagen21 from "../assets/imagen21.jpg";
+
 
 function Home() {
   // ===== IMÁGENES DEL CARRUSEL DEL HERO =====
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
   const heroImages = [
-    imagen17,
-    "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=500&fit=crop",
+    imagen18,
+    imagen19,
+    imagen20,
+    imagen21,
+
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);

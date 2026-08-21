@@ -106,28 +106,8 @@ function Cuy() {
       rating: 4.9,
     },
      
-    {
-      id: 4,
-      nombre: "Snacks Naturales de Fruta",
-      categoria: "alimento",
-      precio: 6900,
-      precioOriginal: 9000,
-      imagen: "/images/imagen152.webp",
-      descripcion: "Premio ocasional bajo en azúcar",
-      stock: 38,
-      rating: 4.6,
-    },
-    {
-      id: 5,
-      nombre: "Jaula Amplia 100x60x45",
-      categoria: "espacios",
-      precio: 59900,
-      precioOriginal: 78000,
-      imagen: "/images/imagen153.jpg",
-      descripcion: "Espacio suficiente para uno o dos cuyes",
-      stock: 10,
-      rating: 4.9,
-    },
+   
+    
     {
       id: 6,
       nombre: "Corral Modulable Interior",
@@ -139,17 +119,7 @@ function Cuy() {
       stock: 14,
       rating: 4.8,
     },
-    {
-      id: 7,
-      nombre: "Casa Refugio de Madera",
-      categoria: "espacios",
-      precio: 15900,
-      precioOriginal: 21000,
-      imagen: "/images/imagen155.jpg",
-      descripcion: "Lugar seguro para descansar y esconderse",
-      stock: 20,
-      rating: 4.8,
-    },
+    
     
     {
       id: 9,
@@ -186,43 +156,7 @@ function Cuy() {
       stock: 26,
       rating: 4.8,
     },
-    {
-      id: 14,
-      nombre: "Cortauñas de Precisión",
-      categoria: "cuidado",
-      precio: 8900,
-      precioOriginal: 12000,
-      imagen: "/images/imagen159.webp",
-      descripcion: "Corte seguro y sin estrés",
-      stock: 20,
-      rating: 4.9,
-    },
-    
- 
-    {
-      id: 17,
-      nombre: "Desinfectante Seguro 500ml",
-      categoria: "higiene",
-      precio: 5900,
-      precioOriginal: 8000,
-      imagen: "/images/imagen160.jpg",
-      descripcion: "No tóxico, seguro para jaulas",
-      stock: 30,
-      rating: 4.7,
-    },
-   
-    
-    {
-      id: 20,
-      nombre: "Mochila de Transporte Cómoda",
-      categoria: "transportes",
-      precio: 18900,
-      precioOriginal: 24000,
-      imagen: "/images/imagen161.webp",
-      descripcion: "Ventilación y visibilidad para el cuy",
-      stock: 12,
-      rating: 4.9,
-    },
+     
   ];
 
   const categorias = [

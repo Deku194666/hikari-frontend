@@ -4,9 +4,9 @@ import "./ClientShop.css";
 
 const CATEGORIES = [
   { id: "todos", name: "Todos", icon: "📦" },
-  { id: "Productos", name: "Productos", icon: "🧴" },
+  { id: "Alimentos", name: "Alimentos", icon: "🧴" },
   { id: "Ropa", name: "Ropa", icon: "👕" },
-  { id: "Ropa Hikari", name: "Ropa Hikari", icon: "🏷️" },
+  { id: "Productos Hikari", name: "Productos Hikari", icon: "🏷️" },
   { id: "Medicamentos", name: "Medicamentos", icon: "💊" },
   { id: "Accesorios", name: "Accesorios", icon: "🦴" },
   { id: "Higiene", name: "Higiene", icon: "🧼" },
@@ -44,6 +44,10 @@ function ClientShop() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
+
+  const [zoomImage, setZoomImage] = useState(null);
+
+  const [descriptionProduct, setDescriptionProduct] = useState(null);
 
   useEffect(() => {
     loadProducts();
@@ -211,7 +215,12 @@ function ClientShop() {
                   <div key={product._id} className={`cshop-card ${outOfStock ? "out-of-stock" : ""}`}>
                     <div className="cshop-card-image">
                       {product.image ? (
-                        <img src={product.image} alt={product.name} />
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          onClick={() => setZoomImage(product.image)}
+                          style={{ cursor: "zoom-in" }}
+                        />
                       ) : (
                         <span className="cshop-card-placeholder">
                           {CATEGORY_ICON[product.category] || "📦"}
@@ -237,6 +246,13 @@ function ClientShop() {
                         disabled={outOfStock || inCart >= product.quantity}
                       >
                         {outOfStock ? "No disponible" : inCart > 0 ? `🛒 En carrito (${inCart})` : "🛒 Agregar"}
+                      </button>
+
+                      <button
+                        className="cshop-desc-btn"
+                        onClick={() => setDescriptionProduct(product)}
+                      >
+                        📝 Descripción
                       </button>
                     </div>
                   </div>
@@ -294,6 +310,23 @@ function ClientShop() {
             </div>
           )}
         </aside>
+      )}
+
+      {zoomImage && (
+        <div className="cshop-zoom-overlay" onClick={() => setZoomImage(null)}>
+          <img src={zoomImage} alt="Vista ampliada" className="cshop-zoom-image" />
+          <button className="cshop-zoom-close" onClick={() => setZoomImage(null)}>✕</button>
+        </div>
+      )}
+
+      {descriptionProduct && (
+        <div className="cshop-desc-overlay" onClick={() => setDescriptionProduct(null)}>
+          <div className="cshop-desc-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="cshop-desc-close" onClick={() => setDescriptionProduct(null)}>✕</button>
+            <h3>{descriptionProduct.name}</h3>
+            <p>{descriptionProduct.description || "Este producto no tiene descripción todavía."}</p>
+          </div>
+        </div>
       )}
     </section>
   );
