@@ -1,0 +1,572 @@
+
+
+
+/* Petshop.css - Hikari - Paleta Tienda Unificada (SCOPED a .pet-page) */
+
+:root {
+  --pine: #1f4b43;
+  --pine-dark: #15332d;
+  --pine-light: #e6efec;
+  --coral: #ff6b4a;
+  --coral-dark: #e2573a;
+  --paper: #fbf7f0;
+  --sand: #e8dcc8;
+  --ink: #2d2a26;
+  --ink-soft: #5c574f;
+  --line: rgba(45, 42, 38, 0.12);
+  --shadow: 0 10px 26px -14px rgba(31, 75, 67, 0.35);
+  --shadow-lg: 0 26px 50px -20px rgba(31, 75, 67, 0.4);
+}
+
+.pet-page {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.pet-page h1,
+.pet-page h2,
+.pet-page h3,
+.pet-page h4 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--pine-dark);
+}
+
+/* ===== HERO ===== */
+.pet-page .pet-hero {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--paper) 100%);
+  padding: 80px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  color: var(--ink);
+}
+
+.pet-page .pet-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.pet-page .pet-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--coral-dark);
+  margin-bottom: 16px;
+  background: none;
+  margin-left: 3rem;
+}
+
+.pet-page .pet-h1 {
+  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+  margin-bottom: 20px;
+  line-height: 1.08;
+  font-weight: 600;
+  margin-left: 3rem;
+}
+
+.pet-page .pet-p {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  margin-bottom: 30px;
+  line-height: 1.7;
+  opacity: 1;
+  margin-left: 3rem;
+}
+
+.pet-page .pet-hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+}
+
+.pet-page .pet-btn-primary {
+  padding: 14px 28px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pet-page .pet-btn-primary:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+.pet-page .pet-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.pet-page .pet-hero-emoji {
+  font-size: 150px;
+  animation: petFloat 3s ease-in-out infinite;
+}
+
+
+.pet-page .pet-hero-img-full {
+  width: 100%;
+  max-width: 480px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid white;
+}
+
+@keyframes petFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ===== CONTAINER ===== */
+.pet-page .pet-container-small {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ===== AVISO FARMACIA ===== */
+.pet-page .pet-notice {
+  padding: 50px 6vw 0;
+  background: var(--paper);
+}
+
+.pet-page .pet-notice-box {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  border: 2px solid var(--coral);
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 80px;
+}
+
+.pet-page .pet-notice-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  
+}
+
+.pet-page .pet-notice-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--coral-dark);
+ }
+
+.pet-page .pet-notice-box p {
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* ===== DESCRIPTION ===== */
+.pet-page .pet-description {
+  padding: 80px 6vw 40px;
+  background: white;
+}
+
+.pet-page .pet-section-h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pet-page .pet-description-text {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== CATEGORÍAS ===== */
+.pet-page .pet-categories {
+  padding: 40px 6vw 80px;
+  background: white;
+}
+
+.pet-page .pet-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.pet-page .pet-category-card {
+  background: var(--paper);
+  padding: 30px 24px;
+  border-radius: 16px;
+  text-align: center;
+  border-top: 4px solid var(--pine);
+  transition: all 0.2s ease;
+}
+
+.pet-page .pet-category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pet-page .pet-category-icon {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pet-page .pet-category-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.pet-page .pet-category-card p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ===== QUÉ INCLUYE ===== */
+.pet-page .pet-includes {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.pet-page .pet-includes-list {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 10px 30px;
+  list-style: none;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.pet-page .pet-includes-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.pet-page .pet-includes-list li:last-child {
+  border-bottom: none;
+}
+
+/* ===== BENEFITS ===== */
+.pet-page .pet-benefits {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.pet-page .pet-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.pet-page .pet-benefit-card {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid var(--coral);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.pet-page .pet-benefit-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pet-page .pet-benefit-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pet-page .pet-benefit-card h3 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.pet-page .pet-benefit-card p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== FAQ ===== */
+.pet-page .pet-faq {
+  padding: 80px 6vw;
+  background: var(--pine-light);
+}
+
+.pet-page .pet-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pet-page .pet-faq-item {
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.pet-page .pet-faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: white;
+  border: none;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  color: var(--ink);
+}
+
+.pet-page .pet-faq-question:hover {
+  background: var(--paper);
+}
+
+.pet-page .pet-faq-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--coral-dark);
+}
+
+.pet-page .pet-faq-answer {
+  padding: 18px 20px;
+  background: white;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== CTA FINAL ===== */
+.pet-page .pet-cta-final {
+  padding: 80px 6vw;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--sand) 100%);
+  text-align: center;
+  color: var(--ink);
+}
+
+.pet-page .pet-cta-final h2 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.pet-page .pet-cta-final p {
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.pet-page .pet-btn-large {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 40px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.pet-page .pet-btn-large:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .pet-page .pet-hero {
+    padding: 60px 5vw;
+    gap: 36px;
+  }
+
+  .pet-page .pet-badge,
+  .pet-page .pet-h1,
+  .pet-page .pet-p,
+  .pet-page .pet-hero-cta {
+    margin-left: 0;
+  }
+
+  .pet-page .pet-h1 {
+    font-size: clamp(1.9rem, 4vw, 2.4rem);
+  }
+
+  .pet-page .pet-p {
+    font-size: 1.15rem;
+  }
+
+  .pet-page .pet-hero-emoji {
+    font-size: 110px;
+  }
+
+  .pet-page .pet-section-h2 {
+    font-size: 1.9rem;
+  }
+
+  .pet-page .pet-description-text {
+    font-size: 1.1rem;
+  }
+
+  .pet-page .pet-categories-grid,
+  .pet-page .pet-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-page .pet-hero {
+    flex-direction: column;
+    padding: 50px 5vw;
+    text-align: center;
+  }
+
+  .pet-page .pet-h1 {
+    font-size: 2rem;
+  }
+
+  .pet-page .pet-hero-emoji {
+    font-size: 80px;
+  }
+
+  .pet-page .pet-hero-cta {
+    justify-content: center;
+  }
+
+  .pet-page .pet-notice-box {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .pet-page .pet-section-h2 {
+    font-size: 1.7rem;
+  }
+
+  .pet-page .pet-description,
+  .pet-page .pet-categories,
+  .pet-page .pet-includes,
+  .pet-page .pet-benefits,
+  .pet-page .pet-faq,
+  .pet-page .pet-cta-final {
+    padding: 50px 5vw;
+  }
+
+  .pet-page .pet-categories-grid,
+  .pet-page .pet-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pet-page .pet-hero {
+    padding: 40px 4vw;
+  }
+
+  .pet-page .pet-badge {
+    font-size: 0.78rem;
+  }
+
+  .pet-page .pet-h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .pet-page .pet-p {
+    font-size: 1rem;
+  }
+
+  .pet-page .pet-hero-emoji {
+    font-size: 60px;
+  }
+
+  .pet-page .pet-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pet-page .pet-btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pet-page .pet-section-h2 {
+    font-size: 1.4rem;
+  }
+
+  .pet-page .pet-description-text {
+    font-size: 1rem;
+  }
+
+  .pet-page .pet-category-card,
+  .pet-page .pet-benefit-card {
+    padding: 22px 18px;
+  }
+
+  .pet-page .pet-includes-list {
+    padding: 6px 20px;
+  }
+
+  .pet-page .pet-includes-list li {
+    font-size: 0.98rem;
+    padding: 13px 0;
+  }
+
+  .pet-page .pet-faq-question {
+    padding: 14px 16px;
+    font-size: 0.98rem;
+  }
+
+  .pet-page .pet-faq-answer {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .pet-page .pet-cta-final h2 {
+    font-size: 1.6rem;
+  }
+
+  .pet-page .pet-btn-large {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}

@@ -261,6 +261,35 @@
   line-height: 1.6;
 }
 
+/* ===== QUÉ INCLUYE ===== */
+.dom-page .dom-includes {
+  padding: 80px 6vw;
+  background: white;
+}
+
+.dom-page .dom-includes-list {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 16px;
+  padding: 10px 30px;
+  list-style: none;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.dom-page .dom-includes-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.dom-page .dom-includes-list li:last-child {
+  border-bottom: none;
+}
+
 /* ===== PROCESS ===== */
 .dom-page .dom-process {
   padding: 80px 6vw;
@@ -421,6 +450,18 @@
   font-size: 0.9rem;
 }
 
+.dom-page .dom-price-note {
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  background: var(--pine-light);
+  padding: 16px 22px;
+  border-radius: 12px;
+}
+
 .dom-page .dom-price-btn {
   width: 100%;
   padding: 12px;
@@ -471,6 +512,7 @@
   align-items: center;
   transition: all 0.2s ease;
   color: var(--ink);
+  font-size: 1.2rem;
 }
 
 .dom-page .dom-faq-question:hover {
@@ -581,7 +623,8 @@
 }
 
 .dom-page .dom-form-group input,
-.dom-page .dom-form-group textarea {
+.dom-page .dom-form-group textarea,
+.dom-page .dom-form-group select {
   width: 100%;
   padding: 12px 15px;
   border: 1.5px solid var(--line);
@@ -593,7 +636,8 @@
 }
 
 .dom-page .dom-form-group input:focus,
-.dom-page .dom-form-group textarea:focus {
+.dom-page .dom-form-group textarea:focus,
+.dom-page .dom-form-group select:focus {
   outline: none;
   border-color: var(--pine);
   box-shadow: 0 0 0 3px rgba(31, 75, 67, 0.1);
@@ -756,6 +800,7 @@
 
   .dom-page .dom-description,
   .dom-page .dom-benefits,
+  .dom-page .dom-includes,
   .dom-page .dom-process,
   .dom-page .dom-vets,
   .dom-page .dom-prices,
@@ -835,6 +880,15 @@
     padding: 22px 18px;
   }
 
+  .dom-page .dom-includes-list {
+    padding: 6px 20px;
+  }
+
+  .dom-page .dom-includes-list li {
+    font-size: 0.98rem;
+    padding: 13px 0;
+  }
+
   .dom-page .dom-price-amount {
     font-size: 1.6rem;
   }
@@ -850,7 +904,7 @@
 
   .dom-page .dom-faq-answer {
     padding: 14px 16px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .dom-page .dom-cta-final h2 {

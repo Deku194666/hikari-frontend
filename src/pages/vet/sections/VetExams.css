@@ -1,7 +1,3 @@
-
-
-
-
 .ve-section {
   --ve-accent: #534ab7;
   --ve-accent-dark: #3c3489;
@@ -85,6 +81,45 @@
   margin-bottom: 4px;
 }
 
+/* --- ORDEN MÉDICA ADJUNTA --- */
+.ve-order-files {
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: var(--ve-border-soft);
+  border-radius: 10px;
+}
+
+.ve-order-files-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ve-text-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ve-order-files-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ve-order-file-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ve-accent);
+  background: white;
+  color: var(--ve-accent);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ve-order-file-btn:hover {
+  background: var(--ve-accent);
+  color: white;
+}
+
 .ve-edit-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,6 +173,66 @@
 
 .ve-save-btn:hover { background: var(--ve-accent-dark); }
 .ve-save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* --- MODAL DE VISTA PREVIA (orden médica) --- */
+.ve-preview-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 2rem;
+}
+
+.ve-preview-modal {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.ve-preview-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ve-border-soft);
+  color: var(--ve-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.ve-preview-close:hover {
+  background: var(--ve-accent);
+  color: white;
+}
+
+.ve-preview-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.ve-preview-pdf {
+  width: 100%;
+  height: 65vh;
+  border: none;
+  border-radius: 8px;
+}
 
 @media (max-width: 600px) {
   .ve-edit-grid { grid-template-columns: 1fr; }

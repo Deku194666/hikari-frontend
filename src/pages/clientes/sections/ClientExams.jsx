@@ -1,7 +1,3 @@
-
-
-
-
 import { useState, useEffect } from "react";
 import { getPetsRequest } from "../../../services/petService";
 import { createExamRequestRequest, getMyExamRequestsRequest } from "../../../services/examService";
@@ -16,6 +12,8 @@ const statusInfo = {
   resultados_listos: { label: "Resultados listos", className: "ce-status-resultados" },
 };
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
 const emptyForm = {
   pet: "",
   examTypes: [],
@@ -23,6 +21,7 @@ const emptyForm = {
   paymentMethod: "",
   address: "",
   notes: "",
+  orderFiles: [], // [{ name, type, data }]
 };
 
 function ClientExams() {
@@ -33,6 +32,7 @@ function ClientExams() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState(emptyForm);
   const [saving, setSaving] = useState(false);
+  const [previewFile, setPreviewFile] = useState(null);
 
   useEffect(() => {
     loadData();
@@ -68,6 +68,48 @@ function ClientExams() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleFilesChange = (e) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+
+    files.forEach((file) => {
+      if (file.size > MAX_FILE_SIZE) {
+        alert(`⚠️ "${file.name}" pesa más de 5MB, elige un archivo más liviano`);
+        return;
+      }
+
+      const isImage = file.type.startsWith("image/");
+      const isPdf = file.type === "application/pdf";
+
+      if (!isImage && !isPdf) {
+        alert(`⚠️ "${file.name}" no es una imagen ni un PDF`);
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        setForm((prev) => ({
+          ...prev,
+          orderFiles: [
+            ...prev.orderFiles,
+            { name: file.name, type: file.type, data: reader.result },
+          ],
+        }));
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // permite volver a seleccionar el mismo archivo si lo quita y lo quiere subir de nuevo
+    e.target.value = "";
+  };
+
+  const removeFile = (index) => {
+    setForm((prev) => ({
+      ...prev,
+      orderFiles: prev.orderFiles.filter((_, i) => i !== index),
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.examTypes.length === 0) {
@@ -76,7 +118,11 @@ function ClientExams() {
     }
     setSaving(true);
     try {
-      const created = await createExamRequestRequest(form);
+      const payload = {
+        ...form,
+        orderFiles: form.orderFiles.map((f) => f.data),
+      };
+      const created = await createExamRequestRequest(payload);
       setRequests((prev) => [created, ...prev]);
       setForm(emptyForm);
       setShowForm(false);
@@ -155,6 +201,45 @@ function ClientExams() {
             </label>
           )}
 
+          <div className="ce-field-full">
+            <span className="ce-label">Orden médica del examen (opcional)</span>
+            <div className="ce-upload-box">
+              <input
+                type="file"
+                accept="image/*,application/pdf"
+                multiple
+                onChange={handleFilesChange}
+                id="ce-order-files"
+                className="ce-upload-input"
+              />
+              <label htmlFor="ce-order-files" className="ce-upload-label">
+                📎 Subir foto o PDF de la orden (puedes subir varios)
+              </label>
+            </div>
+
+            {form.orderFiles.length > 0 && (
+              <div className="ce-files-preview">
+                {form.orderFiles.map((file, idx) => (
+                  <div key={idx} className="ce-file-item">
+                    {file.type.startsWith("image/") ? (
+                      <img src={file.data} alt={file.name} className="ce-file-thumb" />
+                    ) : (
+                      <div className="ce-file-pdf">📄</div>
+                    )}
+                    <span className="ce-file-name">{file.name}</span>
+                    <button
+                      type="button"
+                      className="ce-file-remove"
+                      onClick={() => removeFile(idx)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
           <label className="ce-field-full">
             Método de pago
             <select name="paymentMethod" value={form.paymentMethod} onChange={handleChange} required>
@@ -213,12 +298,41 @@ function ClientExams() {
                 Agendado: {new Date(r.scheduledDate).toLocaleDateString("es-CL")}
               </p>
             )}
+            {r.orderFiles && r.orderFiles.length > 0 && (
+              <div className="ce-request-files">
+                {r.orderFiles.map((file, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className="ce-request-file-link"
+                    onClick={() => setPreviewFile(file)}
+                  >
+                    📎 Ver orden {idx + 1}
+                  </button>
+                ))}
+              </div>
+            )}
             {r.resultsNotes && (
               <p className="ce-request-results">📋 {r.resultsNotes}</p>
             )}
           </div>
         ))}
       </div>
+
+      {previewFile && (
+        <div className="ce-preview-overlay" onClick={() => setPreviewFile(null)}>
+          <div className="ce-preview-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="ce-preview-close" onClick={() => setPreviewFile(null)}>
+              ✕
+            </button>
+            {previewFile.startsWith("data:application/pdf") ? (
+              <iframe src={previewFile} title="Orden médica" className="ce-preview-pdf" />
+            ) : (
+              <img src={previewFile} alt="Orden médica" className="ce-preview-image" />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

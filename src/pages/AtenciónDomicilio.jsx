@@ -1,42 +1,32 @@
-
-
-
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./AtenciónDomicilio.css";
 import { Link } from "react-router-dom";
 
 function AtenciónDomicilio() {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    mascota: "",
-    fecha: "",
-    mensaje: "",
-  });
+  
 
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    alert("¡Solicitud enviada! Nos contactaremos pronto.");
-    setFormData({ nombre: "", email: "", telefono: "", mascota: "", fecha: "", mensaje: "" });
-  };
-
+ 
   const benefits = [
     { icon: "🏠", title: "Comodidad en Casa", desc: "Tu mascota se atiende en su ambiente familiar" },
     { icon: "🚗", title: "Sin Traslados", desc: "Evita el estrés de viajar en auto" },
-    { icon: "⏰", title: "Flexible", desc: "Horarios que se ajustan a tu disponibilidad" },
     { icon: "👨‍⚕️", title: "Atención Personalizada", desc: "Veterinario dedicado solo a tu mascota" },
-    { icon: "🛠️", title: "Equipo Completo", desc: "Llevamos todo lo necesario para diagnósticos" },
-    { icon: "📊", title: "Seguimiento", desc: "Reporte detallado y recomendaciones por escrito" },
+    { icon: "🛠️", title: "Equipo Completo", desc: "Llevamos todo lo necesario para diagnósticos y tratamientos" },
+    { icon: "🛡️", title: "Prevención y Cuidado", desc: "Desparasitación, vacunación y asesoramiento en cada visita" },
+    { icon: "📋", title: "Recetas Médicas", desc: "Emitimos la receta correspondiente según evaluación clínica" },
+  ];
+
+  const includes = [
+    "Consulta de medicina general",
+    "Plan de vacunación",
+    "Desparasitación",
+    "Curaciones",
+    "Retiro de puntos",
+    "Eutanasia",
+    "Certificados de viaje",
+    "Y mucho más",
   ];
 
   const process = [
@@ -44,28 +34,57 @@ function AtenciónDomicilio() {
     { step: 2, title: "Confirmación", desc: "Te confirmamos fecha, hora y veterinario" },
     { step: 3, title: "Preparación", desc: "Preparamos todo el equipo necesario" },
     { step: 4, title: "Visita", desc: "El veterinario llega a tu hogar puntualmente" },
-    { step: 5, title: "Atención", desc: "Examen completo y diagnóstico en casa" },
+    { step: 5, title: "Atención", desc: "Examen completo, diagnóstico y tratamiento en casa" },
     { step: 6, title: "Seguimiento", desc: "Reporte escrito y asesoramiento post-visita" },
   ];
 
   const vets = [
-    { name: "Dra. Sofia Pirul", specialty: "Medicina General", exp: "12 años", img: "👩‍⚕️" },
-    { name: "Dr. Nils Meyer Galindo", specialty: "Cirugía", exp: "15 años", img: "👨‍⚕️" },
+    { name: "Dra. Sofia Pirul Hernández", specialty: "Medico Veterinario dedicado a Especies Menores (Perros y Gatos)     Asesor de Tenencia Responsable en Animales Exoticos",  img: "👩‍⚕️" },
+    { name: "Dr. Nils Meyer Galindo", specialty: "Medico Veterinario dedicado a Especies Menores (Perros y Gatos)", img: "👨‍⚕️" },
   ];
 
   const prices = [
-    { name: "Consulta General", price: "$45,000", time: "30 min", services: ["Examen general", "Diagnóstico básico", "Recomendaciones"] },
-    { name: "Consulta Completa", price: "$65,000", time: "45 min", services: ["Examen exhaustivo", "Análisis laborales", "Plan de tratamiento", "Seguimiento 1 mes"] },
-    { name: "Urgencia 24h", price: "$80,000", time: "1 hora", services: ["Atención inmediata", "Estabilización", "Derivación si es necesario", "Reporte detallado"] },
+    {
+      name: "Consulta a Domicilio",
+      price: "$25.000",
+      time: "Incluye diagnóstico, tratamiento y receta",
+      services: [
+        "Examen general",
+        "Diagnóstico",
+        "Tratamiento",
+        "Receta médica (fármacos no incluidos)",
+      ],
+    },
+    {
+      name: "Telemedicina",
+      price: "$15.000",
+      time: "Consulta por videollamada",
+      services: [
+        "Consulta, control o seguimiento",
+        "Si deriva a visita a domicilio, este monto se descuenta del valor de la consulta presencial",
+        "No se cobran ambos servicios por separado",
+      ],
+    },
+    {
+      name: "Promoción: Vacuna Triple + Domicilio",
+      price: "$32.000",
+      time: "Aplicación de vacuna incluida",
+      services: [
+        "Vacuna triple felina/canina según corresponda",
+        "Consulta a domicilio incluida",
+        "Evaluación general de salud",
+      ],
+    },
   ];
 
   const faqs = [
     { q: "¿Qué mascota puedo llevar?", a: "Atendemos perros, gatos, conejos, aves y pequeños roedores. Consulta por mascotas exóticas." },
-    { q: "¿Qué equipo llevan?", a: "Llevamos estetoscopio, termómetro, báscula, otoscopio, y todo lo necesario para diagnósticos básicos." },
-    { q: "¿Hay costo de traslado?", a: "No, el valor incluye traslado dentro de Santiago. Consulta por zonas alejadas." },
-    { q: "¿Qué pasa si necesita análisis?", a: "Toman muestras en tu hogar y las procesamos en nuestro laboratorio." },
-    { q: "¿Puedo agendar urgencias?", a: "Sí, tenemos servicio 24/7. Hay recargo por atención fuera de horario." },
+    { q: "¿Qué equipo llevan?", a: "Llevamos estetoscopio, termómetro, báscula, otoscopio, y todo lo necesario para diagnósticos y tratamientos básicos." },
+    { q: "¿El servicio incluye los medicamentos?", a: "El valor de la consulta incluye diagnóstico, tratamiento y receta médica. Por el momento no realizamos venta directa de medicamentos; el veterinario emite la receta correspondiente para que la adquieras donde prefieras." },
+    { q: "¿Qué pasa si tuve una sesión de telemedicina y necesito visita a domicilio?", a: "El monto que ya pagaste por la telemedicina se descuenta del valor de la consulta a domicilio. Solo pagas la diferencia, no se cobran ambos servicios por separado." },
+    { q: "¿Qué pasa si necesita análisis?", a: "Tomamos muestras en tu hogar y las procesamos con nuestro laboratorio asociado." },
     { q: "¿Qué debo preparar?", a: "Un lugar cómodo, historiales médicos si tiene, y datos de tu mascota." },
+    { q: "¿Se hacen envios a regiones?", a: "Se hacen envíos a regiones a través de Blue Express o empresa de envios a conveniencia del cliente." },
   ];
 
   const testimonios = [
@@ -121,7 +140,7 @@ function AtenciónDomicilio() {
             <div className="dom-desc-card">
               <span className="dom-desc-icon">🔍</span>
               <h3>Alcance</h3>
-              <p>Desde consultas generales hasta procedimientos diagnósticos avanzados.</p>
+              <p>Desde consultas generales hasta diagnóstico, tratamiento y emisión de recetas.</p>
             </div>
           </div>
         </div>
@@ -140,6 +159,18 @@ function AtenciónDomicilio() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== QUÉ INCLUYE ===== */}
+      <section className="dom-includes">
+        <div className="dom-container-small">
+          <h2 className="dom-section-h2">¿Qué Incluye el Servicio?</h2>
+          <ul className="dom-includes-list">
+            {includes.map((item, idx) => (
+              <li key={idx}>✓ {item}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -171,8 +202,7 @@ function AtenciónDomicilio() {
                 <div className="dom-vet-avatar">{vet.img}</div>
                 <h3>{vet.name}</h3>
                 <p className="dom-vet-specialty">{vet.specialty}</p>
-                <p className="dom-vet-exp">Experiencia: {vet.exp}</p>
-              </div>
+               </div>
             ))}
           </div>
         </div>
@@ -187,7 +217,7 @@ function AtenciónDomicilio() {
               <div key={idx} className="dom-price-card">
                 <h3>{price.name}</h3>
                 <div className="dom-price-amount">{price.price}</div>
-                <p className="dom-price-time">⏱️ {price.time}</p>
+                <p className="dom-price-time">{price.time}</p>
                 <ul className="dom-price-services">
                   {price.services.map((service, i) => (
                     <li key={i}>✓ {service}</li>
@@ -196,6 +226,9 @@ function AtenciónDomicilio() {
                </div>
             ))}
           </div>
+          <p className="dom-price-note">
+            📌 Los medicamentos no están incluidos en el valor de la consulta. Por el momento no realizamos venta directa de fármacos; el médico veterinario evalúa el caso y emite la receta correspondiente.
+          </p>
         </div>
       </section>
 
@@ -244,89 +277,7 @@ function AtenciónDomicilio() {
         </div>
       </section>
 
-      {/* ===== FORMULARIO ===== */}
-      <section className="dom-contact">
-        <div className="dom-container-small">
-          <h2 className="dom-section-h2">Agenda tu Cita</h2>
-          <form className="dom-form" onSubmit={handleFormSubmit}>
-            <div className="dom-form-group">
-              <label>Nombre Completo *</label>
-              <input
-                type="text"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleFormChange}
-                required
-                placeholder="Tu nombre"
-              />
-            </div>
-
-            <div className="dom-form-row">
-              <div className="dom-form-group">
-                <label>Email *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="tu@email.com"
-                />
-              </div>
-              <div className="dom-form-group">
-                <label>Teléfono *</label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="+56 9 XXXX XXXX"
-                />
-              </div>
-            </div>
-
-            <div className="dom-form-row">
-              <div className="dom-form-group">
-                <label>Mascota *</label>
-                <input
-                  type="text"
-                  name="mascota"
-                  value={formData.mascota}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="Nombre y tipo de mascota"
-                />
-              </div>
-              <div className="dom-form-group">
-                <label>Fecha Preferida *</label>
-                <input
-                  type="date"
-                  name="fecha"
-                  value={formData.fecha}
-                  onChange={handleFormChange}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="dom-form-group">
-              <label>Mensaje / Síntomas</label>
-              <textarea
-                name="mensaje"
-                value={formData.mensaje}
-                onChange={handleFormChange}
-                placeholder="Cuéntanos qué motiva la consulta..."
-                rows="5"
-              ></textarea>
-            </div>
-
-            <button type="submit" className="dom-btn-submit">
-              ✓ Solicitar Cita
-            </button>
-          </form>
-        </div>
-      </section>
+       
 
       {/* ===== CTA FINAL ===== */}
       <section className="dom-cta-final">

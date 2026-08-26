@@ -1,7 +1,3 @@
-
-
-
-
 import { useState, useEffect } from "react";
 import { getAllExamRequestsRequest, updateExamRequestRequest } from "../../../services/examService";
 import "./VetExams.css";
@@ -17,6 +13,7 @@ function VetExams() {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [previewFile, setPreviewFile] = useState(null);
 
   useEffect(() => {
     loadRequests();
@@ -65,14 +62,34 @@ function VetExams() {
         )}
 
         {requests.map((r) => (
-          <ExamCard key={r._id} record={r} onUpdated={handleUpdate} />
+          <ExamCard
+            key={r._id}
+            record={r}
+            onUpdated={handleUpdate}
+            onPreview={setPreviewFile}
+          />
         ))}
       </div>
+
+      {previewFile && (
+        <div className="ve-preview-overlay" onClick={() => setPreviewFile(null)}>
+          <div className="ve-preview-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="ve-preview-close" onClick={() => setPreviewFile(null)}>
+              ✕
+            </button>
+            {previewFile.startsWith("data:application/pdf") ? (
+              <iframe src={previewFile} title="Orden médica" className="ve-preview-pdf" />
+            ) : (
+              <img src={previewFile} alt="Orden médica" className="ve-preview-image" />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-function ExamCard({ record, onUpdated }) {
+function ExamCard({ record, onUpdated, onPreview }) {
   const [status, setStatus] = useState(record.status);
   const [scheduledDate, setScheduledDate] = useState(
     record.scheduledDate ? record.scheduledDate.slice(0, 10) : ""
@@ -115,6 +132,24 @@ function ExamCard({ record, onUpdated }) {
       <p className="ve-detail"><b>Pago:</b> {record.paymentMethod}</p>
       <p className="ve-detail"><b>Dirección:</b> {record.address}</p>
       {record.notes && <p className="ve-detail"><b>Notas del cliente:</b> {record.notes}</p>}
+
+      {record.orderFiles && record.orderFiles.length > 0 && (
+        <div className="ve-order-files">
+          <span className="ve-order-files-label">📎 Orden médica adjunta:</span>
+          <div className="ve-order-files-list">
+            {record.orderFiles.map((file, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className="ve-order-file-btn"
+                onClick={() => onPreview(file)}
+              >
+                Ver orden {idx + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="ve-edit-grid">
         <label>

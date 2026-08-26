@@ -1,6 +1,3 @@
-
-
-
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getAllPatientsRequest, updatePetRequest } from "../../services/petService";
@@ -11,28 +8,30 @@ import {
 } from "../../services/clinicalRecordService";
 import "./VetPatientRecord.css";
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 const emptyRecordForm = {
   date: new Date().toISOString().slice(0, 10),
-  anamnesis: "",
-  weight: "",
+  anamnesisRemota: "",
+  enfermedadesPrevias: "",
+  tratamientosPrevios: "",
+  alimentacion: "",
+  motivoConsulta: "",
+  anamnesisActual: "",
   temperature: "",
-  heartRate: "",
+  weight: "",
   respiratoryRate: "",
-  mucousMembranes: "",
   capillaryRefillTime: "",
-  bodyCondition: "",
-  auscultation: "",
+  heartRate: "",
+  mucousMembranes: "",
+  bloodPressure: "",
   physicalExam: "",
-  symptoms: "",
   presumptiveDiagnosis: "",
-  examResults: "",
   diagnosis: "",
+  requestedExams: "",
   treatment: "",
-  medications: "",
-  surgery: "",
-  rehabilitation: "",
   notes: "",
+  prescriptionFiles: [], // array de strings base64
 };
 
 function VetPatientRecord() {
@@ -56,6 +55,9 @@ function VetPatientRecord() {
   const [recordForm, setRecordForm] = useState(emptyRecordForm);
   const [savingRecord, setSavingRecord] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
+
+  // --- vista previa de recetas ---
+  const [previewFile, setPreviewFile] = useState(null);
 
   useEffect(() => {
     loadData();
@@ -130,25 +132,26 @@ function VetPatientRecord() {
   const handleEditRecordClick = (record) => {
     setRecordForm({
       date: record.date ? record.date.slice(0, 10) : new Date().toISOString().slice(0, 10),
-      anamnesis: record.anamnesis || "",
-      weight: record.weight ?? "",
+      anamnesisRemota: record.anamnesisRemota || "",
+      enfermedadesPrevias: record.enfermedadesPrevias || "",
+      tratamientosPrevios: record.tratamientosPrevios || "",
+      alimentacion: record.alimentacion || "",
+      motivoConsulta: record.motivoConsulta || "",
+      anamnesisActual: record.anamnesisActual || "",
       temperature: record.temperature || "",
-      heartRate: record.heartRate || "",
+      weight: record.weight ?? "",
       respiratoryRate: record.respiratoryRate || "",
-      mucousMembranes: record.mucousMembranes || "",
       capillaryRefillTime: record.capillaryRefillTime || "",
-      bodyCondition: record.bodyCondition || "",
-      auscultation: record.auscultation || "",
+      heartRate: record.heartRate || "",
+      mucousMembranes: record.mucousMembranes || "",
+      bloodPressure: record.bloodPressure || "",
       physicalExam: record.physicalExam || "",
-      symptoms: record.symptoms || "",
       presumptiveDiagnosis: record.presumptiveDiagnosis || "",
-      examResults: record.examResults || "",
       diagnosis: record.diagnosis || "",
+      requestedExams: record.requestedExams || "",
       treatment: record.treatment || "",
-      medications: record.medications || "",
-      surgery: record.surgery || "",
-      rehabilitation: record.rehabilitation || "",
       notes: record.notes || "",
+      prescriptionFiles: record.prescriptionFiles || [],
     });
     setEditingRecordId(record._id);
     setShowRecordForm(true);
@@ -158,6 +161,45 @@ function VetPatientRecord() {
     setShowRecordForm(false);
     setEditingRecordId(null);
     setRecordForm(emptyRecordForm);
+  };
+
+  // --- recetas: subir archivos ---
+  const handlePrescriptionFilesChange = (e) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+
+    files.forEach((file) => {
+      if (file.size > MAX_FILE_SIZE) {
+        alert(`⚠️ "${file.name}" pesa más de 5MB, elige un archivo más liviano`);
+        return;
+      }
+
+      const isImage = file.type.startsWith("image/");
+      const isPdf = file.type === "application/pdf";
+
+      if (!isImage && !isPdf) {
+        alert(`⚠️ "${file.name}" no es una imagen ni un PDF`);
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        setRecordForm((prev) => ({
+          ...prev,
+          prescriptionFiles: [...prev.prescriptionFiles, reader.result],
+        }));
+      };
+      reader.readAsDataURL(file);
+    });
+
+    e.target.value = "";
+  };
+
+  const removePrescriptionFile = (index) => {
+    setRecordForm((prev) => ({
+      ...prev,
+      prescriptionFiles: prev.prescriptionFiles.filter((_, i) => i !== index),
+    }));
   };
 
   const handleSaveRecord = async (e) => {
@@ -304,104 +346,139 @@ function VetPatientRecord() {
             <input type="date" name="date" value={recordForm.date} onChange={handleRecordFormChange} required />
           </label>
 
-          <div className="vpr-section">
-            <h4>Anamnesis</h4>
-            <label className="vpr-field-full">
-              Motivo de consulta / historia
-              <textarea name="anamnesis" rows={3} value={recordForm.anamnesis} onChange={handleRecordFormChange} />
+          <label className="vpr-field-full">
+            Anamnesis Remota
+            <textarea name="anamnesisRemota" rows={3} value={recordForm.anamnesisRemota} onChange={handleRecordFormChange} />
+          </label>
+
+          <div className="vpr-form-grid">
+            <label>
+              Enfermedades Previas
+              <textarea name="enfermedadesPrevias" rows={2} value={recordForm.enfermedadesPrevias} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              Tratamiento Previos
+              <textarea name="tratamientosPrevios" rows={2} value={recordForm.tratamientosPrevios} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              Alimentación
+              <textarea name="alimentacion" rows={2} value={recordForm.alimentacion} onChange={handleRecordFormChange} />
             </label>
           </div>
 
-          <div className="vpr-section">
-            <h4>Examen físico / Signos vitales</h4>
-            <div className="vpr-form-grid">
-              <label>
-                Peso (kg)
-                <input type="number" step="0.1" name="weight" value={recordForm.weight} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Temperatura
-                <input name="temperature" placeholder="Ej: 38.5°C" value={recordForm.temperature} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Frecuencia cardíaca
-                <input name="heartRate" placeholder="Ej: 120 lpm" value={recordForm.heartRate} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Frecuencia respiratoria
-                <input name="respiratoryRate" placeholder="Ej: 24 rpm" value={recordForm.respiratoryRate} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Mucosas
-                <input name="mucousMembranes" placeholder="Ej: rosadas, húmedas" value={recordForm.mucousMembranes} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Tiempo de llenado capilar
-                <input name="capillaryRefillTime" placeholder="Ej: < 2 seg" value={recordForm.capillaryRefillTime} onChange={handleRecordFormChange} />
-              </label>
-              <label>
-                Condición corporal
-                <input name="bodyCondition" placeholder="Ej: 3/5" value={recordForm.bodyCondition} onChange={handleRecordFormChange} />
-              </label>
-            </div>
-            <label className="vpr-field-full">
-              Auscultación cardiopulmonar
-              <textarea name="auscultation" rows={2} value={recordForm.auscultation} onChange={handleRecordFormChange} />
+          <label className="vpr-field-full">
+            Motivo Consulta
+            <textarea name="motivoConsulta" rows={3} value={recordForm.motivoConsulta} onChange={handleRecordFormChange} />
+          </label>
+
+          <label className="vpr-field-full">
+            Anamnesis Actual
+            <textarea name="anamnesisActual" rows={3} value={recordForm.anamnesisActual} onChange={handleRecordFormChange} />
+          </label>
+
+          <div className="vpr-form-grid-6">
+            <label>
+              T°
+              <input name="temperature" value={recordForm.temperature} onChange={handleRecordFormChange} />
             </label>
-            <label className="vpr-field-full">
-              Observaciones del examen físico
-              <textarea name="physicalExam" rows={2} value={recordForm.physicalExam} onChange={handleRecordFormChange} />
+            <label>
+              Peso
+              <input type="number" step="0.1" name="weight" value={recordForm.weight} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              FR
+              <input name="respiratoryRate" value={recordForm.respiratoryRate} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              TLLC
+              <input name="capillaryRefillTime" value={recordForm.capillaryRefillTime} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              FC
+              <input name="heartRate" value={recordForm.heartRate} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              Mucosas
+              <input name="mucousMembranes" value={recordForm.mucousMembranes} onChange={handleRecordFormChange} />
             </label>
           </div>
 
-          <div className="vpr-section">
-            <h4>Síntomas</h4>
-            <label className="vpr-field-full">
-              <textarea name="symptoms" rows={2} value={recordForm.symptoms} onChange={handleRecordFormChange} />
+          <div className="vpr-form-grid-6">
+            <label>
+              Presión arterial
+              <input name="bloodPressure" value={recordForm.bloodPressure} onChange={handleRecordFormChange} />
             </label>
           </div>
 
-          <div className="vpr-section">
-            <h4>Diagnóstico</h4>
-            <label className="vpr-field-full">
-              Diagnóstico presuntivo
-              <textarea name="presumptiveDiagnosis" rows={2} value={recordForm.presumptiveDiagnosis} onChange={handleRecordFormChange} />
-            </label>
-            <label className="vpr-field-full">
-              Resultados de exámenes
-              <textarea name="examResults" rows={2} value={recordForm.examResults} onChange={handleRecordFormChange} />
-            </label>
-            <label className="vpr-field-full">
-              Diagnóstico definitivo
-              <textarea name="diagnosis" rows={2} value={recordForm.diagnosis} onChange={handleRecordFormChange} />
-            </label>
-          </div>
+          <label className="vpr-field-full">
+            Examen Físico
+            <textarea name="physicalExam" rows={3} value={recordForm.physicalExam} onChange={handleRecordFormChange} />
+          </label>
 
-          <div className="vpr-section">
-            <h4>Tratamiento</h4>
-            <label className="vpr-field-full">
-              Tratamiento indicado
+          <label className="vpr-field-full">
+            Prediagnósticos
+            <input name="presumptiveDiagnosis" value={recordForm.presumptiveDiagnosis} onChange={handleRecordFormChange} />
+          </label>
+
+          <label className="vpr-field-full">
+            Diagnóstico
+            <input name="diagnosis" value={recordForm.diagnosis} onChange={handleRecordFormChange} />
+          </label>
+
+          <div className="vpr-form-grid-2">
+            <label>
+              Exámenes solicitados
+              <textarea name="requestedExams" rows={2} value={recordForm.requestedExams} onChange={handleRecordFormChange} />
+            </label>
+            <label>
+              Tratamiento
               <textarea name="treatment" rows={2} value={recordForm.treatment} onChange={handleRecordFormChange} />
             </label>
-            <label className="vpr-field-full">
-              Medicamentos
-              <textarea name="medications" rows={2} value={recordForm.medications} onChange={handleRecordFormChange} />
-            </label>
-            <label className="vpr-field-full">
-              Cirugía (si aplica)
-              <textarea name="surgery" rows={2} value={recordForm.surgery} onChange={handleRecordFormChange} />
-            </label>
-            <label className="vpr-field-full">
-              Rehabilitación / indicaciones
-              <textarea name="rehabilitation" rows={2} value={recordForm.rehabilitation} onChange={handleRecordFormChange} />
-            </label>
           </div>
 
-          <div className="vpr-section">
-            <h4>Notas adicionales</h4>
-            <label className="vpr-field-full">
-              <textarea name="notes" rows={2} value={recordForm.notes} onChange={handleRecordFormChange} />
-            </label>
+          <label className="vpr-field-full">
+            Observaciones
+            <textarea name="notes" rows={3} value={recordForm.notes} onChange={handleRecordFormChange} />
+          </label>
+
+          {/* RECUADRO DE RECETAS */}
+          <div className="vpr-section vpr-prescription-section">
+            <h4>💊 Recetas</h4>
+            <div className="vpr-upload-box">
+              <input
+                type="file"
+                accept="image/*,application/pdf"
+                multiple
+                onChange={handlePrescriptionFilesChange}
+                id="vpr-prescription-files"
+                className="vpr-upload-input"
+              />
+              <label htmlFor="vpr-prescription-files" className="vpr-upload-label">
+                📎 Subir foto o PDF de la receta (puedes subir varias, o hacerlo después editando la consulta)
+              </label>
+            </div>
+
+            {recordForm.prescriptionFiles.length > 0 && (
+              <div className="vpr-files-preview">
+                {recordForm.prescriptionFiles.map((file, idx) => (
+                  <div key={idx} className="vpr-file-item">
+                    {file.startsWith("data:application/pdf") ? (
+                      <div className="vpr-file-pdf">📄</div>
+                    ) : (
+                      <img src={file} alt={`Receta ${idx + 1}`} className="vpr-file-thumb" />
+                    )}
+                    <span className="vpr-file-name">Receta {idx + 1}</span>
+                    <button
+                      type="button"
+                      className="vpr-file-remove"
+                      onClick={() => removePrescriptionFile(idx)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="vpr-form-actions">
@@ -435,25 +512,43 @@ function VetPatientRecord() {
 
               {isExpanded && (
                 <div className="vpr-record-detail">
-                  <DetailRow label="Anamnesis" value={record.anamnesis} />
+                  <DetailRow label="Anamnesis Remota" value={record.anamnesisRemota} />
+                  <DetailRow label="Enfermedades Previas" value={record.enfermedadesPrevias} />
+                  <DetailRow label="Tratamiento Previos" value={record.tratamientosPrevios} />
+                  <DetailRow label="Alimentación" value={record.alimentacion} />
+                  <DetailRow label="Motivo Consulta" value={record.motivoConsulta} />
+                  <DetailRow label="Anamnesis Actual" value={record.anamnesisActual} />
+                  <DetailRow label="T°" value={record.temperature} />
                   <DetailRow label="Peso" value={record.weight ? `${record.weight} kg` : ""} />
-                  <DetailRow label="Temperatura" value={record.temperature} />
-                  <DetailRow label="Frecuencia cardíaca" value={record.heartRate} />
-                  <DetailRow label="Frecuencia respiratoria" value={record.respiratoryRate} />
+                  <DetailRow label="FR" value={record.respiratoryRate} />
+                  <DetailRow label="TLLC" value={record.capillaryRefillTime} />
+                  <DetailRow label="FC" value={record.heartRate} />
                   <DetailRow label="Mucosas" value={record.mucousMembranes} />
-                  <DetailRow label="Tiempo de llenado capilar" value={record.capillaryRefillTime} />
-                  <DetailRow label="Condición corporal" value={record.bodyCondition} />
-                  <DetailRow label="Auscultación" value={record.auscultation} />
-                  <DetailRow label="Examen físico" value={record.physicalExam} />
-                  <DetailRow label="Síntomas" value={record.symptoms} />
-                  <DetailRow label="Diagnóstico presuntivo" value={record.presumptiveDiagnosis} />
-                  <DetailRow label="Resultados de exámenes" value={record.examResults} />
+                  <DetailRow label="Presión arterial" value={record.bloodPressure} />
+                  <DetailRow label="Examen Físico" value={record.physicalExam} />
+                  <DetailRow label="Prediagnósticos" value={record.presumptiveDiagnosis} />
                   <DetailRow label="Diagnóstico" value={record.diagnosis} />
+                  <DetailRow label="Exámenes solicitados" value={record.requestedExams} />
                   <DetailRow label="Tratamiento" value={record.treatment} />
-                  <DetailRow label="Medicamentos" value={record.medications} />
-                  <DetailRow label="Cirugía" value={record.surgery} />
-                  <DetailRow label="Rehabilitación" value={record.rehabilitation} />
-                  <DetailRow label="Notas" value={record.notes} />
+                  <DetailRow label="Observaciones" value={record.notes} />
+
+                  {record.prescriptionFiles && record.prescriptionFiles.length > 0 && (
+                    <div className="vpr-detail-row">
+                      <span className="vpr-detail-label">💊 Recetas</span>
+                      <div className="vpr-prescription-list">
+                        {record.prescriptionFiles.map((file, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            className="vpr-prescription-btn"
+                            onClick={() => setPreviewFile(file)}
+                          >
+                            Ver receta {idx + 1}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <button className="vpr-edit-btn" onClick={() => handleEditRecordClick(record)}>
                     Editar esta consulta
@@ -464,6 +559,21 @@ function VetPatientRecord() {
           );
         })}
       </div>
+
+      {previewFile && (
+        <div className="vpr-preview-overlay" onClick={() => setPreviewFile(null)}>
+          <div className="vpr-preview-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="vpr-preview-close" onClick={() => setPreviewFile(null)}>
+              ✕
+            </button>
+            {previewFile.startsWith("data:application/pdf") ? (
+              <iframe src={previewFile} title="Receta" className="vpr-preview-pdf" />
+            ) : (
+              <img src={previewFile} alt="Receta" className="vpr-preview-image" />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

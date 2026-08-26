@@ -279,14 +279,12 @@ function Contacto() {
             <div className="perfil-info">
               <span className="perfil-rol">Médico Veterinario</span>
               <h3>Dra. Sofia Pirul Hernández</h3>
-              <p className="perfil-especialidad">
-                🦎 Especialista en animales exóticos
+              
+              <p className="perfil-descripcion">
+                Medica Veterinaria dedicado a Especies Menores (Perros y Gatos)
               </p>
               <p className="perfil-descripcion">
-                Veterinaria con experiencia en atención de perros, gatos y animales
-                exóticos. Actualmente preparándose para su especialización en
-                <strong> Laboratorio Clínico Veterinario</strong>, ampliando su
-                expertise en diagnóstico de precisión.
+                Asesora de Tenencia Responsable en Animales Exoticos
               </p>
               <div className="perfil-skills">
                 <span>🐾 Atención domiciliaria</span>
@@ -307,14 +305,9 @@ function Contacto() {
             <div className="perfil-info">
               <span className="perfil-rol">Médico Veterinario</span>
               <h3>Dr. Nils Meyer Galindo </h3>
-              <p className="perfil-especialidad">
-                🦎 Especialista en animales exóticos
-              </p>
+              
               <p className="perfil-descripcion">
-                Veterinario con vocación por el cuidado integral de las mascotas.
-                Actualmente preparándose para su especialización en
-                <strong> Cirugía Veterinaria</strong>, expandiendo los servicios
-                que ofrecemos a la comunidad.
+                Medico Veterinario dedicado a Especies Menores (Perros y Gatos)
               </p>
               <div className="perfil-skills">
                 <span>🏠 Visitas a domicilio</span>

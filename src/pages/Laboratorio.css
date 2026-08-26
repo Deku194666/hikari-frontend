@@ -408,6 +408,7 @@
   align-items: center;
   transition: all 0.2s ease;
   color: var(--ink);
+  font-size: 1.2rem;
 }
 
 .lab-page .lab-faq-question:hover {
@@ -415,7 +416,7 @@
 }
 
 .lab-page .lab-faq-icon {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--coral-dark);
 }
@@ -426,6 +427,7 @@
   color: var(--ink-soft);
   line-height: 1.8;
   border-top: 1px solid var(--line);
+  font-size: 1.1rem;
 }
 
 /* ===== TESTIMONIOS ===== */

@@ -229,6 +229,48 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== AVISO PRÓXIMAMENTE ===== */
+
+.farmacia .farmacia-notice-wrap {
+  padding: 40px 6vw 0;
+  background: var(--pine-light);
+}
+
+.farmacia .farmacia-notice-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  border: 2px solid var(--coral);
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: var(--shadow);
+}
+
+.farmacia .farmacia-notice-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.farmacia .farmacia-notice-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--coral-dark);
+}
+
+.farmacia .farmacia-notice-box p {
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+.farmacia .farmacia-notice-box p:last-child {
+  margin-bottom: 0;
+}
+
 /* ===== CONTENEDOR PRINCIPAL ===== */
 
 .farmacia .farmacia-container {
@@ -239,10 +281,6 @@
   grid-template-columns: 250px 1fr;
   gap: 30px;
   background: var(--pine-light);
-}
-
-.farmacia .farmacia-container:has(.farmacia-carrito) {
-  grid-template-columns: 250px 1fr 300px;
 }
 
 /* ===== SIDEBAR - FILTROS ===== */
@@ -423,115 +461,14 @@
   cursor: not-allowed;
 }
 
-/* ===== CARRITO ===== */
-
-.farmacia .farmacia-carrito {
-  background: white;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--line);
-  height: fit-content;
-  position: sticky;
-  top: 24px;
-}
-
-.farmacia .farmacia-carrito h3 {
-  color: var(--pine-dark);
-  margin-bottom: 18px;
-  font-size: 1.1rem;
-}
-
-.farmacia .carrito-items {
-  margin-bottom: 20px;
-  max-height: 400px;
-  overflow-y: auto;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 20px;
-}
-
-.farmacia .carrito-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.farmacia .item-info {
-  flex-grow: 1;
-}
-
-.farmacia .item-nombre {
-  font-weight: 600;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
-  color: var(--ink);
-}
-
-.farmacia .item-precio {
-  color: var(--pine);
-  font-weight: 700;
-  margin: 0;
-  font-size: 0.85rem;
-}
-
-.farmacia .btn-eliminar {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.farmacia .btn-eliminar:hover {
-  transform: scale(1.3);
-}
-
-.farmacia .carrito-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
-  color: var(--ink);
-}
-
-.farmacia .carrito-total span {
-  color: var(--pine-dark);
-  font-weight: 700;
-  font-size: 1.2rem;
-  font-family: "Fraunces", serif;
-}
-
-.farmacia .btn-checkout {
-  width: 100%;
-  padding: 14px;
-  background: var(--coral);
-  color: white;
-  border: none;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.92rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.farmacia .btn-checkout:hover {
-  background: var(--coral-dark);
-  transform: translateY(-2px);
-}
-
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
-  .farmacia .farmacia-container,
-  .farmacia .farmacia-container:has(.farmacia-carrito) {
+  .farmacia .farmacia-container {
     grid-template-columns: 1fr;
   }
 
-  .farmacia .farmacia-sidebar,
-  .farmacia .farmacia-carrito {
+  .farmacia .farmacia-sidebar {
     position: relative;
     top: auto;
   }
@@ -588,6 +525,10 @@
     margin-left: 0;
     margin-top: 0;
   }
+
+  .farmacia .farmacia-notice-box {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
@@ -604,17 +545,6 @@
 
   .farmacia .medicamento-card {
     padding: 15px;
-  }
-
-  .farmacia .farmacia-carrito {
-    position: relative;
-    top: auto;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .farmacia .carrito-items {
-    max-height: 300px;
   }
 
   .farmacia .farmacia-hero-carousel {

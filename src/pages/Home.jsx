@@ -4,11 +4,7 @@ import "./Home.css";
 import NavBar2 from "../components/NavBar2";
 import WhatsAppButton from "../components/WhatsAppButton";
 import imagen3 from "../assets/imagen3.png";
-import imagen4 from "../assets/Imagen4.png"; 
 import Imagen5 from "../assets/imagen5.jpeg"; 
-import imagen6 from "../assets/imagen6.jpg"; 
-import images7 from "../assets/images7.jpg";
-import imagen8 from "../assets/imagen8.webp";
 import imagen9 from "../assets/imagen9.jpg"; 
 import imagen10 from "../assets/imagen10.jpg"; 
 import imagen11 from "../assets/imagen11.webp";  
@@ -21,6 +17,9 @@ import imagen18 from "../assets/imagen18.jpg";
 import imagen19 from "../assets/imagen19.jpg";
 import imagen20 from "../assets/imagen20.jpg";
 import imagen21 from "../assets/imagen21.jpg";
+import imagen7 from "../assets/imagen7.jpg"
+import imagen8 from "../assets/imagen8.jpg";
+
 
 
 function Home() {
@@ -122,29 +121,18 @@ function Home() {
               <img src={imagen3} alt="Atención a Domicilio" className="service-img" />
             </div>
             <h3>Atención a Domicilio</h3>
-            <p>Visitamos tu hogar con todo lo necesario para evaluaciones veterinarias en un ambiente cómodo.</p>
+            <p>Consulta medicina general, plan de vacunación, desparasitación, curaciones, retiro de puntos, eutanasia, certificados de viaje y mucho más.</p>
             <ul className="service-list">
-              <li>✓ Revisión general</li>
-              <li>✓ Control de peso</li>
-              <li>✓ Evaluación dental</li>
-              <li>✓ Auscultación</li>
+              <li>✓ Consulta medicina general</li>
+              <li>✓ Plan de vacunación</li>
+              <li>✓ Desparasitación</li>
+              <li>✓ Curaciones</li>
+              <li>✓ Retiro de puntos</li>
+              <li>✓ Eutanasia</li>
+              <li>✓ Certificados de viaje</li>
+              <li>✓ Y mucho más</li>
             </ul>
             <a href="/atencion-domicilio">Más información</a>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">
-              <img src={imagen4} alt="Vacunación y Prevención" className="service-img" />
-            </div>
-            <h3>Vacunación y Prevención</h3>
-            <p>Aplicación de todas las vacunas necesarias para perros y gatos.</p>
-            <ul className="service-list">
-              <li>✓ Vacunas de rutina</li>
-              <li>✓ Refuerzos anuales</li>
-              <li>✓ Asesoramiento</li>
-              <li>✓ Certificados</li>
-            </ul>
-            <a href="/vacunacion">Más información</a>
           </div>
 
           <div className="service-card">
@@ -152,59 +140,51 @@ function Home() {
               <img src={Imagen5} alt="Exámenes de Laboratorio" className="service-img" />
             </div>
             <h3>Exámenes de Laboratorio</h3>
-            <p>Toma de muestras profesional con coordinación directa con laboratorios.</p>
+            <p>Hematología, bioquímica, hormonas, biomarcadores, microbiología, parasitología, biopsias, citologías y mucho más.</p>
             <ul className="service-list">
-              <li>✓ Análisis de sangre</li>
-              <li>✓ Urianalisis</li>
-              <li>✓ Coprologías</li>
-              <li>✓ Cultivos</li>
+              <li>✓ Hematología</li>
+              <li>✓ Bioquímica</li>
+              <li>✓ Hormonas</li>
+              <li>✓ Biomarcadores</li>
+              <li>✓ Microbiología</li>
+              <li>✓ Parasitología</li>
+              <li>✓ Biopsias</li>
+              <li>✓ Citologías</li>
+              <li>✓ Y mucho más</li>
             </ul>
             <a href="/laboratorio">Más información</a>
           </div>
 
           <div className="service-card">
             <div className="service-icon">
-              <img src={imagen6} alt="Diagnóstico Profesional" className="service-img" />
+              <img src={imagen7} alt="Telemedicina" className="service-img" />
             </div>
-            <h3>Diagnóstico Profesional</h3>
-            <p>Evaluaciones clínicas completas para identificar problemas de salud.</p>
+            <h3>Telemedicina</h3>
+            <p>Consultas, control y seguimientos, todo desde la comodidad de tu hogar.</p>
             <ul className="service-list">
-              <li>✓ Desparasitación</li>
-              <li>✓ Control de pulgas</li>
-              <li>✓ Tratamientos</li>
-              <li>✓ Asesoramiento</li>
+              <li>✓ Consultas</li>
+              <li>✓ Control</li>
+              <li>✓ Seguimientos</li>
             </ul>
-            <a href="/evaluacion-general">Más información</a>
+            <a href="/telemedicina">Más información</a>
           </div>
 
           <div className="service-card">
             <div className="service-icon">
-              <img src={images7} alt="Medicamentos" className="service-img" />
+              <img src={imagen8} alt="Petshop" className="service-img" />
             </div>
-            <h3>Medicamentos</h3>
-            <p>Medicamentos veterinarios de calidad para tratar diferentes condiciones.</p>
+            <h3>Petshop</h3>
+            <p>Alimentos, juguetes, snacks, arnés, bebederos, próximamente farmacia y más.</p>
             <ul className="service-list">
-              <li>✓ Antibióticos</li>
-              <li>✓ Analgésicos</li>
-              <li>✓ Antiinflamatorios</li>
-              <li>✓ Especializadas</li>
+              <li>✓ Alimentos</li>
+              <li>✓ Juguetes</li>
+              <li>✓ Snacks</li>
+              <li>✓ Arnés</li>
+              <li>✓ Bebederos</li>
+              <li>✓ Próximamente farmacia</li>
+              <li>✓ Y más</li>
             </ul>
-            <a href="/seguimiento-medico">Más información</a>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">
-              <img src={imagen8} alt="Seguimiento Continuo" className="service-img" />
-            </div>
-            <h3>Seguimiento Continuo</h3>
-            <p>Historial completo con recordatorios y plan personalizado de cuidados.</p>
-            <ul className="service-list">
-              <li>✓ Historial médico</li>
-              <li>✓ Recordatorios</li>
-              <li>✓ Planes de salud</li>
-              <li>✓ Nutrición</li>
-            </ul>
-            <a href="/cuidado-preventivo">Más información</a>
+            <a href="/petshop">Más información</a>
           </div>
         </div>
       </section>

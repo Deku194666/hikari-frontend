@@ -24,11 +24,7 @@ import Tortugas from "./pages/Tortugas";
 import Aves from "./pages/Aves";
 import Conejos from "./pages/Conejos";
 import AtenciónDomicilio from "./pages/AtenciónDomicilio";
-import Vacunación from "./pages/Vacunación";
 import Laboratorio from "./pages/Laboratorio";
-import EvaluaciónGeneral from "./pages/EvaluaciónGeneral";
-import SeguimientoMédico from "./pages/SeguimientoMédico";
-import CuidadoPreventivo from "./pages/CuidadoPreventivo";
 import Iguanas from "./pages/Iguanas";
 import Roedores from "./pages/Roedores";
 import Cuy from "./pages/Cuy";
@@ -38,6 +34,8 @@ import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
 import VideoCall from "./pages/VideoCall.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Telemedicina from "./pages/Telemedicina.jsx";
+import Petshop from "./pages/Petshop.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -67,11 +65,7 @@ function AppContent() {
           <Route path="/aves" element={<Aves />} />
           <Route path="/conejos" element={<Conejos />} />
           <Route path="/atencion-domicilio" element={<AtenciónDomicilio />} />
-          <Route path="/vacunacion" element={<Vacunación />} />
           <Route path="/laboratorio" element={<Laboratorio />} />
-          <Route path="/evaluacion-general" element={<EvaluaciónGeneral />} />
-          <Route path="/seguimiento-medico" element={<SeguimientoMédico />} />
-          <Route path="/cuidado-preventivo" element={<CuidadoPreventivo />} />
           <Route path="/iguanas" element={<Iguanas />} />
           <Route path="/roedores" element={<Roedores />} />
           <Route path="/cuy" element={<Cuy />} />
@@ -79,6 +73,8 @@ function AppContent() {
           <Route path="/erizo"  element={ <Erizo  />}   />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
+          <Route path="/telemedicina"  element={   < Telemedicina  />  }   />
+          <Route path="/petshop"  element={  <  Petshop /> }   />
 
           <Route path="/dashboard-vet" element={
             <PrivateVetRoute>

@@ -7,30 +7,10 @@ import "./Laboratorio.css";
 import { Link } from "react-router-dom";
 
 function Laboratorio() {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    mascota: "",
-    tipo: "",
-    examen: "",
-    fecha: "",
-    mensaje: "",
-  });
+  
 
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    alert("¡Solicitud de examen enviada! Te contactaremos pronto.");
-    setFormData({ nombre: "", email: "", telefono: "", mascota: "", tipo: "", examen: "", fecha: "", mensaje: "" });
-  };
 
   const benefits = [
     { icon: "🔬", title: "Laboratorio Especializado", desc: "Equipos de última tecnología y profesionales certificados" },
@@ -42,12 +22,15 @@ function Laboratorio() {
   ];
 
   const exams = [
-    { name: "Análisis de Sangre Completo", desc: "Hemograma, química sanguínea, enzimas hepáticas", time: "24-48h", price: "$35,000" },
-    { name: "Análisis de Orina", desc: "Uroanálisis completo para diagnóstico de infecciones", time: "12-24h", price: "$18,000" },
-    { name: "Copología", desc: "Detección de parásitos y problemas digestivos", time: "24h", price: "$16,000" },
-    { name: "Perfil Renal", desc: "Evaluación completa de función renal", time: "24-48h", price: "$28,000" },
-    { name: "Perfil Hepático", desc: "Análisis de función hepática", time: "24-48h", price: "$28,000" },
-    { name: "Panel Tiroidea", desc: "Evaluación de tiroides (T3, T4, TSH)", time: "48-72h", price: "$35,000" },
+    { name: "Hematología", desc: "Hemograma, química sanguínea, enzimas hepáticas", time: "24-48h",  },
+    { name: "Bioquímica", desc: "Glucosa, Creatinina, Urea, Transaminasas, Colesterol, Electrolitos ", time: "12-24h",  },
+    { name: "Hormonas", desc: "TSH, Testosterona, Cortisol, FSH, LH",  time: "24h",  },
+    { name: "Biomarcadores", desc: "Son señales biológicas como proteínas, hormonas, lípidos o células que indican procesos normales o anormales en el cuerpo.", time: "24-48h",  },
+    { name: "Microbiología", desc: "Hemocultivo, Bacterias, Hongos", time: "48-72h",  },
+    { name: "Parasitología", desc: "Malaria, Enfermedad de Chagas, EIA, IFA / IFI, ELISA", time: "48-72h",  },
+    { name: "Biopsias", desc: "Una biopsia es un procedimiento médico donde se extrae una pequeña muestra de tejido u órgano para analizarla en un laboratorio y obtener un diagnóstico definitivo", time: "48-72h",  },
+    { name: "Citologías", desc: "La citología veterinaria es un examen rápido y poco invasivo que analiza células de tejidos o fluidos de tu mascota para detectar infecciones, inflamaciones o tumores", time: "48-72h",  },
+    { name: "Mucho más", desc: "Muchos mas examenes a disposición, todo depende al momento de la evaluación", time: "48-72h",  },
   ];
 
   const process = [
@@ -146,7 +129,7 @@ function Laboratorio() {
       {/* ===== TIPOS DE EXÁMENES ===== */}
       <section className="lab-exams">
         <div className="lab-container-small">
-          <h2 className="lab-section-h2">Exámenes Disponibles</h2>
+          <h2 className="lab-section-h2"> Algunos de los examenes que realizamos </h2>
           <div className="lab-exams-grid">
             {exams.map((exam, idx) => (
               <div key={idx} className="lab-exam-card">
@@ -225,123 +208,7 @@ function Laboratorio() {
         </div>
       </section>
 
-      {/* ===== FORMULARIO ===== */}
-      <section className="lab-contact">
-        <div className="lab-container-small">
-          <h2 className="lab-section-h2">Solicita tu Examen</h2>
-          <form className="lab-form" onSubmit={handleFormSubmit}>
-            <div className="lab-form-group">
-              <label>Nombre Completo *</label>
-              <input
-                type="text"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleFormChange}
-                required
-                placeholder="Tu nombre"
-              />
-            </div>
-
-            <div className="lab-form-row">
-              <div className="lab-form-group">
-                <label>Email *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="tu@email.com"
-                />
-              </div>
-              <div className="lab-form-group">
-                <label>Teléfono *</label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="+56 9 XXXX XXXX"
-                />
-              </div>
-            </div>
-
-            <div className="lab-form-row">
-              <div className="lab-form-group">
-                <label>Mascota *</label>
-                <input
-                  type="text"
-                  name="mascota"
-                  value={formData.mascota}
-                  onChange={handleFormChange}
-                  required
-                  placeholder="Nombre de tu mascota"
-                />
-              </div>
-              <div className="lab-form-group">
-                <label>Tipo *</label>
-                <select
-                  name="tipo"
-                  value={formData.tipo}
-                  onChange={handleFormChange}
-                  required
-                >
-                  <option value="">Selecciona...</option>
-                  <option value="perro">Perro</option>
-                  <option value="gato">Gato</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="lab-form-row">
-              <div className="lab-form-group">
-                <label>Tipo de Examen *</label>
-                <select
-                  name="examen"
-                  value={formData.examen}
-                  onChange={handleFormChange}
-                  required
-                >
-                  <option value="">Selecciona...</option>
-                  <option value="sangre">Análisis de Sangre</option>
-                  <option value="orina">Análisis de Orina</option>
-                  <option value="copologia">Copología</option>
-                  <option value="renal">Perfil Renal</option>
-                  <option value="hepatico">Perfil Hepático</option>
-                  <option value="tiroidea">Panel Tiroidea</option>
-                </select>
-              </div>
-              <div className="lab-form-group">
-                <label>Fecha Preferida *</label>
-                <input
-                  type="date"
-                  name="fecha"
-                  value={formData.fecha}
-                  onChange={handleFormChange}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="lab-form-group">
-              <label>Mensaje Adicional</label>
-              <textarea
-                name="mensaje"
-                value={formData.mensaje}
-                onChange={handleFormChange}
-                placeholder="Alguna información adicional..."
-                rows="4"
-              ></textarea>
-            </div>
-
-            <button type="submit" className="lab-btn-submit">
-              ✓ Solicitar Examen
-            </button>
-          </form>
-        </div>
-      </section>
+     
 
       {/* ===== CTA FINAL ===== */}
       <section className="lab-cta-final">

@@ -1,13 +1,10 @@
 import { useState } from "react";
 import NavBar2 from "../components/NavBar2";
 import "./Farmacia.css";
-import { useNavigate } from "react-router-dom";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 function Farmacia() {
   const [selectedCategory, setSelectedCategory] = useState("todos");
-  const [cart, setCart] = useState([]);
-  const navigate = useNavigate();
 
   // ===== IMÁGENES DEL CARRUSEL DEL HERO =====
   // Agrega, quita o reemplaza rutas aquí para cambiar las fotos del carrusel.
@@ -146,25 +143,6 @@ function Farmacia() {
       ? medicamentos
       : medicamentos.filter((med) => med.categoria === selectedCategory);
 
-  const addToCart = (medicamento) => {
-    const existente = cart.find((item) => item.id === medicamento.id);
-    if (existente) {
-      setCart(
-        cart.map((item) =>
-          item.id === medicamento.id
-            ? { ...item, cantidad: item.cantidad + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...medicamento, cantidad: 1 }]);
-    }
-  };
-
-  const removeFromCart = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
-  };
-
   return (
     <div className="farmacia">
       <NavBar2 />
@@ -235,6 +213,22 @@ function Farmacia() {
         </div>
       </section>
 
+      {/* ===== AVISO PRÓXIMAMENTE ===== */}
+      <div className="farmacia-notice-wrap">
+        <div className="farmacia-notice-box">
+          <span className="farmacia-notice-icon">📌</span>
+          <div>
+            <h3>¡Próximamente!</h3>
+            <p>
+              Por el momento, no contamos con venta directa de medicamentos. Actualmente, en esta sección solo se realiza la prescripción y emisión de recetas médicas veterinarias, siempre bajo el criterio clínico del médico veterinario asignado y previa evaluación del caso en consulta.
+            </p>
+            <p>
+              Las recetas podrán ser emitidas durante una consulta veterinaria o posteriormente, cuando el profesional cuente con los antecedentes clínicos necesarios para indicar el tratamiento de forma responsable y segura.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="farmacia-container">
         {/* ===== SIDEBAR - FILTROS ===== */}
         <aside className="farmacia-sidebar">
@@ -263,7 +257,7 @@ function Farmacia() {
                 ? "Todos los medicamentos"
                 : categorias.find((c) => c.id === selectedCategory)?.label}
             </h2>
-            <p>{medicamentosFiltrados.length} productos disponibles</p>
+            <p>{medicamentosFiltrados.length} productos en catálogo (venta próximamente)</p>
           </div>
 
           {/* GRID DE MEDICAMENTOS */}
@@ -279,62 +273,14 @@ function Farmacia() {
                 </div>
                 <h3>{medicamento.nombre}</h3>
                 <p className="descripcion">{medicamento.descripcion}</p>
-                <div className="stock">
-                  {medicamento.stock > 0 ? (
-                    <span className="disponible">✅ En stock ({medicamento.stock})</span>
-                  ) : (
-                    <span className="agotado">❌ Agotado</span>
-                  )}
-                </div>
                 <p className="precio">${medicamento.precio.toLocaleString("es-CL")}</p>
-                <button
-                  className="btn-agregar"
-                  onClick={() => addToCart(medicamento)}
-                  disabled={medicamento.stock === 0}
-                >
-                  🛒 Agregar al carrito
+                <button className="btn-agregar" disabled>
+                  🚫 Próximamente disponible
                 </button>
               </div>
             ))}
           </div>
         </main>
-
-        {/* ===== CARRITO ===== */}
-        {cart.length > 0 && (
-          <aside className="farmacia-carrito">
-            <h3>🛒 Tu carrito ({cart.length})</h3>
-            <div className="carrito-items">
-              {cart.map((item) => (
-                <div key={item.id} className="carrito-item">
-                  <div className="item-info">
-                    <p className="item-nombre">{item.nombre}</p>
-                    <p className="item-precio">
-                      ${item.precio.toLocaleString("es-CL")} x {item.cantidad}
-                    </p>
-                  </div>
-                  <button
-                    className="btn-eliminar"
-                    onClick={() => removeFromCart(item.id)}
-                  >
-                    ❌
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="carrito-total">
-              <strong>Total:</strong>
-              <span>
-                $
-                {cart
-                  .reduce((sum, item) => sum + item.precio * item.cantidad, 0)
-                  .toLocaleString("es-CL")}
-              </span>
-            </div>
-            <button className="btn-checkout" onClick={() => navigate("/login")}>
-              💳 Ir al pago
-            </button>
-          </aside>
-        )}
       </div>
     </div>
   );

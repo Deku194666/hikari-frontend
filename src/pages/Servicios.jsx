@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import "./Servicios.css";
 import NavBar2 from "../components/NavBar2";
 import imagen3 from "../assets/imagen3.png";
-import imagen4 from "../assets/Imagen4.png";
-import imagen6 from "../assets/imagen6.jpg";
-import imagen8 from "../assets/imagen8.webp";
-import imagen5 from "../assets/imagen5.jpeg"; 
+import imagen5 from "../assets/imagen5.jpeg";
+import imagen7 from "../assets/imagen7.jpg";
+import imagen8 from "../assets/imagen8.jpg";
 import WhatsAppButton from "../components/WhatsAppButton";
  
 function Servicios() {
@@ -76,80 +75,53 @@ const nextPerritosImage = () => {
       id: 1,
       image: imagen3,
       title: "Atención a Domicilio",
-      description: "Visitamos tu hogar con equipamiento completo para evaluar a tu mascota sin estrés.",
+      description: "Consulta medicina general, plan de vacunación, desparasitación, curaciones, retiro de puntos, eutanasia, certificados de viaje y mucho más.",
       details: [
-        "Comodidad para tu mascota",
-        "Sin traslados estresantes",
-        "Ambiente familiar",
-        "Atención dedicada",
+        "Consulta medicina general",
+        "Plan de vacunación",
+        "Desparasitación",
+        "Certificados de viaje",
       ],
-      link: "/atencion-domicilio" 
+      link: "/atencion-domicilio"
     },
     {
       id: 2,
-      image: imagen4,
-      title: "Vacunación Integral",
-      description: "Esquemas vacunales completos y actualizados para perros y gatos.",
-      details: [
-        "Vacunas de rutina",
-        "Refuerzos anuales",
-        "Certificados oficiales",
-        "Registro de vacunas",
-      ],
-      link: "/vacunacion"
-    },
-    {
-      id: 3,
       image: imagen5,
       title: "Exámenes de Laboratorio",
-      description: "Toma de muestras profesional con análisis en laboratorios especializados.",
+      description: "Hematología, bioquímica, hormonas, biomarcadores, microbiología, parasitología, biopsias, citologías y mucho más.",
       details: [
-        "Análisis de sangre",
-        "Análisis de orina",
-        "Coprologías",
-        "Resultados rápidos",
+        "Hematología",
+        "Bioquímica",
+        "Biopsias",
+        "Citologías",
       ],
       link: "/laboratorio"
     },
     {
+      id: 3,
+      image: imagen7,
+      title: "Telemedicina",
+      description: "Consultas, control y seguimientos, todo desde la comodidad de tu hogar.",
+      details: [
+        "Consultas",
+        "Control",
+        "Seguimientos",
+      ],
+      link: "/telemedicina"
+    },
+    {
       id: 4,
-      image: imagen6,
-      title: "Evaluación General",
-      description: "Revisión completa del estado de salud de tu mascota.",
-      details: [
-        "Examen físico completo",
-        "Evaluación de signos vitales",
-        "Revisión dentaria",
-        "Recomendaciones personalizadas",
-      ],
-      link: "/evaluacion-general"
-    },
-    {
-      id: 5,
       image: imagen8,
-      title: "Seguimiento Médico",
-      description: "Monitoreo continuo y coordinación de resultados con laboratorios.",
+      title: "Petshop",
+      description: "Alimentos, juguetes, snacks, arnés, bebederos, próximamente farmacia y más.",
       details: [
-        "Historial completo",
-        "Recordatorios automáticos",
-        "Plan de salud personalizado",
-        "Seguimiento de medicinas",
+        "Alimentos",
+        "Juguetes",
+        "Snacks",
+        "Bebederos",
       ],
-      link: "/seguimiento-medico"
+      link: "/petshop"
     },
-    {
-  id: 6,
-  image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
-  title: "Cuidado Preventivo",
-  description: "Prevención y mantenimiento de la salud antes de que surjan problemas.",
-  details: [
-    "Desparasitación",
-    "Control de pulgas",
-    "Asesoramiento nutricional",
-    "Consejos de bienestar",
-  ],
-    link: "/cuidado-preventivo"
-},
   ];
 
   const process = [
