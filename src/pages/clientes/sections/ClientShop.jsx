@@ -128,7 +128,7 @@ function ClientShop() {
       const data = await createPaymentPreferenceRequest(items);
 
       // Redirige al usuario a la pantalla de pago de Mercado Pago
-      window.location.href = data.sandbox_init_point || data.init_point;
+      window.location.href = data.init_point;
     } catch (err) {
       alert(err.response?.data?.msg || "No se pudo iniciar el pago");
       setCheckingOut(false);
