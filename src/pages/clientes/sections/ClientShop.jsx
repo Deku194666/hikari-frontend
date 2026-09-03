@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { getProductsRequest, purchaseProductsRequest } from "../../../services/productService";
+import { getProductsRequest, createPaymentPreferenceRequest } from "../../../services/productService";
 import "./ClientShop.css";
 
 const CATEGORIES = [
@@ -125,21 +125,12 @@ function ClientShop() {
     setCheckingOut(true);
     try {
       const items = cart.map((item) => ({ productId: item._id, quantity: item.quantity }));
-      const data = await purchaseProductsRequest(items);
+      const data = await createPaymentPreferenceRequest(items);
 
-      if (data.success) {
-        alert("✅ ¡Compra realizada con éxito!");
-        setCart([]);
-        setShowCart(false);
-        loadProducts(); // refresca stock real
-      } else {
-        const failed = data.results.filter((r) => !r.ok);
-        alert("⚠️ Algunos productos no se pudieron comprar:\n" + failed.map((f) => f.msg).join("\n"));
-        loadProducts();
-      }
+      // Redirige al usuario a la pantalla de pago de Mercado Pago
+      window.location.href = data.sandbox_init_point || data.init_point;
     } catch (err) {
-      alert(err.response?.data?.msg || "No se pudo procesar la compra");
-    } finally {
+      alert(err.response?.data?.msg || "No se pudo iniciar el pago");
       setCheckingOut(false);
     }
   };
@@ -305,7 +296,7 @@ function ClientShop() {
                 <span>${totalCart.toLocaleString("es-CL")}</span>
               </div>
               <button className="cshop-checkout-btn" onClick={handleCheckout} disabled={checkingOut}>
-                {checkingOut ? "Procesando..." : "💳 Confirmar compra"}
+                {checkingOut ? "Redirigiendo a Mercado Pago..." : "💳 Pagar con Mercado Pago"}
               </button>
             </div>
           )}

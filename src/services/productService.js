@@ -24,3 +24,8 @@ export const purchaseProductsRequest = async (items) => {
   const res = await api.post("/products/purchase", { items });
   return res.data;
 };
+
+export const createPaymentPreferenceRequest = async (items) => {
+  const res = await api.post("/products/create-preference", { items });
+  return res.data;
+};

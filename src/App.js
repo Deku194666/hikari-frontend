@@ -36,6 +36,11 @@ import VideoCall from "./pages/VideoCall.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Telemedicina from "./pages/Telemedicina.jsx";
 import Petshop from "./pages/Petshop.jsx";
+import CompraExitosa from "./pages/CompraExitosa";
+import CompraFallida from "./pages/CompraFallida";
+import CompraPendiente from "./pages/CompraPendiente";
+
+
 
 function AppContent() {
   const location = useLocation();
@@ -75,6 +80,9 @@ function AppContent() {
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/telemedicina"  element={   < Telemedicina  />  }   />
           <Route path="/petshop"  element={  <  Petshop /> }   />
+          <Route path="/compra-exitosa" element={<CompraExitosa />} />
+          <Route path="/compra-fallida" element={<CompraFallida />} />
+          <Route path="/compra-pendiente" element={<CompraPendiente />} />
 
           <Route path="/dashboard-vet" element={
             <PrivateVetRoute>
